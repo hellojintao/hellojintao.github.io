@@ -91,19 +91,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo常用命令</title>
-    <url>/2022/02/18/3ca0d4b2c93f/</url>
-    <content><![CDATA[<h4 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h4><p>本地预览命令组合</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo g == hexo generate     <span class="comment">#生成</span></span><br><span class="line">hexo s == hexo server         <span class="comment">#启动服务预览</span></span><br></pre></td></tr></table></figure>
-<p>部署命令组合</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo clean                   <span class="comment">#清除缓存</span></span><br><span class="line">hexo g == hexo generate      <span class="comment">#生成静态网页</span></span><br><span class="line">hexo d == hexo deploy        <span class="comment">#开始部署</span></span><br><span class="line">hexo g -d                    <span class="comment">#生成部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d  <span class="comment">#复合命令</span></span><br></pre></td></tr></table></figure>
-<p>其它</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo server -p <span class="number">5000</span>    <span class="comment">#更改端口，默认端口4000</span></span><br><span class="line">hexo server -i <span class="number">192.168</span>.<span class="number">1.1</span> <span class="comment">#自定义 IP</span></span><br><span class="line">hexo help                <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version             <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>macOS环境下的ssh配置</title>
     <url>/2022/04/06/92812954a869/</url>
     <content><![CDATA[<h4 id="查看本机有没有ssh秘钥"><a href="#查看本机有没有ssh秘钥" class="headerlink" title="查看本机有没有ssh秘钥"></a>查看本机有没有ssh秘钥</h4><p>终端输入以下内容并<code>cd ~/.ssh</code>回车，如果能打开说明是有ssh文件的</p>
@@ -446,6 +433,19 @@
 ]]></content>
       <tags>
         <tag>情感随记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo常用命令</title>
+    <url>/2022/02/18/3ca0d4b2c93f/</url>
+    <content><![CDATA[<h4 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h4><p>本地预览命令组合</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo g == hexo generate     <span class="comment">#生成</span></span><br><span class="line">hexo s == hexo server         <span class="comment">#启动服务预览</span></span><br></pre></td></tr></table></figure>
+<p>部署命令组合</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo clean                   <span class="comment">#清除缓存</span></span><br><span class="line">hexo g == hexo generate      <span class="comment">#生成静态网页</span></span><br><span class="line">hexo d == hexo deploy        <span class="comment">#开始部署</span></span><br><span class="line">hexo g -d                    <span class="comment">#生成部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d  <span class="comment">#复合命令</span></span><br></pre></td></tr></table></figure>
+<p>其它</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo server -p <span class="number">5000</span>    <span class="comment">#更改端口，默认端口4000</span></span><br><span class="line">hexo server -i <span class="number">192.168</span>.<span class="number">1.1</span> <span class="comment">#自定义 IP</span></span><br><span class="line">hexo help                <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version             <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
