@@ -918,27 +918,10 @@ pre .javascript .function {
   transition-delay: 0s, 0s, 0s, 0s, 0s;
   transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
   transition-timing-function: ease, ease, ease, ease, ease-in-out;
-  color: #fff;
-  right: 2px;
-  top: 2px;
-}
-.highlight-container {
-  background: #21252b;
-  border-radius: 5px;
-  box-shadow: 0 10px 30px 0 rgba(0,0,0,0.4);
-  padding-top: 20px;
-  margin-top: 10px;
-}
-.highlight-container::before {
-  background: #fc625d;
-  border-radius: 50%;
-  box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-  content: ' ';
-  height: 12px;
-  left: 12px;
-  margin-top: -10px;
-  position: absolute;
-  width: 12px;
+  background: var(--background-color);
+  border: 0;
+  right: 0;
+  top: 0;
 }
 :root {
   --background-color: #fff;
@@ -2077,7 +2060,7 @@ pre .javascript .function {
   box-sizing: border-box;
   width: 100%;
   overflow: hidden;
-  background: url("https://pic.imgdb.cn/item/626125ad239250f7c532b002.jpg") center center/cover no-repeat;
+  background: url("/images/bg.svg") center center/cover no-repeat;
   background-position-y: 70px;
 }
 @media (max-width: 780px) {

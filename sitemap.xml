@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.kimtoli.com/tags/index.html</loc>
+    <loc>https://www.kimtoli.com/links/index.html</loc>
     
     <lastmod>2022-05-20</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://www.kimtoli.com/links/index.html</loc>
+    <loc>https://www.kimtoli.com/tags/index.html</loc>
     
     <lastmod>2022-05-20</lastmod>
     
@@ -205,14 +205,14 @@
   </url>
   
   <url>
-    <loc>https://www.kimtoli.com/tags/Hexo/</loc>
+    <loc>https://www.kimtoli.com/tags/Homebrew/</loc>
     <lastmod>2022-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.kimtoli.com/tags/Homebrew/</loc>
+    <loc>https://www.kimtoli.com/tags/Hexo/</loc>
     <lastmod>2022-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
