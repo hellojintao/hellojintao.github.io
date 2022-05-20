@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.kimtoli.com/tags/index.html</loc>
+    
+    <lastmod>2022-05-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.kimtoli.com/lovetree/index.html</loc>
     
     <lastmod>2022-05-20</lastmod>
@@ -167,15 +176,6 @@
     <loc>https://www.kimtoli.com/2022/03/01/b0ae6af3502b/</loc>
     
     <lastmod>2022-04-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.kimtoli.com/tags/index.html</loc>
-    
-    <lastmod>2022-02-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

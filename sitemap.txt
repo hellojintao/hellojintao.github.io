@@ -1,3 +1,4 @@
+https://www.kimtoli.com/tags/index.html
 https://www.kimtoli.com/lovetree/index.html
 https://www.kimtoli.com/link/index.html
 https://www.kimtoli.com/api/index.html
@@ -17,7 +18,6 @@ https://www.kimtoli.com/2022/04/06/63a8c97f5f96/
 https://www.kimtoli.com/2022/04/02/ccd9ff6b80fc/
 https://www.kimtoli.com/2022/02/16/c177b9827d5a/
 https://www.kimtoli.com/2022/03/01/b0ae6af3502b/
-https://www.kimtoli.com/tags/index.html
 https://www.kimtoli.com/
 https://www.kimtoli.com/tags/%E7%9F%AD%E8%A7%86%E9%A2%91/
 https://www.kimtoli.com/tags/Golang/
