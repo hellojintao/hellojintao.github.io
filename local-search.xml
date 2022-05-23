@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>vue框架使用B站开源项目flv.js拉视频流</title>
+    <link href="/2022/05/02/3a1c388b9baa/"/>
+    <url>/2022/05/02/3a1c388b9baa/</url>
+    
+    <content type="html"><![CDATA[<h3 id="flv项目地址"><a href="#flv项目地址" class="headerlink" title="flv项目地址"></a>flv项目地址</h3><p><a href="https://github.com/Bilibili/flv.js/">bilibili flv.js</a></p><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm install --save flv.js<br></code></pre></td></tr></table></figure><h3 id="vue页面"><a href="#vue页面" class="headerlink" title="vue页面"></a>vue页面</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"> <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;video&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">video</span></span><br><span class="hljs-tag">       <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;vPull&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">controls</span></span><br><span class="hljs-tag">       <span class="hljs-attr">autoplay</span></span><br><span class="hljs-tag">       <span class="hljs-attr">muted</span></span><br><span class="hljs-tag">       <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;100%&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span><br> <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br></code></pre></td></tr></table></figure><h3 id="Js部分"><a href="#Js部分" class="headerlink" title="Js部分"></a>Js部分</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">import</span> flv <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;flv.js&quot;</span>;</span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;&quot;</span>,</span><br><span class="language-javascript">  <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">      <span class="hljs-attr">player</span>: <span class="hljs-literal">null</span>,</span><br><span class="language-javascript">    &#125;;</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">  <span class="hljs-attr">methods</span>: &#123;</span><br><span class="language-javascript">    <span class="hljs-title function_">play</span>(<span class="hljs-params">urls</span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">let</span> video = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;vPull&quot;</span>); <span class="hljs-comment">//定义播放路径</span></span><br><span class="language-javascript">      <span class="hljs-keyword">if</span> (flv.<span class="hljs-title function_">isSupported</span>()) &#123;</span><br><span class="language-javascript">        <span class="hljs-variable language_">this</span>.<span class="hljs-property">player</span> = flv.<span class="hljs-title function_">createPlayer</span>(</span><br><span class="language-javascript">          &#123;</span><br><span class="language-javascript">            <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;flv&quot;</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">isLive</span>: <span class="hljs-literal">true</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">url</span>: urls,</span><br><span class="language-javascript">          &#125;,</span><br><span class="language-javascript">          &#123;</span><br><span class="language-javascript">            <span class="hljs-attr">enableWorker</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">//不启用分离线程</span></span><br><span class="language-javascript">            <span class="hljs-attr">enableStashBuffer</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">//关闭IO隐藏缓冲区</span></span><br><span class="language-javascript">            <span class="hljs-attr">isLive</span>: <span class="hljs-literal">true</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">lazyLoad</span>: <span class="hljs-literal">false</span>,</span><br><span class="language-javascript">          &#125;</span><br><span class="language-javascript">        );</span><br><span class="language-javascript">      &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="language-javascript">        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;不支持的格式&quot;</span>);</span><br><span class="language-javascript">        <span class="hljs-keyword">return</span>;</span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">      <span class="hljs-variable language_">this</span>.<span class="hljs-property">player</span>.<span class="hljs-title function_">attachMediaElement</span>(video);</span><br><span class="language-javascript">      <span class="hljs-variable language_">this</span>.<span class="hljs-property">player</span>.<span class="hljs-title function_">load</span>();</span><br><span class="language-javascript">      <span class="hljs-variable language_">this</span>.<span class="hljs-property">player</span>.<span class="hljs-title function_">play</span>();</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">    <span class="hljs-title function_">destruction</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-comment">//销毁对象</span></span><br><span class="language-javascript">      <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">player</span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-variable language_">this</span>.<span class="hljs-property">player</span>.<span class="hljs-title function_">pause</span>();</span><br><span class="language-javascript">        <span class="hljs-variable language_">this</span>.<span class="hljs-property">player</span>.<span class="hljs-title function_">destroy</span>();</span><br><span class="language-javascript">        <span class="hljs-variable language_">this</span>.<span class="hljs-property">player</span> = <span class="hljs-literal">null</span>;</span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">  <span class="hljs-title function_">created</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">play</span>(<span class="hljs-string">&#x27;http://1011.hlsplay.aodianyun.com/demo/game.flv&#x27;</span>);</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript">&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure><h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> flv <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;flv.js&quot;</span>;<br></code></pre></td></tr></table></figure><h3 id="创建flv播放器"><a href="#创建flv播放器" class="headerlink" title="创建flv播放器"></a>创建flv播放器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> player = flv.<span class="hljs-title function_">createPlayer</span>(<span class="hljs-attr">mediaDataSource</span>: <span class="hljs-title class_">MediaDataSource</span>, config?: <span class="hljs-title class_">Config</span>);<br></code></pre></td></tr></table></figure><p><code>createPlayer()</code>方法有两个参数，<code>MediaDataSource</code>和config两个参数，<code>MediaDataSource</code>必传，config可传可不传，返回值为<code>player</code>;</p><h3 id="MediaDataSource"><a href="#MediaDataSource" class="headerlink" title="MediaDataSource"></a>MediaDataSource</h3><table><thead><tr><th>属性</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td><code>type</code></td><td><code>string</code></td><td>指示媒体类型，<code>&#39;flv&#39;</code>或<code>&#39;mp4&#39;</code></td></tr><tr><td><code>isLive?</code></td><td><code>boolean</code></td><td>指示数据源是否为实时流</td></tr><tr><td><code>cors?</code></td><td><code>boolean</code></td><td>指示是否启用<code>CORS</code>进行<code>http</code>提取</td></tr><tr><td><code>withCredentials?</code></td><td><code>boolean</code></td><td>指示是否对<code>Cookie</code>进行<code>http</code>提取</td></tr><tr><td><code>hasAudio?</code></td><td><code>boolean</code></td><td>指示流是否有音轨</td></tr><tr><td><code>hasVideo?</code></td><td><code>boolean</code></td><td>指示流中是否有视频轨道</td></tr><tr><td><code>duration?</code></td><td><code>number</code></td><td>指示总媒体持续时间（以毫秒为单位）</td></tr><tr><td><code>filesize?</code></td><td><code>number</code></td><td>指示媒体文件的总文件大小，以字节为单位</td></tr><tr><td><code>url?</code></td><td><code>string</code></td><td>表示媒体URL，可以以<code>&#39;https(s)&#39;</code>或<code>&#39;ws(s)&#39;``（WebSocket）</code>开头</td></tr><tr><td><code>segments?</code></td><td><code>Array</code></td><td>多段播放的可选字段，请参见<code>MediaSegment</code></td></tr></tbody></table><p>如果<code>segments</code>存在字段，则<code>transmuxer</code>会将其<code>MediaDataSource</code>视为多部分源。</p><p>在多部分模式下，结构中的<code>duration filesize url</code>字段<code>MediaDataSource</code>将被忽略。</p><h3 id="MediaSegment"><a href="#MediaSegment" class="headerlink" title="MediaSegment"></a>MediaSegment</h3><table><thead><tr><th>属性</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td><code>duration</code></td><td><code>number</code></td><td>必填字段，表示段持续时间（以毫秒为单位）</td></tr><tr><td><code>filesize?</code></td><td><code>number</code></td><td>可选字段，以字节为单位指示段文件大小</td></tr><tr><td><code>url</code></td><td><code>string</code></td><td>必填字段，指示段文件<code>URL</code></td></tr></tbody></table><h3 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h3><table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>描述</th></tr></thead><tbody><tr><td><code>enableWorker</code></td><td><code>boolean</code></td><td><code>FALSE</code></td><td>启用分离的线程进行转换（暂时不稳定）</td></tr><tr><td><code>enableStashBuffer</code></td><td><code>boolean</code></td><td><code>TRUE</code></td><td>启用IO隐藏缓冲区。如果您需要实时（最小延迟）进行实时流播放，则设置为<code>false</code>，但是如果网络抖动，则可能会停顿。</td></tr><tr><td><code>stashInitialSize</code></td><td><code>number</code></td><td><code>384KB</code></td><td>表示IO暂存缓冲区的初始大小。默认值为384KB。指出合适的尺寸可以改善视频负载&#x2F;搜索时间。</td></tr><tr><td><code>isLive</code></td><td><code>boolean</code></td><td><code>FALSE</code></td><td>同样要<code>isLive</code>在<code>MediaDataSource</code>，如果忽略已经在<code>MediaDataSource</code>结构集合。</td></tr><tr><td><code>lazyLoad</code></td><td><code>boolean</code></td><td><code>TRUE</code></td><td>如果有足够的数据可播放，则中止http连接。</td></tr><tr><td><code>lazyLoadMaxDuration</code></td><td><code>number</code></td><td><code>3 * 60</code></td><td>指示要保留多少秒的数据<code>lazyLoad</code>。</td></tr><tr><td><code>lazyLoadRecoverDuration</code></td><td><code>number</code></td><td><code>30</code></td><td>指示<code>lazyLoad</code>恢复时间边界，以秒为单位。</td></tr><tr><td><code>deferLoadAfterSourceOpen</code></td><td><code>boolean</code></td><td><code>TRUE</code></td><td>在<code>MediaSourcesourceopen</code>事件触发后加载。在<code>Chrome</code>上，在后台打开的标签页可能不会触发<code>sourceopen</code>事件，除非切换到该标签页。</td></tr><tr><td><code>autoCleanupSourceBuffer</code></td><td><code>boolean</code></td><td><code>FALSE</code></td><td>对<code>SourceBuffer</code>进行自动清理</td></tr><tr><td><code>autoCleanupMaxBackwardDuration</code></td><td><code>number</code></td><td><code>3 * 60</code></td><td>当向后缓冲区持续时间超过此值（以秒为单位）时，请对<code>SourceBuffer</code>进行自动清理</td></tr><tr><td><code>autoCleanupMinBackwardDuration</code></td><td><code>number</code></td><td><code>2 * 60</code></td><td>指示进行自动清除时为反向缓冲区保留的持续时间（以秒为单位）。</td></tr><tr><td><code>fixAudioTimestampGap</code></td><td><code>boolean</code></td><td><code>TRUE</code></td><td>当检测到较大的音频时间戳间隙时，请填充无声音频帧，以避免<code>A / V</code>不同步。</td></tr><tr><td><code>accurateSeek</code></td><td><code>boolean</code></td><td><code>FALSE</code></td><td>精确查找任何帧，不限于视频<code>IDR</code>帧，但可能会慢一些。可用的<code>Chrome &gt; 50</code>，<code>FireFox</code>和<code>Safari</code>。</td></tr><tr><td><code>seekType</code></td><td><code>string</code></td><td><code>range</code></td><td><code>range</code>‘使用范围请求进行查找，或’param’在url中添加参数以指示请求范围。</td></tr><tr><td><code>seekParamStart</code></td><td><code>string</code></td><td><code>bstart</code></td><td>指示的搜索起始参数名称 <code>seekType = &#39;param&#39;</code></td></tr><tr><td><code>seekParamEnd</code></td><td><code>string</code></td><td><code>bend</code></td><td>指示的搜索结束参数名称 <code>seekType = &#39;param&#39;</code></td></tr><tr><td><code>rangeLoadZeroStart</code></td><td><code>boolean</code></td><td><code>FALSE</code></td><td><code>Range: bytes=0-</code>如果使用范围查找，则发送首次负载</td></tr><tr><td><code>customSeekHandler</code></td><td><code>object</code></td><td><code>undefined</code></td><td>指示自定义搜索处理程序</td></tr><tr><td><code>reuseRedirectedURL</code></td><td><code>boolean</code></td><td><code>FALSE</code></td><td>重复使用301&#x2F;302重定向的<code>url</code>进行子序列请求，例如搜索，重新连接等。</td></tr><tr><td><code>referrerPolicy</code></td><td><code>string</code></td><td><code>no-referrer-when-downgrade</code></td><td>指示使用<code>FetchStreamLoader</code>时的推荐人策略</td></tr><tr><td><code>headers</code></td><td><code>object</code></td><td><code>undefined</code></td><td>指示将添加到请求的其他标头</td></tr></tbody></table><h3 id="flv-isSupported"><a href="#flv-isSupported" class="headerlink" title="flv.isSupported()"></a>flv.isSupported()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">isSupported</span>(<span class="hljs-params"></span>): boolean;<br></code></pre></td></tr></table></figure><p>player实例存在返回true，否则返回fasle</p><h3 id="flv-getFeatureList"><a href="#flv-getFeatureList" class="headerlink" title="flv.getFeatureList()"></a>flv.getFeatureList()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getFeatureList</span>(<span class="hljs-params"></span>): <span class="hljs-title class_">FeatureList</span>;<br></code></pre></td></tr></table></figure><p>返回 FeatureList 对象</p><h3 id="FeatureList"><a href="#FeatureList" class="headerlink" title="FeatureList"></a>FeatureList</h3><table><thead><tr><th>属性</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td><code>mseFlvPlayback</code></td><td><code>boolean</code></td><td>等同于<code>flv.isSupported()</code></td></tr><tr><td><code>mseLiveFlvPlayback</code></td><td><code>boolean</code></td><td>指示HTTP FLV实时流是否可以在您的浏览器上工作。</td></tr><tr><td><code>networkStreamIO</code></td><td><code>boolean</code></td><td>指示网络加载程序是否正在流式传输。</td></tr><tr><td><code>networkLoaderName</code></td><td><code>string</code></td><td>指示网络加载程序类型名称。</td></tr><tr><td><code>nativeMP4H264Playback</code></td><td><code>boolean</code></td><td>指示您的浏览器是否本身支持H.264 MP4视频文件。</td></tr><tr><td><code>nativeWebmVP8Playback</code></td><td><code>boolean</code></td><td>指示您的浏览器是否本机支持WebM VP8视频文件。</td></tr><tr><td><code>nativeWebmVP9Playback</code></td><td><code>boolean</code></td><td>指示您的浏览器是否本机支持WebM VP9视频文件。</td></tr></tbody></table><h3 id="Player对象"><a href="#Player对象" class="headerlink" title="Player对象"></a>Player对象</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js">interface <span class="hljs-title class_">Player</span> &#123;<br>    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">mediaDataSource: MediaDataSource, config?: Config</span>): <span class="hljs-title class_">Player</span>;<br>    <span class="hljs-title function_">destroy</span>(): <span class="hljs-keyword">void</span>;<br>    <span class="hljs-title function_">on</span>(<span class="hljs-attr">event</span>: string, <span class="hljs-attr">listener</span>: <span class="hljs-title class_">Function</span>): <span class="hljs-keyword">void</span>;<br>    <span class="hljs-title function_">off</span>(<span class="hljs-attr">event</span>: string, <span class="hljs-attr">listener</span>: <span class="hljs-title class_">Function</span>): <span class="hljs-keyword">void</span>;<br>    <span class="hljs-title function_">attachMediaElement</span>(<span class="hljs-attr">mediaElement</span>: <span class="hljs-title class_">HTMLMediaElement</span>): <span class="hljs-keyword">void</span>;<br>    <span class="hljs-title function_">detachMediaElement</span>(): <span class="hljs-keyword">void</span>;<br>    <span class="hljs-title function_">load</span>(): <span class="hljs-keyword">void</span>;<span class="hljs-comment">//加载</span><br>    <span class="hljs-title function_">unload</span>(): <span class="hljs-keyword">void</span>;<span class="hljs-comment">//卸载</span><br>    <span class="hljs-title function_">play</span>(): <span class="hljs-title class_">Promise</span>&lt;<span class="hljs-keyword">void</span>&gt;;<span class="hljs-comment">//播放</span><br>    <span class="hljs-title function_">pause</span>(): <span class="hljs-keyword">void</span>;<span class="hljs-comment">//暂停</span><br>    <span class="hljs-attr">type</span>: string;<br>    <span class="hljs-attr">buffered</span>: <span class="hljs-title class_">TimeRanges</span>;<br>    <span class="hljs-attr">duration</span>: number;<br>    <span class="hljs-attr">volume</span>: number;<br>    <span class="hljs-attr">muted</span>: boolean;<br>    <span class="hljs-attr">currentTime</span>: number;<br>    <span class="hljs-attr">mediaInfo</span>: <span class="hljs-title class_">Object</span>;<br>    <span class="hljs-attr">statisticsInfo</span>: <span class="hljs-title class_">Object</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>其余API参见bibilibi flv.js官方文档</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>flv.js</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>关于hexo d出现SSL:443的报错终极解决方案</title>
+    <link href="/2022/04/25/a49a42aa59c4/"/>
+    <url>/2022/04/25/a49a42aa59c4/</url>
+    
+    <content type="html"><![CDATA[<p>网上的hexo部署教程都是把repo项的Github地址设置成https地址，我用了一段时间之后发现，因为大陆的政策问题（你懂的）会导致在执行hexo d部署项目的时候提示代码超时，很头疼啊，也不可能一直搭梯子啊，再说也不稳定，后来在从CSDN上找到了解决思路，把repo项的Github地址设置成Git地址就很丝滑了。</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span><br><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br><br>  <span class="hljs-attr">repo:</span> <br><br><span class="hljs-string">​</span>    <span class="hljs-attr">github:</span> <span class="hljs-string">git@github.com:username/username.github.io.git</span><br></code></pre></td></tr></table></figure><p><img src="https://pic.imgdb.cn/item/626657b9239250f7c522788f.png" alt="image-20220425155956939"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>那些爱情观超级正的句子</title>
+    <link href="/2022/04/25/d7971d2240bb/"/>
+    <url>/2022/04/25/d7971d2240bb/</url>
+    
+    <content type="html"><![CDATA[<p>前言：最近抖音刷到只要是有关爱情的，几乎全是站在性别的角度吐苦水，甚至是一些带节奏站对立面的，失望的是还是有很多人深信不疑，现在关于爱情的话题已经成了自媒体炒流量的必备Case，很少可以看到爱情观、价值观很正的说法，下面的都是平时看到的积累。</p><p>1、不用每天缠绵，随时保持联络。我知道你不会走，你知道我不会变。各自忙碌，互相牵挂。相处时不要防备，聊天时毫无顾忌。我不会随随便便爱你，我会认真，会隆重。</p><p>2、任何关系中，只要懂得相互服软，轮流低头，就不会走散。这个世上没有天生就般配的两个人，只不过是一个懂得包容和迁就，而另一个懂得适而可止，最好的爱情大概就是，我让你心动，你让我心安:你知道我的委屈，我心疼你的不容易。</p><p>3、其实两个人在一起，别老说配不配，一块钱的打火机也能点着一万块钱的烟，几万块钱的一桌菜，也离不开两块钱的一包盐。</p><p>4、以结婚为目的去谈恋爱，也许结果和期望会有偏差，甚至相差很远，但至少在这段感情里都曾用过心，都曾努力互相奔赴过，这就足够了。很喜欢<strong>宫崎骏</strong>这句话 : <font color="red"><strong>“其实我很早就知道我们不合适，但我还是拒绝了所有人，陪你走过了一段没有结果的路，当然时间不长，但毕生难忘，想想都是心酸。“</strong></font></p><p>5、我们不需要二十四小时都在线，不需要通过刻意且频繁的聊天来维持关系，我只希望我们忙的时候认真努力，闲下来了就能立刻想起对方，我希望我们是相互想念的，相互在意的就好。</p><p>6、情侣相处久了，最怕什么呢?怕失去新鲜感怕『三年之痛，七年之痒」，怕重复。幸福就是重复。第18次捧来被嘣上麻辣烫汁儿的白色T恤向你求助，是重复第23次问你袜子放哪了，是重复第456次伴着对方的呼噜声和温暖的怀抱入睡，是重复。我们正是重复做着这些事情，然后相信，这就是幸福。愿意重复，愿意陪伴对方经历日复一日的平淡生活而不厌倦，这样的爱情，才真正值得羡慕。</p><p>7、爱情虽然甜蜜，却也是令人疲惫的。要花心思为对方准备惊喜，做任何事要考虑对方的感受，自己生活已经很不容易了，还要去分担对方的烦恼和忧愁。不过好在，爱情的疲惫是可以修复的。就比如，一次逃离生活的旅行，路途上那些共处时光，就是爱的重启键；又比如，在每个纪念日都重新回忆一遍往事，心又重新变得柔软，疲惫也随之一键清零。所以，不要感觉累了就厌倦付出，因为爱就是我们得到的最好的回报。</p><p>8、一句誓言，即便最后落了空，但在说出口的那个当下，彼此一定是真心相爱的。所以，誓言这种东西无法衡量坚贞，也不能判断对错;更不能以誓言为证据，在分手后苦苦纠缠:彼此折磨。只要在听到誓言的当下，我们能够感受到真诚与幸福，或许这就够了吧~</p><p>9、是爱情让我们了解了人生，是爱情让我们了解了无常。爱情只是我们人生中一部分，即使是没有结局的爱情，也一定有它背后的意义呢。爱情的终极目标本就不在于能否终老，而是我们都投入地爱过彼此，我们都有所成长，我们都变成了更好的人，这才是最重要的~</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>情感随记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>做自己情绪的主人，不要被情绪伤害到自己和身边的人！</title>
+    <link href="/2022/04/20/f6eb36481dbb/"/>
+    <url>/2022/04/20/f6eb36481dbb/</url>
+    
+    <content type="html"><![CDATA[<p>情绪管理人人都需要。理解自己的情绪，能够用自己的思维去思考和控制自己的行动，这是情绪管理最基本的要求。对于情绪敏感的人而言，总是能够时刻觉察到他人的情绪，并且他们会很在意他人的情绪，总是会以为他人的情绪和自己有关。</p><p>有研究表明，当人产生各种各样的情绪时，最先受损的是自身的免疫系统。情绪会通过内分泌系统，控制我们的身体器官，使我们的免疫力下降，抵抗力下降，疾病也就随之而来了。早在《黄帝内经》中就有记载：“怒伤肝、喜伤心、思伤脾、空伤肾。”情绪是不可避免的，但我们可以合理的控制它，化解他。</p><p>对待情绪最正确的态度就是，承认自己是有情绪的人，也承认他人是有情绪的人。来了就接受，不要刻意压制自己的情绪，人人都是有情绪的人，人人都需要情绪。当情绪来临时，我们都因为自己的冲动后悔过，每次都会告诉自己这样是不对的，但下次仍会重复上次的冲动。为情绪买单的原因是，我们没有建立属于自己的情绪控制系统。</p><p><img src="https://pic.imgdb.cn/item/625fd10a239250f7c5e68d22.jpg"></p><p>当事情发生，我们的通常情况会是这样，在脑海里反复的回想让我们产生这种情绪的事件。我们会及其的聚焦到这件事上，通过不断地心理暗示证明我们的处理是对的。暗示自己处理这件事时的情绪是正确。这是正确的做法是，给大脑‘放个假’转移自己的注意力，刷刷微博，看看小品电视剧等等。转移注意力的过程，就是在给自己赢得时间，让自己冷静下来，回归理性的状态。理性不存在的时候情绪便会控制我们的一切。</p><p>当一切回归平静，这时我们要思考是什么让我们产生这样的情绪。当我们找出原因不必自责，这是你向情绪管理成功迈出的又一步。除了审视自己我们也要审视事情本身。我们对有些事情的看法存在很多偏见和非理性的成分，而导致的情绪反应，比一般事件更值得深思。认识到自己的想法不一定就是现实，这会使我们更理性的处理自己的情绪。</p><p>管理情绪的第二个方面是：相信自己，相信对方。有时候假想别人的想法，只会使自己的情绪更加敏感。揣测不同于理性的分析和思考。对别人的想法和行为进行揣测，只会让你感觉更加痛苦。猜测不同于真相，即便你猜测的准确无误，这也不同于去亲自询问真相。接纳事物本来的模样，而不是蒙上了猜测，假象，揣测后的样子。唯有建立正面积极的自我身份认同感，才不容易受他人评判的影响。每个人都有情绪，但并不是每个人都能控制自己的情绪。管控好自己的情绪，也并不是失去自我。</p><p>最重要的情绪管理是你要相信没有一种情绪不应该。情绪能够帮助我们更全面地认识自己，了解自己的价值观、兴趣爱好，帮助我们确定人生方向。学会管理情绪，管理我们的敏感、焦虑、恐惧、愤怒、怀疑等等，往往能帮助我们突破自我的能力边界。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>情感随记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Golang实战案例：用Golang实现用户登录验证</title>
+    <link href="/2022/04/11/8ce30903afbf/"/>
+    <url>/2022/04/11/8ce30903afbf/</url>
+    
+    <content type="html"><![CDATA[<p>用<a href="https://so.csdn.net/so/search?q=Go%E8%AF%AD%E8%A8%80&spm=1001.2101.3001.7020">Go语言</a>实现登录验证，有3次机会。为了不要那么麻烦，这次示例就不用数据库了，直接if判断用户名为 zhangsan ，密码为 123456 ，则提示登录成功，否则提示还有几次机会，次数用完，提示登录失败。代码如下：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br><span class="hljs-keyword">var</span> name <span class="hljs-type">string</span><br><span class="hljs-keyword">var</span> pwd <span class="hljs-type">string</span><br><span class="hljs-keyword">var</span> loginChance = <span class="hljs-number">3</span><br><span class="hljs-keyword">for</span> i := <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">3</span>; i++&#123;<br>fmt.Print(<span class="hljs-string">&quot;请输入用户名：&quot;</span>)<br>fmt.Scanln(&amp;name)<br>fmt.Print(<span class="hljs-string">&quot;请输入密码：&quot;</span>)<br>fmt.Scanln(&amp;pwd)<br><br><span class="hljs-keyword">if</span> name == <span class="hljs-string">&quot;zhangsan&quot;</span> &amp;&amp; pwd== <span class="hljs-string">&quot;123456&quot;</span> &#123;<br>fmt.Println(<span class="hljs-string">&quot;恭喜你登录成功！&quot;</span>)<br><span class="hljs-keyword">break</span><br>&#125; <span class="hljs-keyword">else</span> &#123;<br>loginChance--<br>fmt.Printf(<span class="hljs-string">&quot;你还有%v次登录机会！\n&quot;</span>,loginChance)<br>&#125;<br>&#125;<br><span class="hljs-keyword">if</span> loginChance == <span class="hljs-number">0</span> &#123;<br>fmt.Println(<span class="hljs-string">&quot;机会用完，登录失败。&quot;</span>)<br>&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure><p>执行结果如下图所示：</p><p>测试一（登录成功）：</p><p><img src="https://img-blog.csdnimg.cn/20190621162721450.png" alt="在这里插入图片描述"></p><p>测试二（登录失败）：</p><p><img src="https://s2.loli.net/2022/04/11/13bAvfWyHwxGq2E.png" alt="在这里插入图片描述"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Golang</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Golang连接mysql数据库</title>
+    <link href="/2022/04/06/64dd2dcf1241/"/>
+    <url>/2022/04/06/64dd2dcf1241/</url>
+    
+    <content type="html"><![CDATA[<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">brew </span><span class="hljs-keyword">install </span>mysql<br></code></pre></td></tr></table></figure><h3 id="启动mysql"><a href="#启动mysql" class="headerlink" title="启动mysql"></a>启动mysql</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">mysql.<span class="hljs-keyword">server</span> <span class="hljs-keyword">start</span><br></code></pre></td></tr></table></figure><h3 id="登录mysql"><a href="#登录mysql" class="headerlink" title="登录mysql"></a>登录mysql</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">mysql -u root</span><br></code></pre></td></tr></table></figure><h3 id="mysql数据库go驱动安装"><a href="#mysql数据库go驱动安装" class="headerlink" title="mysql数据库go驱动安装"></a>mysql数据库go驱动安装</h3><p>golang连接数据库用户的驱动是：&#96;go-sql-driver’<br>打开终端执行命令</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">go</span> <span class="hljs-built_in">get</span> -<span class="hljs-keyword">u</span> github.<span class="hljs-keyword">com</span>/<span class="hljs-keyword">go</span>-sql-driver/mysql<br></code></pre></td></tr></table></figure><h3 id="mysql数据库连接"><a href="#mysql数据库连接" class="headerlink" title="mysql数据库连接"></a>mysql数据库连接</h3><p>构建连接, 格式是：”用户名:密码@tcp(IP:端口)&#x2F;数据库?charset&#x3D;utf8”<br>打开数据库,前者是驱动名，所以要导入： <code>“github.com/go-sql-driver/mysql”</code><br>设置数据库最大连接数和设置上数据库最大闲置连接数<br>验证连接：使用Ping()函数<br>代码参考如下：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">//数据库配置</span><br><span class="hljs-keyword">const</span> (<br>    userName = <span class="hljs-string">&quot;root&quot;</span><br>    password = <span class="hljs-string">&quot;123456&quot;</span><br>    ip = <span class="hljs-string">&quot;127.0.0.1&quot;</span><br>    port = <span class="hljs-string">&quot;3306&quot;</span><br>    dbName = <span class="hljs-string">&quot;loginserver&quot;</span><br>)<br><span class="hljs-comment">//Db数据库连接池</span><br><span class="hljs-keyword">var</span> DB *sql.DB<br><br><span class="hljs-comment">//注意方法名大写，就是public</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">InitDB</span><span class="hljs-params">()</span></span>  &#123;<br>    <span class="hljs-comment">//构建连接：&quot;用户名:密码@tcp(IP:端口)/数据库?charset=utf8&quot;</span><br>    path := strings.Join([]<span class="hljs-type">string</span>&#123;userName, <span class="hljs-string">&quot;:&quot;</span>, password, <span class="hljs-string">&quot;@tcp(&quot;</span>,ip, <span class="hljs-string">&quot;:&quot;</span>, port, <span class="hljs-string">&quot;)/&quot;</span>, dbName, <span class="hljs-string">&quot;?charset=utf8&quot;</span>&#125;, <span class="hljs-string">&quot;&quot;</span>)<br><br>    <span class="hljs-comment">//打开数据库,前者是驱动名，所以要导入： _ &quot;github.com/go-sql-driver/mysql&quot;</span><br>    DB, _ = sql.Open(<span class="hljs-string">&quot;mysql&quot;</span>, path)<br>    <span class="hljs-comment">//设置数据库最大连接数</span><br>    DB.SetConnMaxLifetime(<span class="hljs-number">100</span>)<br>    <span class="hljs-comment">//设置上数据库最大闲置连接数</span><br>    DB.SetMaxIdleConns(<span class="hljs-number">10</span>)<br>    <span class="hljs-comment">//验证连接</span><br>    <span class="hljs-keyword">if</span> err := DB.Ping(); err != <span class="hljs-literal">nil</span>&#123;<br>        fmt.Println(<span class="hljs-string">&quot;opon database fail&quot;</span>)<br>        <span class="hljs-keyword">return</span><br>    &#125;<br>    fmt.Println(<span class="hljs-string">&quot;connnect success&quot;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Golang</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Go语言原生http库的网络请求</title>
+    <link href="/2022/04/06/63a8c97f5f96/"/>
+    <url>/2022/04/06/63a8c97f5f96/</url>
+    
+    <content type="html"><![CDATA[<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> (<br>    <span class="hljs-string">&quot;fmt&quot;</span><br>    <span class="hljs-string">&quot;io/ioutil&quot;</span><br>    <span class="hljs-string">&quot;net/http&quot;</span><br>)<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>    fmt.Println(<span class="hljs-string">&quot;Hello, world&quot;</span>)<br>    resp, err := http.Get(<span class="hljs-string">&quot;http://www.baidu.com/&quot;</span>)<br>    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>        fmt.Println(<span class="hljs-string">&quot;http get error&quot;</span>, err)<br>        <span class="hljs-keyword">return</span><br>    &#125;<br>    body, err := ioutil.ReadAll(resp.Body)<br>    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>        fmt.Println(<span class="hljs-string">&quot;read error&quot;</span>, err)<br>        <span class="hljs-keyword">return</span><br>    &#125;<br>    fmt.Println(<span class="hljs-type">string</span>(body))<br>&#125;<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Golang</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>macOS环境下的ssh配置</title>
+    <link href="/2022/04/06/92812954a869/"/>
+    <url>/2022/04/06/92812954a869/</url>
+    
+    <content type="html"><![CDATA[<h4 id="查看本机有没有ssh秘钥"><a href="#查看本机有没有ssh秘钥" class="headerlink" title="查看本机有没有ssh秘钥"></a>查看本机有没有ssh秘钥</h4><p>终端输入以下内容并<code>cd ~/.ssh</code>回车，如果能打开说明是有ssh文件的</p><h4 id="查看已生成的ssh秘钥"><a href="#查看已生成的ssh秘钥" class="headerlink" title="查看已生成的ssh秘钥"></a>查看已生成的ssh秘钥</h4><p><code>cat /Users/电脑用户名/.ssh/id_rsa.pub</code></p><h4 id="生成新的ssh秘钥"><a href="#生成新的ssh秘钥" class="headerlink" title="生成新的ssh秘钥"></a>生成新的ssh秘钥</h4><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>ssh</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022年了，还会有人不了解短视频运营吗</title>
+    <link href="/2022/04/02/ccd9ff6b80fc/"/>
+    <url>/2022/04/02/ccd9ff6b80fc/</url>
+    
+    <content type="html"><![CDATA[<p>前言：如果您打算对岗位的人力预算是1个人，或者想急于见到成果，那就建议不要在这个项目上浪费人力物力了，现在的短视频平台内容饱和程度已经不像4-5年前了，创作成本要是那么低的话，岂不是抖音上1&#x2F;5的人要当老板了。。</p><h3 id="哪些同学适合做短视频运营？"><a href="#哪些同学适合做短视频运营？" class="headerlink" title="哪些同学适合做短视频运营？"></a>哪些同学适合做短视频运营？</h3><h4 id="在某一领域有独到的见底或态度"><a href="#在某一领域有独到的见底或态度" class="headerlink" title="在某一领域有独到的见底或态度"></a>在某一领域有独到的见底或态度</h4><p>   例如：你是生活中的美妆达人、擅长搭配爱臭美；你是美食达人，爱吃会吃能吃、爱研究美食；你是生活达人，动手能力强，心灵手巧爱DIY；你是旅行达人、健身达人……只要你对某一领域有浓厚的兴趣并肯钻研，就有机会成为短视频垂直领域的KOL</p><h4 id="拥有好奇心并乐于分享"><a href="#拥有好奇心并乐于分享" class="headerlink" title="拥有好奇心并乐于分享"></a>拥有好奇心并乐于分享</h4><p>   好奇心会让你敏锐捕捉身边有趣或特别的事，乐于分享能让你在短视频运营领域收获更多乐趣，成为以后创作的源动力3.做过互联网运营或是自媒体的同学，他们通常对数据极为敏感度，网感较强等；有专业背景例如你学习编导、播音主持、甚至表演，这些都将成为支撑你创作优质短视频的专业能力，从事短视频运营也会更得心应手</p><h3 id="短视频运营人员工作内容"><a href="#短视频运营人员工作内容" class="headerlink" title="短视频运营人员工作内容"></a>短视频运营人员工作内容</h3><h4 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h4><p>   内容选题、策划、编排、内容优化和发布。选题是内容创作的重要环节，好的选题自带流量属性，在选题要更倾向于选择热门话题、能普遍引起受众共鸣的话题</p><h4 id="制作"><a href="#制作" class="headerlink" title="制作"></a>制作</h4><p>   拍摄、剪辑、后期等。制作是短视频运营的关键环节，优良的制作是对视频的二次创作，学习和使用当下流行的视频剪辑手法，通过酷炫的表现形式展示视频，把握视频节奏，会使视频更具魅力</p><h4 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h4><p>   收集用户反馈、用户互动、策划用户活动、用户社群的建立等</p><h4 id="渠道"><a href="#渠道" class="headerlink" title="渠道"></a>渠道</h4><p>   和一些渠道小编的对接沟通，签署协议等</p><h4 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h4><p>   具体分析全渠道，单渠道的播放量，评论收藏量找出影响这些点的因素，并对现有短视频进行优化以上不难看出，短视频运营人员其实工作量会非常大，特别是现在平台众多的情况下，在视频制作完成后需要挨个发布到各大平台中间造成了很多重复繁琐的操作，上传完成后还得人工去每个平台统计数据，相信很多短视频运营的同学都呼唤过：要是有个一键分发和统计的工具，那有多好啊一帧是现在新出的一款短视频运营工具，可以将视频一键发送到多个平台，对于重点运营的平台还支持个性化单独编辑，十分便利其中的一帧数据及统计功能，还能将自己视频在各个平台的数据统计出来，进行横向纵深比较，还能查看竞品的数据情况，给视频创作团队带来更加智能、精准的行业信息。</p><h3 id="短视频的人员构成"><a href="#短视频的人员构成" class="headerlink" title="短视频的人员构成"></a>短视频的人员构成</h3><h4 id="编导"><a href="#编导" class="headerlink" title="编导"></a>编导</h4><p>   定视频内容，定脚本，制定拍摄计划，选择视频中的人物和场景等</p><h4 id="摄影师"><a href="#摄影师" class="headerlink" title="摄影师"></a>摄影师</h4><p>   负责视频的收录工作，通过对光线、镜头、拍摄角度的把握，将内容通过视频记录下来，通过镜头语言加以表达</p><h4 id="剪辑师"><a href="#剪辑师" class="headerlink" title="剪辑师"></a>剪辑师</h4><p>   负责视频、音频的后期再创作</p><h4 id="运营"><a href="#运营" class="headerlink" title="运营"></a>运营</h4><p>作品上传到各个网站里，对粉丝评论等维护，创建并维护粉丝社群。</p><h3 id="深度了解短视频领域，掌握运营方法论"><a href="#深度了解短视频领域，掌握运营方法论" class="headerlink" title="深度了解短视频领域，掌握运营方法论"></a>深度了解短视频领域，掌握运营方法论</h3><p>1.主动成长是进入这领域的必修课视频策划、创作视频脚本、剪辑视频，上传视频，提高视频的点击量，分析优秀竞品和行业案例，都需要我们主动去学习，去成长。<br>2.学会案例分析从他人身上取其精华，运用到自己的工作上，不断提升自己。以papi酱为例<br>3.数据分析把最近一些papi酱的相关视频标题、播放量、收藏量和转发数导在Excel表里，观察趋势变化，注意收藏量和评论量。收藏量高表示用户对于这个视频的喜好程度高，评论量能看出用户对于哪个话题活跃性强，未来做内容选题时可参考借鉴。对于竞品数据的话，一帧有个功能叫一帧数据，可以对创作者未来即将发布的视频进行分钟级监测，也可以对之前的视频数据进行历史数据回采，知己知彼，百战不殆。<br>4.洞察分析认真看最热门的3个视频，思考视频激发人们哪些方面的共鸣，转发的理由是什么。更深层次的了解用户的痛点和喜好。<br>5.研究台词听打字幕，逐句分析。总结papi酱的语言表达特点，找出引发搞笑的语言特征和铺垫技巧。并运用到自己的视频里，提高视频内容核心质量。<br>5.同类对比对比自己的视频和同类型的优秀视频，寻找差异，并做有针对性提高</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>短视频</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Mac下Homebrew常用命令</title>
+    <link href="/2022/03/01/b0ae6af3502b/"/>
+    <url>/2022/03/01/b0ae6af3502b/</url>
+    
+    <content type="html"><![CDATA[<p><strong>brewhome国内镜像</strong><br>&#x2F;bin&#x2F;zsh -c “$(curl -fsSL <a href="https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;">https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</a></p><p><strong>查看帮助信息</strong><br>brew help</p><p><strong>查看版本</strong><br>brew -v</p><p><strong>更新brew</strong><br>brew update</p><p><strong>安装</strong><br>brew install XX</p><p><strong>查询可更新的包</strong><br>brew outdated</p><p><strong>更新包</strong><br>brew upgrade 全部<br>brew upgrade 包名 指定包</p><p><strong>清理旧版本</strong><br>brew cleanup</p><h5 id="锁定不想更新的包"><a href="#锁定不想更新的包" class="headerlink" title="锁定不想更新的包"></a><strong>锁定不想更新的包</strong></h5><p><strong>锁定某个包</strong><br>brew pin $FORMULA<br><strong>取消锁定</strong><br>brew unpin $FORMULA<br><strong>查看包信息</strong><br>brew info 包名</p><p><strong>查看安装列表</strong><br>brew list</p><p><strong>查询可用包</strong><br>brew search [包名]</p><h5 id="服务管理"><a href="#服务管理" class="headerlink" title="服务管理"></a><strong>服务管理</strong></h5><p><strong>查看服务列表</strong><br>brew services list<br><strong>启动服务</strong><br>brew services start 服务名<br><strong>停止服务</strong><br>brew services stop 服务名<br><strong>重启服务</strong><br>brew services restart 服务名<br><strong>清除已卸载应用无用的配置</strong><br>brew services cleanup</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Homebrew</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>微信多开解决方案</title>
+    <link href="/2022/02/24/9d1c410f8e59/"/>
+    <url>/2022/02/24/9d1c410f8e59/</url>
+    
+    <content type="html"><![CDATA[<h5 id="Macos系统"><a href="#Macos系统" class="headerlink" title="Macos系统"></a><strong>Macos系统</strong></h5><p>复制下面的保存为.sh格式，用的时候拖放到终端里面运行就行<br><code>#!/bin/bash echo &quot;正在打开新的微信！！！&quot; nohup /Applications/WeChat.app/Contents/MacOS/WeChat &gt; /dev/null 2&gt;&amp;1 &amp;</code></p><h5 id="Windows系统"><a href="#Windows系统" class="headerlink" title="Windows系统"></a><strong>Windows系统</strong></h5><p>桌面新建一个文本文档，多开几个复制几行，另存为bat文件<br><code>start &quot;&quot; &quot;C:\Program Files (x86)\Tencent\WeChat\WeChat.exe&quot;</code></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>奇淫技巧</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>hexo常用命令</title>
+    <link href="/2022/02/18/3ca0d4b2c93f/"/>
+    <url>/2022/02/18/3ca0d4b2c93f/</url>
+    
+    <content type="html"><![CDATA[<h4 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h4><p>本地预览命令组合</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php">hexo g == hexo generate     <span class="hljs-comment">#生成</span><br>hexo s == hexo server         <span class="hljs-comment">#启动服务预览</span><br></code></pre></td></tr></table></figure><p>部署命令组合</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs php">hexo clean                   <span class="hljs-comment">#清除缓存</span><br>hexo g == hexo generate      <span class="hljs-comment">#生成静态网页</span><br>hexo d == hexo deploy        <span class="hljs-comment">#开始部署</span><br>hexo g -d                    <span class="hljs-comment">#生成部署</span><br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d  <span class="hljs-comment">#复合命令</span><br></code></pre></td></tr></table></figure><p>其它</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php">hexo server -p <span class="hljs-number">5000</span>    <span class="hljs-comment">#更改端口，默认端口4000</span><br>hexo server -i <span class="hljs-number">192.168</span>.<span class="hljs-number">1.1</span> <span class="hljs-comment">#自定义 IP</span><br>hexo help                <span class="hljs-comment"># 查看帮助</span><br>hexo version             <span class="hljs-comment">#查看Hexo的版本</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>win11命令行激活</title>
+    <link href="/2022/02/16/c177b9827d5a/"/>
+    <url>/2022/02/16/c177b9827d5a/</url>
+    
+    <content type="html"><![CDATA[<p>1.卸载系统自带密钥</p><p><code>slmgr.vbs /upk</code></p><p>2.安装新密钥</p><p><code>slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</code></p><p>3.指定激活服务器</p><p><code>slmgr /skms kms.03k.org</code></p><p>4.激活系统</p><p><code>slmgr /ato</code></p><p>备用密钥如下：</p><p>专业版：<code>VK7JG-NPHTM-C97JM-9MPGT-3V66T</code></p><p>家庭版：<code>YTMG3-N6DKC-DKB77-7M9GH-8HVX7</code></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Windows</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>记录一下Markdown代码高亮</title>
+    <link href="/2022/01/24/6569c0fc0445/"/>
+    <url>/2022/01/24/6569c0fc0445/</url>
+    
+    <content type="html"><![CDATA[<p><strong>下面写的是python的代码块语法高亮</strong><br> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/env python3</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Hello, World!&quot;</span>);<br></code></pre></td></tr></table></figure><br><strong>做法就是在三个引号的后面标注一下语言</strong></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Markdown</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>开始使用hexo框架做个人博客了</title>
+    <link href="/2022/01/23/a38ecb549ebc/"/>
+    <url>/2022/01/23/a38ecb549ebc/</url>
+    
+    <content type="html"><![CDATA[<p>z-blog虽然写作方便，但是毕竟没有几个能看的主题，最重要的是居然还都要钱。。<br>“要钱谁跟你玩啊？”“对不对”<br>就是之前写的文章不能搬家了，2022从头开始</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
