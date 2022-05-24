@@ -43,7 +43,7 @@
     <link href="https://www.kimtoli.com/2022/05/23/e89773f480e9/"/>
     <id>https://www.kimtoli.com/2022/05/23/e89773f480e9/</id>
     <published>2022-05-23T10:03:20.000Z</published>
-    <updated>2022-05-23T10:03:32.992Z</updated>
+    <updated>2022-05-24T12:31:49.065Z</updated>
     
     <content type="html"><![CDATA[<p>先用终端CD到需要操作的目录</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ssh">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @<br></code></pre></td></tr></table></figure>]]></content>
     

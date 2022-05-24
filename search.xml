@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Golang连接mysql数据库</title>
-    <url>/2022/04/06/64dd2dcf1241/</url>
-    <content><![CDATA[<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight mipsasm"><table><tr><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">brew </span><span class="hljs-keyword">install </span>mysql<br></code></pre></td></tr></table></figure>
-<h3 id="启动mysql"><a href="#启动mysql" class="headerlink" title="启动mysql"></a>启动mysql</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><code class="hljs pgsql">mysql.<span class="hljs-keyword">server</span> <span class="hljs-keyword">start</span><br></code></pre></td></tr></table></figure>
-<h3 id="登录mysql"><a href="#登录mysql" class="headerlink" title="登录mysql"></a>登录mysql</h3><figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">mysql -u root</span><br></code></pre></td></tr></table></figure>
-<h3 id="mysql数据库go驱动安装"><a href="#mysql数据库go驱动安装" class="headerlink" title="mysql数据库go驱动安装"></a>mysql数据库go驱动安装</h3><p>golang连接数据库用户的驱动是：&#96;go-sql-driver’<br>打开终端执行命令</p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">go</span> <span class="hljs-built_in">get</span> -<span class="hljs-keyword">u</span> github.<span class="hljs-keyword">com</span>/<span class="hljs-keyword">go</span>-sql-driver/mysql<br></code></pre></td></tr></table></figure>
-<h3 id="mysql数据库连接"><a href="#mysql数据库连接" class="headerlink" title="mysql数据库连接"></a>mysql数据库连接</h3><p>构建连接, 格式是：”用户名:密码@tcp(IP:端口)&#x2F;数据库?charset&#x3D;utf8”<br>打开数据库,前者是驱动名，所以要导入： <code>“github.com/go-sql-driver/mysql”</code><br>设置数据库最大连接数和设置上数据库最大闲置连接数<br>验证连接：使用Ping()函数<br>代码参考如下：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs go"><span class="hljs-comment">//数据库配置</span><br><span class="hljs-keyword">const</span> (<br>    userName = <span class="hljs-string">&quot;root&quot;</span><br>    password = <span class="hljs-string">&quot;123456&quot;</span><br>    ip = <span class="hljs-string">&quot;127.0.0.1&quot;</span><br>    port = <span class="hljs-string">&quot;3306&quot;</span><br>    dbName = <span class="hljs-string">&quot;loginserver&quot;</span><br>)<br><span class="hljs-comment">//Db数据库连接池</span><br><span class="hljs-keyword">var</span> DB *sql.DB<br><br><span class="hljs-comment">//注意方法名大写，就是public</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">InitDB</span><span class="hljs-params">()</span></span>  &#123;<br>    <span class="hljs-comment">//构建连接：&quot;用户名:密码@tcp(IP:端口)/数据库?charset=utf8&quot;</span><br>    path := strings.Join([]<span class="hljs-type">string</span>&#123;userName, <span class="hljs-string">&quot;:&quot;</span>, password, <span class="hljs-string">&quot;@tcp(&quot;</span>,ip, <span class="hljs-string">&quot;:&quot;</span>, port, <span class="hljs-string">&quot;)/&quot;</span>, dbName, <span class="hljs-string">&quot;?charset=utf8&quot;</span>&#125;, <span class="hljs-string">&quot;&quot;</span>)<br><br>    <span class="hljs-comment">//打开数据库,前者是驱动名，所以要导入： _ &quot;github.com/go-sql-driver/mysql&quot;</span><br>    DB, _ = sql.Open(<span class="hljs-string">&quot;mysql&quot;</span>, path)<br>    <span class="hljs-comment">//设置数据库最大连接数</span><br>    DB.SetConnMaxLifetime(<span class="hljs-number">100</span>)<br>    <span class="hljs-comment">//设置上数据库最大闲置连接数</span><br>    DB.SetMaxIdleConns(<span class="hljs-number">10</span>)<br>    <span class="hljs-comment">//验证连接</span><br>    <span class="hljs-keyword">if</span> err := DB.Ping(); err != <span class="hljs-literal">nil</span>&#123;<br>        fmt.Println(<span class="hljs-string">&quot;opon database fail&quot;</span>)<br>        <span class="hljs-keyword">return</span><br>    &#125;<br>    fmt.Println(<span class="hljs-string">&quot;connnect success&quot;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Golang</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2022年了，还会有人不了解短视频运营吗</title>
     <url>/2022/04/02/ccd9ff6b80fc/</url>
     <content><![CDATA[<p>前言：如果您打算对岗位的人力预算是1个人，或者想急于见到成果，那就建议不要在这个项目上浪费人力物力了，现在的短视频平台内容饱和程度已经不像4-5年前了，创作成本要是那么低的话，岂不是抖音上1&#x2F;5的人要当老板了。。</p>
@@ -37,14 +22,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Go语言原生http库的网络请求</title>
-    <url>/2022/05/24/2fa223cb7c13/</url>
-    <content><![CDATA[<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> (<br>    <span class="hljs-string">&quot;fmt&quot;</span><br>    <span class="hljs-string">&quot;io/ioutil&quot;</span><br>    <span class="hljs-string">&quot;net/http&quot;</span><br>)<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>    fmt.Println(<span class="hljs-string">&quot;Hello, world&quot;</span>)<br>    resp, err := http.Get(<span class="hljs-string">&quot;http://www.baidu.com/&quot;</span>)<br>    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>        fmt.Println(<span class="hljs-string">&quot;http get error&quot;</span>, err)<br>        <span class="hljs-keyword">return</span><br>    &#125;<br>    body, err := ioutil.ReadAll(resp.Body)<br>    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>        fmt.Println(<span class="hljs-string">&quot;read error&quot;</span>, err)<br>        <span class="hljs-keyword">return</span><br>    &#125;<br>    fmt.Println(<span class="hljs-type">string</span>(body))<br>&#125;<br><br></code></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>Golang</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Golang实战案例：用Golang实现用户登录验证</title>
     <url>/2022/04/11/8ce30903afbf/</url>
     <content><![CDATA[<p>用<a href="https://so.csdn.net/so/search?q=Go%E8%AF%AD%E8%A8%80&spm=1001.2101.3001.7020">Go语言</a>实现登录验证，有3次机会。为了不要那么麻烦，这次示例就不用数据库了，直接if判断用户名为 zhangsan ，密码为 123456 ，则提示登录成功，否则提示还有几次机会，次数用完，提示登录失败。代码如下：</p>
@@ -61,14 +38,11 @@
       </tags>
   </entry>
   <entry>
-    <title>MacOS系统环境，批量替换文件种的字符串</title>
-    <url>/2022/05/23/e89773f480e9/</url>
-    <content><![CDATA[<p>先用终端CD到需要操作的目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs ssh">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @<br></code></pre></td></tr></table></figure>
-
-]]></content>
+    <title>Go语言原生http库的网络请求</title>
+    <url>/2022/05/24/2fa223cb7c13/</url>
+    <content><![CDATA[<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> (<br>    <span class="hljs-string">&quot;fmt&quot;</span><br>    <span class="hljs-string">&quot;io/ioutil&quot;</span><br>    <span class="hljs-string">&quot;net/http&quot;</span><br>)<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>    fmt.Println(<span class="hljs-string">&quot;Hello, world&quot;</span>)<br>    resp, err := http.Get(<span class="hljs-string">&quot;http://www.baidu.com/&quot;</span>)<br>    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>        fmt.Println(<span class="hljs-string">&quot;http get error&quot;</span>, err)<br>        <span class="hljs-keyword">return</span><br>    &#125;<br>    body, err := ioutil.ReadAll(resp.Body)<br>    <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>        fmt.Println(<span class="hljs-string">&quot;read error&quot;</span>, err)<br>        <span class="hljs-keyword">return</span><br>    &#125;<br>    fmt.Println(<span class="hljs-type">string</span>(body))<br>&#125;<br><br></code></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>Mac</tag>
+        <tag>Golang</tag>
       </tags>
   </entry>
   <entry>
@@ -89,6 +63,32 @@
 ]]></content>
       <tags>
         <tag>Homebrew</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MacOS系统环境，批量替换文件种的字符串</title>
+    <url>/2022/05/23/e89773f480e9/</url>
+    <content><![CDATA[<p>先用终端CD到需要操作的目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs ssh">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Golang连接mysql数据库</title>
+    <url>/2022/04/06/64dd2dcf1241/</url>
+    <content><![CDATA[<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight mipsasm"><table><tr><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">brew </span><span class="hljs-keyword">install </span>mysql<br></code></pre></td></tr></table></figure>
+<h3 id="启动mysql"><a href="#启动mysql" class="headerlink" title="启动mysql"></a>启动mysql</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><code class="hljs pgsql">mysql.<span class="hljs-keyword">server</span> <span class="hljs-keyword">start</span><br></code></pre></td></tr></table></figure>
+<h3 id="登录mysql"><a href="#登录mysql" class="headerlink" title="登录mysql"></a>登录mysql</h3><figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">mysql -u root</span><br></code></pre></td></tr></table></figure>
+<h3 id="mysql数据库go驱动安装"><a href="#mysql数据库go驱动安装" class="headerlink" title="mysql数据库go驱动安装"></a>mysql数据库go驱动安装</h3><p>golang连接数据库用户的驱动是：&#96;go-sql-driver’<br>打开终端执行命令</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">go</span> <span class="hljs-built_in">get</span> -<span class="hljs-keyword">u</span> github.<span class="hljs-keyword">com</span>/<span class="hljs-keyword">go</span>-sql-driver/mysql<br></code></pre></td></tr></table></figure>
+<h3 id="mysql数据库连接"><a href="#mysql数据库连接" class="headerlink" title="mysql数据库连接"></a>mysql数据库连接</h3><p>构建连接, 格式是：”用户名:密码@tcp(IP:端口)&#x2F;数据库?charset&#x3D;utf8”<br>打开数据库,前者是驱动名，所以要导入： <code>“github.com/go-sql-driver/mysql”</code><br>设置数据库最大连接数和设置上数据库最大闲置连接数<br>验证连接：使用Ping()函数<br>代码参考如下：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><code class="hljs go"><span class="hljs-comment">//数据库配置</span><br><span class="hljs-keyword">const</span> (<br>    userName = <span class="hljs-string">&quot;root&quot;</span><br>    password = <span class="hljs-string">&quot;123456&quot;</span><br>    ip = <span class="hljs-string">&quot;127.0.0.1&quot;</span><br>    port = <span class="hljs-string">&quot;3306&quot;</span><br>    dbName = <span class="hljs-string">&quot;loginserver&quot;</span><br>)<br><span class="hljs-comment">//Db数据库连接池</span><br><span class="hljs-keyword">var</span> DB *sql.DB<br><br><span class="hljs-comment">//注意方法名大写，就是public</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">InitDB</span><span class="hljs-params">()</span></span>  &#123;<br>    <span class="hljs-comment">//构建连接：&quot;用户名:密码@tcp(IP:端口)/数据库?charset=utf8&quot;</span><br>    path := strings.Join([]<span class="hljs-type">string</span>&#123;userName, <span class="hljs-string">&quot;:&quot;</span>, password, <span class="hljs-string">&quot;@tcp(&quot;</span>,ip, <span class="hljs-string">&quot;:&quot;</span>, port, <span class="hljs-string">&quot;)/&quot;</span>, dbName, <span class="hljs-string">&quot;?charset=utf8&quot;</span>&#125;, <span class="hljs-string">&quot;&quot;</span>)<br><br>    <span class="hljs-comment">//打开数据库,前者是驱动名，所以要导入： _ &quot;github.com/go-sql-driver/mysql&quot;</span><br>    DB, _ = sql.Open(<span class="hljs-string">&quot;mysql&quot;</span>, path)<br>    <span class="hljs-comment">//设置数据库最大连接数</span><br>    DB.SetConnMaxLifetime(<span class="hljs-number">100</span>)<br>    <span class="hljs-comment">//设置上数据库最大闲置连接数</span><br>    DB.SetMaxIdleConns(<span class="hljs-number">10</span>)<br>    <span class="hljs-comment">//验证连接</span><br>    <span class="hljs-keyword">if</span> err := DB.Ping(); err != <span class="hljs-literal">nil</span>&#123;<br>        fmt.Println(<span class="hljs-string">&quot;opon database fail&quot;</span>)<br>        <span class="hljs-keyword">return</span><br>    &#125;<br>    fmt.Println(<span class="hljs-string">&quot;connnect success&quot;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Golang</tag>
       </tags>
   </entry>
   <entry>
