@@ -38,6 +38,14 @@
       </tags>
   </entry>
   <entry>
+    <title>Go语言原生http库的网络请求</title>
+    <url>/2022/05/25/823afe6e65af/</url>
+    <content><![CDATA[<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;io/ioutil&quot;</span></span><br><span class="line">    <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello, world&quot;</span>)</span><br><span class="line">    resp, err := http.Get(<span class="string">&quot;http://www.baidu.com/&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;http get error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    body, err := ioutil.ReadAll(resp.Body)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;read error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="type">string</span>(body))</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Golang</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Golang连接mysql数据库</title>
     <url>/2022/04/06/64dd2dcf1241/</url>
     <content><![CDATA[<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
@@ -53,11 +61,14 @@
       </tags>
   </entry>
   <entry>
-    <title>Go语言原生http库的网络请求</title>
-    <url>/2022/05/25/823afe6e65af/</url>
-    <content><![CDATA[<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;io/ioutil&quot;</span></span><br><span class="line">    <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello, world&quot;</span>)</span><br><span class="line">    resp, err := http.Get(<span class="string">&quot;http://www.baidu.com/&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;http get error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    body, err := ioutil.ReadAll(resp.Body)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;read error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="type">string</span>(body))</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    <title>MacOS系统环境，批量替换文件种的字符串</title>
+    <url>/2022/05/23/e89773f480e9/</url>
+    <content><![CDATA[<p>先用终端CD到需要操作的目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @</span><br></pre></td></tr></table></figure>
+
+]]></content>
       <tags>
-        <tag>Golang</tag>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -78,17 +89,6 @@
 ]]></content>
       <tags>
         <tag>Homebrew</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MacOS系统环境，批量替换文件种的字符串</title>
-    <url>/2022/05/23/e89773f480e9/</url>
-    <content><![CDATA[<p>先用终端CD到需要操作的目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -457,15 +457,6 @@
       </tags>
   </entry>
   <entry>
-    <title>开始使用hexo框架做个人博客了</title>
-    <url>/2022/01/23/a38ecb549ebc/</url>
-    <content><![CDATA[<p>z-blog虽然写作方便，但是毕竟没有几个能看的主题，最重要的是居然还都要钱。。<br>“要钱谁跟你玩啊？”“对不对”<br>就是之前写的文章不能搬家了，2022从头开始</p>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>微信多开解决方案</title>
     <url>/2022/02/24/9d1c410f8e59/</url>
     <content><![CDATA[<h5 id="Macos系统"><a href="#Macos系统" class="headerlink" title="Macos系统"></a><strong>Macos系统</strong></h5><p>复制下面的保存为.sh格式，用的时候拖放到终端里面运行就行<br><code>#!/bin/bash echo &quot;正在打开新的微信！！！&quot; nohup /Applications/WeChat.app/Contents/MacOS/WeChat &gt; /dev/null 2&gt;&amp;1 &amp;</code></p>
@@ -473,6 +464,15 @@
 ]]></content>
       <tags>
         <tag>奇淫技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开始使用hexo框架做个人博客了</title>
+    <url>/2022/01/23/a38ecb549ebc/</url>
+    <content><![CDATA[<p>z-blog虽然写作方便，但是毕竟没有几个能看的主题，最重要的是居然还都要钱。。<br>“要钱谁跟你玩啊？”“对不对”<br>就是之前写的文章不能搬家了，2022从头开始</p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
