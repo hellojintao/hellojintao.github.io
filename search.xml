@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Golang实战案例：用Golang实现用户登录验证</title>
-    <url>/2022/04/11/8ce30903afbf/</url>
-    <content><![CDATA[<p>用<a href="https://so.csdn.net/so/search?q=Go%E8%AF%AD%E8%A8%80&spm=1001.2101.3001.7020">Go语言</a>实现登录验证，有3次机会。为了不要那么麻烦，这次示例就不用数据库了，直接if判断用户名为 zhangsan ，密码为 123456 ，则提示登录成功，否则提示还有几次机会，次数用完，提示登录失败。代码如下：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> name <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> pwd <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> loginChance = <span class="number">3</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++&#123;</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入用户名：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;name)</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入密码：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;pwd)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> name == <span class="string">&quot;zhangsan&quot;</span> &amp;&amp; pwd== <span class="string">&quot;123456&quot;</span> &#123;</span><br><span class="line">			fmt.Println(<span class="string">&quot;恭喜你登录成功！&quot;</span>)</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			loginChance--</span><br><span class="line">			fmt.Printf(<span class="string">&quot;你还有%v次登录机会！\n&quot;</span>,loginChance)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> loginChance == <span class="number">0</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;机会用完，登录失败。&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>执行结果如下图所示：</p>
-<p>测试一（登录成功）：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190621162721450.png" alt="在这里插入图片描述"></p>
-<p>测试二（登录失败）：</p>
-<p><img src="https://s2.loli.net/2022/04/11/13bAvfWyHwxGq2E.png" alt="在这里插入图片描述"></p>
-]]></content>
-      <tags>
-        <tag>Golang</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2022年了，还会有人不了解短视频运营吗</title>
     <url>/2022/04/02/ccd9ff6b80fc/</url>
     <content><![CDATA[<p>前言：如果您打算对岗位的人力预算是1个人，或者想急于见到成果，那就建议不要在这个项目上浪费人力物力了，现在的短视频平台内容饱和程度已经不像4-5年前了，创作成本要是那么低的话，岂不是抖音上1&#x2F;5的人要当老板了。。</p>
@@ -56,6 +40,22 @@
     <title>Go语言原生http库的网络请求</title>
     <url>/2022/05/25/823afe6e65af/</url>
     <content><![CDATA[<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;io/ioutil&quot;</span></span><br><span class="line">    <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello, world&quot;</span>)</span><br><span class="line">    resp, err := http.Get(<span class="string">&quot;http://www.baidu.com/&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;http get error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    body, err := ioutil.ReadAll(resp.Body)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;read error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="type">string</span>(body))</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Golang实战案例：用Golang实现用户登录验证</title>
+    <url>/2022/04/11/8ce30903afbf/</url>
+    <content><![CDATA[<p>用<a href="https://so.csdn.net/so/search?q=Go%E8%AF%AD%E8%A8%80&spm=1001.2101.3001.7020">Go语言</a>实现登录验证，有3次机会。为了不要那么麻烦，这次示例就不用数据库了，直接if判断用户名为 zhangsan ，密码为 123456 ，则提示登录成功，否则提示还有几次机会，次数用完，提示登录失败。代码如下：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> name <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> pwd <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> loginChance = <span class="number">3</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++&#123;</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入用户名：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;name)</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入密码：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;pwd)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> name == <span class="string">&quot;zhangsan&quot;</span> &amp;&amp; pwd== <span class="string">&quot;123456&quot;</span> &#123;</span><br><span class="line">			fmt.Println(<span class="string">&quot;恭喜你登录成功！&quot;</span>)</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			loginChance--</span><br><span class="line">			fmt.Printf(<span class="string">&quot;你还有%v次登录机会！\n&quot;</span>,loginChance)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> loginChance == <span class="number">0</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;机会用完，登录失败。&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图所示：</p>
+<p>测试一（登录成功）：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190621162721450.png" alt="在这里插入图片描述"></p>
+<p>测试二（登录失败）：</p>
+<p><img src="https://s2.loli.net/2022/04/11/13bAvfWyHwxGq2E.png" alt="在这里插入图片描述"></p>
+]]></content>
       <tags>
         <tag>Golang</tag>
       </tags>
@@ -457,15 +457,6 @@
       </tags>
   </entry>
   <entry>
-    <title>开始使用hexo框架做个人博客了</title>
-    <url>/2022/01/23/a38ecb549ebc/</url>
-    <content><![CDATA[<p>z-blog虽然写作方便，但是毕竟没有几个能看的主题，最重要的是居然还都要钱。。<br>“要钱谁跟你玩啊？”“对不对”<br>就是之前写的文章不能搬家了，2022从头开始</p>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>微信多开解决方案</title>
     <url>/2022/02/24/9d1c410f8e59/</url>
     <content><![CDATA[<h5 id="Macos系统"><a href="#Macos系统" class="headerlink" title="Macos系统"></a><strong>Macos系统</strong></h5><p>复制下面的保存为.sh格式，用的时候拖放到终端里面运行就行<br><code>#!/bin/bash echo &quot;正在打开新的微信！！！&quot; nohup /Applications/WeChat.app/Contents/MacOS/WeChat &gt; /dev/null 2&gt;&amp;1 &amp;</code></p>
@@ -473,6 +464,15 @@
 ]]></content>
       <tags>
         <tag>奇淫技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开始使用hexo框架做个人博客了</title>
+    <url>/2022/01/23/a38ecb549ebc/</url>
+    <content><![CDATA[<p>z-blog虽然写作方便，但是毕竟没有几个能看的主题，最重要的是居然还都要钱。。<br>“要钱谁跟你玩啊？”“对不对”<br>就是之前写的文章不能搬家了，2022从头开始</p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
