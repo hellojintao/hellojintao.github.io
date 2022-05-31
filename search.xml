@@ -22,22 +22,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Golang实战案例：用Golang实现用户登录验证</title>
-    <url>/2022/04/11/8ce30903afbf/</url>
-    <content><![CDATA[<p>用<a class="link"   href="https://so.csdn.net/so/search?q=Go%E8%AF%AD%E8%A8%80&spm=1001.2101.3001.7020" >Go语言<i class="fas fa-external-link-alt"></i></a>实现登录验证，有3次机会。为了不要那么麻烦，这次示例就不用数据库了，直接if判断用户名为 zhangsan ，密码为 123456 ，则提示登录成功，否则提示还有几次机会，次数用完，提示登录失败。代码如下：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> name <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> pwd <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> loginChance = <span class="number">3</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++&#123;</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入用户名：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;name)</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入密码：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;pwd)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> name == <span class="string">&quot;zhangsan&quot;</span> &amp;&amp; pwd== <span class="string">&quot;123456&quot;</span> &#123;</span><br><span class="line">			fmt.Println(<span class="string">&quot;恭喜你登录成功！&quot;</span>)</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			loginChance--</span><br><span class="line">			fmt.Printf(<span class="string">&quot;你还有%v次登录机会！\n&quot;</span>,loginChance)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> loginChance == <span class="number">0</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;机会用完，登录失败。&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>执行结果如下图所示：</p>
-<p>测试一（登录成功）：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190621162721450.png" alt="在这里插入图片描述"></p>
-<p>测试二（登录失败）：</p>
-<p><img src="https://s2.loli.net/2022/04/11/13bAvfWyHwxGq2E.png" alt="在这里插入图片描述"></p>
-]]></content>
-      <tags>
-        <tag>Golang</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Golang连接mysql数据库</title>
     <url>/2022/04/06/64dd2dcf1241/</url>
     <content><![CDATA[<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
@@ -47,6 +31,22 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">go get -u github.com/go-sql-driver/mysql</span><br></pre></td></tr></table></figure>
 <h3 id="mysql数据库连接"><a href="#mysql数据库连接" class="headerlink" title="mysql数据库连接"></a>mysql数据库连接</h3><p>构建连接, 格式是：”用户名:密码@tcp(IP:端口)&#x2F;数据库?charset&#x3D;utf8”<br>打开数据库,前者是驱动名，所以要导入： <code>“github.com/go-sql-driver/mysql”</code><br>设置数据库最大连接数和设置上数据库最大闲置连接数<br>验证连接：使用Ping()函数<br>代码参考如下：</p>
 <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//数据库配置</span></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    userName = <span class="string">&quot;root&quot;</span></span><br><span class="line">    password = <span class="string">&quot;123456&quot;</span></span><br><span class="line">    ip = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line">    port = <span class="string">&quot;3306&quot;</span></span><br><span class="line">    dbName = <span class="string">&quot;loginserver&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">//Db数据库连接池</span></span><br><span class="line"><span class="keyword">var</span> DB *sql.DB</span><br><span class="line"></span><br><span class="line"><span class="comment">//注意方法名大写，就是public</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">InitDB</span><span class="params">()</span></span>  &#123;</span><br><span class="line">    <span class="comment">//构建连接：&quot;用户名:密码@tcp(IP:端口)/数据库?charset=utf8&quot;</span></span><br><span class="line">    path := strings.Join([]<span class="type">string</span>&#123;userName, <span class="string">&quot;:&quot;</span>, password, <span class="string">&quot;@tcp(&quot;</span>,ip, <span class="string">&quot;:&quot;</span>, port, <span class="string">&quot;)/&quot;</span>, dbName, <span class="string">&quot;?charset=utf8&quot;</span>&#125;, <span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//打开数据库,前者是驱动名，所以要导入： _ &quot;github.com/go-sql-driver/mysql&quot;</span></span><br><span class="line">    DB, _ = sql.Open(<span class="string">&quot;mysql&quot;</span>, path)</span><br><span class="line">    <span class="comment">//设置数据库最大连接数</span></span><br><span class="line">    DB.SetConnMaxLifetime(<span class="number">100</span>)</span><br><span class="line">    <span class="comment">//设置上数据库最大闲置连接数</span></span><br><span class="line">    DB.SetMaxIdleConns(<span class="number">10</span>)</span><br><span class="line">    <span class="comment">//验证连接</span></span><br><span class="line">    <span class="keyword">if</span> err := DB.Ping(); err != <span class="literal">nil</span>&#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;opon database fail&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="string">&quot;connnect success&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Golang实战案例：用Golang实现用户登录验证</title>
+    <url>/2022/04/11/8ce30903afbf/</url>
+    <content><![CDATA[<p>用<a href="https://so.csdn.net/so/search?q=Go%E8%AF%AD%E8%A8%80&spm=1001.2101.3001.7020">Go语言</a>实现登录验证，有3次机会。为了不要那么麻烦，这次示例就不用数据库了，直接if判断用户名为 zhangsan ，密码为 123456 ，则提示登录成功，否则提示还有几次机会，次数用完，提示登录失败。代码如下：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> name <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> pwd <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> loginChance = <span class="number">3</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++&#123;</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入用户名：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;name)</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入密码：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;pwd)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> name == <span class="string">&quot;zhangsan&quot;</span> &amp;&amp; pwd== <span class="string">&quot;123456&quot;</span> &#123;</span><br><span class="line">			fmt.Println(<span class="string">&quot;恭喜你登录成功！&quot;</span>)</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			loginChance--</span><br><span class="line">			fmt.Printf(<span class="string">&quot;你还有%v次登录机会！\n&quot;</span>,loginChance)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> loginChance == <span class="number">0</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;机会用完，登录失败。&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图所示：</p>
+<p>测试一（登录成功）：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190621162721450.png" alt="在这里插入图片描述"></p>
+<p>测试二（登录失败）：</p>
+<p><img src="https://s2.loli.net/2022/04/11/13bAvfWyHwxGq2E.png" alt="在这里插入图片描述"></p>
 ]]></content>
       <tags>
         <tag>Golang</tag>
@@ -74,7 +74,7 @@
   <entry>
     <title>Mac下Homebrew常用命令</title>
     <url>/2022/03/01/b0ae6af3502b/</url>
-    <content><![CDATA[<p><strong>brewhome国内镜像</strong><br>&#x2F;bin&#x2F;zsh -c “$(curl -fsSL <a class="link"   href="https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;" >https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;<i class="fas fa-external-link-alt"></i></a></p>
+    <content><![CDATA[<p><strong>brewhome国内镜像</strong><br>&#x2F;bin&#x2F;zsh -c “$(curl -fsSL <a href="https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;">https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</a></p>
 <p><strong>查看帮助信息</strong><br>brew help</p>
 <p><strong>查看版本</strong><br>brew -v</p>
 <p><strong>更新brew</strong><br>brew update</p>
@@ -118,7 +118,7 @@
   <entry>
     <title>vue框架使用B站开源项目flv.js拉视频流</title>
     <url>/2022/05/02/3a1c388b9baa/</url>
-    <content><![CDATA[<h3 id="flv项目地址"><a href="#flv项目地址" class="headerlink" title="flv项目地址"></a>flv项目地址</h3><p><a class="link"   href="https://github.com/Bilibili/flv.js/" >bilibili flv.js<i class="fas fa-external-link-alt"></i></a></p>
+    <content><![CDATA[<h3 id="flv项目地址"><a href="#flv项目地址" class="headerlink" title="flv项目地址"></a>flv项目地址</h3><p><a href="https://github.com/Bilibili/flv.js/">bilibili flv.js</a></p>
 <h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install --save flv.js</span><br></pre></td></tr></table></figure>
 
 <h3 id="vue页面"><a href="#vue页面" class="headerlink" title="vue页面"></a>vue页面</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;video&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">video</span></span></span><br><span class="line"><span class="tag">       <span class="attr">id</span>=<span class="string">&quot;vPull&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">controls</span></span></span><br><span class="line"><span class="tag">       <span class="attr">autoplay</span></span></span><br><span class="line"><span class="tag">       <span class="attr">muted</span></span></span><br><span class="line"><span class="tag">       <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
