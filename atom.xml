@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Kimto blog</title>
   
-  <subtitle>李金涛个人博客</subtitle>
+  <subtitle>李金涛博客</subtitle>
   <link href="https://www.kimtoli.com/atom.xml" rel="self"/>
   
   <link href="https://www.kimtoli.com/"/>
