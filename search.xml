@@ -140,28 +140,6 @@
       </tags>
   </entry>
   <entry>
-    <title>win11命令行激活</title>
-    <url>/2022/02/16/c177b9827d5a/</url>
-    <content><![CDATA[<p>1.卸载系统自带密钥</p>
-<p><code>slmgr.vbs /upk</code></p>
-<p>2.安装新密钥</p>
-<p><code>slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</code></p>
-<p>3.指定激活服务器</p>
-<p><code>slmgr /skms kms.03k.org</code></p>
-<p>4.激活系统</p>
-<p><code>slmgr /ato</code></p>
-<p>备用密钥如下：</p>
-<p>专业版：<code>VK7JG-NPHTM-C97JM-9MPGT-3V66T</code></p>
-<p>家庭版：<code>YTMG3-N6DKC-DKB77-7M9GH-8HVX7</code></p>
-]]></content>
-      <categories>
-        <category>系统运维</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>vue框架使用B站开源项目flv.js拉视频流</title>
     <url>/2022/05/02/3a1c388b9baa/</url>
     <content><![CDATA[<h3 id="flv项目地址"><a href="#flv项目地址" class="headerlink" title="flv项目地址"></a>flv项目地址</h3><p><a href="https://github.com/Bilibili/flv.js/">bilibili flv.js</a></p>
@@ -459,6 +437,43 @@
       </tags>
   </entry>
   <entry>
+    <title>win11命令行激活</title>
+    <url>/2022/02/16/c177b9827d5a/</url>
+    <content><![CDATA[<p>1.卸载系统自带密钥</p>
+<p><code>slmgr.vbs /upk</code></p>
+<p>2.安装新密钥</p>
+<p><code>slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</code></p>
+<p>3.指定激活服务器</p>
+<p><code>slmgr /skms kms.03k.org</code></p>
+<p>4.激活系统</p>
+<p><code>slmgr /ato</code></p>
+<p>备用密钥如下：</p>
+<p>专业版：<code>VK7JG-NPHTM-C97JM-9MPGT-3V66T</code></p>
+<p>家庭版：<code>YTMG3-N6DKC-DKB77-7M9GH-8HVX7</code></p>
+]]></content>
+      <categories>
+        <category>系统运维</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于hexo d出现SSL:443的报错终极解决方案</title>
+    <url>/2022/04/25/a49a42aa59c4/</url>
+    <content><![CDATA[<p>网上的hexo部署教程都是把repo项的Github地址设置成https地址，我用了一段时间之后发现，因为大陆的政策问题（你懂的）会导致在执行hexo d部署项目的时候提示代码超时，很头疼啊，也不可能一直搭梯子啊，再说也不稳定，后来在从CSDN上找到了解决思路，把repo项的Github地址设置成Git地址就很丝滑了。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line"></span><br><span class="line"><span class="string">​</span>    <span class="attr">github:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/626657b9239250f7c522788f.png" alt="image-20220425155956939"></p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>做自己情绪的主人，不要被情绪伤害到自己和身边的人！</title>
     <url>/2022/04/20/f6eb36481dbb/</url>
     <content><![CDATA[<p>情绪管理人人都需要。理解自己的情绪，能够用自己的思维去思考和控制自己的行动，这是情绪管理最基本的要求。对于情绪敏感的人而言，总是能够时刻觉察到他人的情绪，并且他们会很在意他人的情绪，总是会以为他人的情绪和自己有关。</p>
@@ -475,21 +490,6 @@
       </categories>
       <tags>
         <tag>情感随记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于hexo d出现SSL:443的报错终极解决方案</title>
-    <url>/2022/04/25/a49a42aa59c4/</url>
-    <content><![CDATA[<p>网上的hexo部署教程都是把repo项的Github地址设置成https地址，我用了一段时间之后发现，因为大陆的政策问题（你懂的）会导致在执行hexo d部署项目的时候提示代码超时，很头疼啊，也不可能一直搭梯子啊，再说也不稳定，后来在从CSDN上找到了解决思路，把repo项的Github地址设置成Git地址就很丝滑了。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line"></span><br><span class="line"><span class="string">​</span>    <span class="attr">github:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://pic.imgdb.cn/item/626657b9239250f7c522788f.png" alt="image-20220425155956939"></p>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
