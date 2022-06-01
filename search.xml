@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Golang连接mysql数据库</title>
+    <url>/2022/04/06/64dd2dcf1241/</url>
+    <content><![CDATA[<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
+<h3 id="启动mysql"><a href="#启动mysql" class="headerlink" title="启动mysql"></a>启动mysql</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql.server start</span><br></pre></td></tr></table></figure>
+<h3 id="登录mysql"><a href="#登录mysql" class="headerlink" title="登录mysql"></a>登录mysql</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root</span><br></pre></td></tr></table></figure>
+<h3 id="mysql数据库go驱动安装"><a href="#mysql数据库go驱动安装" class="headerlink" title="mysql数据库go驱动安装"></a>mysql数据库go驱动安装</h3><p>golang连接数据库用户的驱动是：&#96;go-sql-driver’<br>打开终端执行命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">go get -u github.com/go-sql-driver/mysql</span><br></pre></td></tr></table></figure>
+<h3 id="mysql数据库连接"><a href="#mysql数据库连接" class="headerlink" title="mysql数据库连接"></a>mysql数据库连接</h3><p>构建连接, 格式是：”用户名:密码@tcp(IP:端口)&#x2F;数据库?charset&#x3D;utf8”<br>打开数据库,前者是驱动名，所以要导入： <code>“github.com/go-sql-driver/mysql”</code><br>设置数据库最大连接数和设置上数据库最大闲置连接数<br>验证连接：使用Ping()函数<br>代码参考如下：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//数据库配置</span></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    userName = <span class="string">&quot;root&quot;</span></span><br><span class="line">    password = <span class="string">&quot;123456&quot;</span></span><br><span class="line">    ip = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line">    port = <span class="string">&quot;3306&quot;</span></span><br><span class="line">    dbName = <span class="string">&quot;loginserver&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">//Db数据库连接池</span></span><br><span class="line"><span class="keyword">var</span> DB *sql.DB</span><br><span class="line"></span><br><span class="line"><span class="comment">//注意方法名大写，就是public</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">InitDB</span><span class="params">()</span></span>  &#123;</span><br><span class="line">    <span class="comment">//构建连接：&quot;用户名:密码@tcp(IP:端口)/数据库?charset=utf8&quot;</span></span><br><span class="line">    path := strings.Join([]<span class="type">string</span>&#123;userName, <span class="string">&quot;:&quot;</span>, password, <span class="string">&quot;@tcp(&quot;</span>,ip, <span class="string">&quot;:&quot;</span>, port, <span class="string">&quot;)/&quot;</span>, dbName, <span class="string">&quot;?charset=utf8&quot;</span>&#125;, <span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//打开数据库,前者是驱动名，所以要导入： _ &quot;github.com/go-sql-driver/mysql&quot;</span></span><br><span class="line">    DB, _ = sql.Open(<span class="string">&quot;mysql&quot;</span>, path)</span><br><span class="line">    <span class="comment">//设置数据库最大连接数</span></span><br><span class="line">    DB.SetConnMaxLifetime(<span class="number">100</span>)</span><br><span class="line">    <span class="comment">//设置上数据库最大闲置连接数</span></span><br><span class="line">    DB.SetMaxIdleConns(<span class="number">10</span>)</span><br><span class="line">    <span class="comment">//验证连接</span></span><br><span class="line">    <span class="keyword">if</span> err := DB.Ping(); err != <span class="literal">nil</span>&#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;opon database fail&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="string">&quot;connnect success&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
+      <tags>
+        <tag>Golang</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2022年了，还会有人不了解短视频运营吗</title>
     <url>/2022/04/02/ccd9ff6b80fc/</url>
     <content><![CDATA[<p>前言：如果您打算对岗位的人力预算是1个人，或者想急于见到成果，那就建议不要在这个项目上浪费人力物力了，现在的短视频平台内容饱和程度已经不像4-5年前了，创作成本要是那么低的话，岂不是抖音上1&#x2F;5的人要当老板了。。</p>
@@ -17,6 +35,9 @@
 <h4 id="运营"><a href="#运营" class="headerlink" title="运营"></a>运营</h4><p>作品上传到各个网站里，对粉丝评论等维护，创建并维护粉丝社群。</p>
 <h3 id="深度了解短视频领域，掌握运营方法论"><a href="#深度了解短视频领域，掌握运营方法论" class="headerlink" title="深度了解短视频领域，掌握运营方法论"></a>深度了解短视频领域，掌握运营方法论</h3><p>1.主动成长是进入这领域的必修课视频策划、创作视频脚本、剪辑视频，上传视频，提高视频的点击量，分析优秀竞品和行业案例，都需要我们主动去学习，去成长。<br>2.学会案例分析从他人身上取其精华，运用到自己的工作上，不断提升自己。以papi酱为例<br>3.数据分析把最近一些papi酱的相关视频标题、播放量、收藏量和转发数导在Excel表里，观察趋势变化，注意收藏量和评论量。收藏量高表示用户对于这个视频的喜好程度高，评论量能看出用户对于哪个话题活跃性强，未来做内容选题时可参考借鉴。对于竞品数据的话，一帧有个功能叫一帧数据，可以对创作者未来即将发布的视频进行分钟级监测，也可以对之前的视频数据进行历史数据回采，知己知彼，百战不殆。<br>4.洞察分析认真看最热门的3个视频，思考视频激发人们哪些方面的共鸣，转发的理由是什么。更深层次的了解用户的痛点和喜好。<br>5.研究台词听打字幕，逐句分析。总结papi酱的语言表达特点，找出引发搞笑的语言特征和铺垫技巧。并运用到自己的视频里，提高视频内容核心质量。<br>5.同类对比对比自己的视频和同类型的优秀视频，寻找差异，并做有针对性提高</p>
 ]]></content>
+      <categories>
+        <category>新媒体</category>
+      </categories>
       <tags>
         <tag>短视频</tag>
       </tags>
@@ -33,21 +54,9 @@
 <p>测试二（登录失败）：</p>
 <p><img src="https://s2.loli.net/2022/04/11/13bAvfWyHwxGq2E.png" alt="在这里插入图片描述"></p>
 ]]></content>
-      <tags>
-        <tag>Golang</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Golang连接mysql数据库</title>
-    <url>/2022/04/06/64dd2dcf1241/</url>
-    <content><![CDATA[<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
-<h3 id="启动mysql"><a href="#启动mysql" class="headerlink" title="启动mysql"></a>启动mysql</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql.server start</span><br></pre></td></tr></table></figure>
-<h3 id="登录mysql"><a href="#登录mysql" class="headerlink" title="登录mysql"></a>登录mysql</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root</span><br></pre></td></tr></table></figure>
-<h3 id="mysql数据库go驱动安装"><a href="#mysql数据库go驱动安装" class="headerlink" title="mysql数据库go驱动安装"></a>mysql数据库go驱动安装</h3><p>golang连接数据库用户的驱动是：&#96;go-sql-driver’<br>打开终端执行命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">go get -u github.com/go-sql-driver/mysql</span><br></pre></td></tr></table></figure>
-<h3 id="mysql数据库连接"><a href="#mysql数据库连接" class="headerlink" title="mysql数据库连接"></a>mysql数据库连接</h3><p>构建连接, 格式是：”用户名:密码@tcp(IP:端口)&#x2F;数据库?charset&#x3D;utf8”<br>打开数据库,前者是驱动名，所以要导入： <code>“github.com/go-sql-driver/mysql”</code><br>设置数据库最大连接数和设置上数据库最大闲置连接数<br>验证连接：使用Ping()函数<br>代码参考如下：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//数据库配置</span></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    userName = <span class="string">&quot;root&quot;</span></span><br><span class="line">    password = <span class="string">&quot;123456&quot;</span></span><br><span class="line">    ip = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line">    port = <span class="string">&quot;3306&quot;</span></span><br><span class="line">    dbName = <span class="string">&quot;loginserver&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">//Db数据库连接池</span></span><br><span class="line"><span class="keyword">var</span> DB *sql.DB</span><br><span class="line"></span><br><span class="line"><span class="comment">//注意方法名大写，就是public</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">InitDB</span><span class="params">()</span></span>  &#123;</span><br><span class="line">    <span class="comment">//构建连接：&quot;用户名:密码@tcp(IP:端口)/数据库?charset=utf8&quot;</span></span><br><span class="line">    path := strings.Join([]<span class="type">string</span>&#123;userName, <span class="string">&quot;:&quot;</span>, password, <span class="string">&quot;@tcp(&quot;</span>,ip, <span class="string">&quot;:&quot;</span>, port, <span class="string">&quot;)/&quot;</span>, dbName, <span class="string">&quot;?charset=utf8&quot;</span>&#125;, <span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//打开数据库,前者是驱动名，所以要导入： _ &quot;github.com/go-sql-driver/mysql&quot;</span></span><br><span class="line">    DB, _ = sql.Open(<span class="string">&quot;mysql&quot;</span>, path)</span><br><span class="line">    <span class="comment">//设置数据库最大连接数</span></span><br><span class="line">    DB.SetConnMaxLifetime(<span class="number">100</span>)</span><br><span class="line">    <span class="comment">//设置上数据库最大闲置连接数</span></span><br><span class="line">    DB.SetMaxIdleConns(<span class="number">10</span>)</span><br><span class="line">    <span class="comment">//验证连接</span></span><br><span class="line">    <span class="keyword">if</span> err := DB.Ping(); err != <span class="literal">nil</span>&#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;opon database fail&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="string">&quot;connnect success&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
       <tags>
         <tag>Golang</tag>
       </tags>
@@ -56,19 +65,11 @@
     <title>Go语言原生http库的网络请求</title>
     <url>/2022/05/25/823afe6e65af/</url>
     <content><![CDATA[<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;io/ioutil&quot;</span></span><br><span class="line">    <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello, world&quot;</span>)</span><br><span class="line">    resp, err := http.Get(<span class="string">&quot;http://www.baidu.com/&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;http get error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    body, err := ioutil.ReadAll(resp.Body)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;read error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="type">string</span>(body))</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
       <tags>
         <tag>Golang</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MacOS系统环境，批量替换文件种的字符串</title>
-    <url>/2022/05/23/e89773f480e9/</url>
-    <content><![CDATA[<p>先用终端CD到需要操作的目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -87,8 +88,25 @@
 <p><strong>查询可用包</strong><br>brew search [包名]</p>
 <h5 id="服务管理"><a href="#服务管理" class="headerlink" title="服务管理"></a><strong>服务管理</strong></h5><p><strong>查看服务列表</strong><br>brew services list<br><strong>启动服务</strong><br>brew services start 服务名<br><strong>停止服务</strong><br>brew services stop 服务名<br><strong>重启服务</strong><br>brew services restart 服务名<br><strong>清除已卸载应用无用的配置</strong><br>brew services cleanup</p>
 ]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
       <tags>
         <tag>Homebrew</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MacOS系统环境，批量替换文件种的字符串</title>
+    <url>/2022/05/23/e89773f480e9/</url>
+    <content><![CDATA[<p>先用终端CD到需要操作的目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>系统运维</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -100,6 +118,9 @@
 <figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo clean                   <span class="comment">#清除缓存</span></span><br><span class="line">hexo g == hexo generate      <span class="comment">#生成静态网页</span></span><br><span class="line">hexo d == hexo deploy        <span class="comment">#开始部署</span></span><br><span class="line">hexo g -d                    <span class="comment">#生成部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d  <span class="comment">#复合命令</span></span><br></pre></td></tr></table></figure>
 <p>其它</p>
 <figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo server -p <span class="number">5000</span>    <span class="comment">#更改端口，默认端口4000</span></span><br><span class="line">hexo server -i <span class="number">192.168</span>.<span class="number">1.1</span> <span class="comment">#自定义 IP</span></span><br><span class="line">hexo help                <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version             <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
       <tags>
         <tag>Hexo</tag>
       </tags>
@@ -111,6 +132,9 @@
 <h4 id="查看已生成的ssh秘钥"><a href="#查看已生成的ssh秘钥" class="headerlink" title="查看已生成的ssh秘钥"></a>查看已生成的ssh秘钥</h4><p><code>cat /Users/电脑用户名/.ssh/id_rsa.pub</code></p>
 <h4 id="生成新的ssh秘钥"><a href="#生成新的ssh秘钥" class="headerlink" title="生成新的ssh秘钥"></a>生成新的ssh秘钥</h4><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p>
 ]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
       <tags>
         <tag>ssh</tag>
       </tags>
@@ -405,6 +429,9 @@
 
 <p>其余API参见bibilibi flv.js官方文档</p>
 ]]></content>
+      <categories>
+        <category>web微服务</category>
+      </categories>
       <tags>
         <tag>flv.js</tag>
       </tags>
@@ -424,6 +451,9 @@
 <p>专业版：<code>VK7JG-NPHTM-C97JM-9MPGT-3V66T</code></p>
 <p>家庭版：<code>YTMG3-N6DKC-DKB77-7M9GH-8HVX7</code></p>
 ]]></content>
+      <categories>
+        <category>系统运维</category>
+      </categories>
       <tags>
         <tag>Windows</tag>
       </tags>
@@ -440,6 +470,9 @@
 <p>管理情绪的第二个方面是：相信自己，相信对方。有时候假想别人的想法，只会使自己的情绪更加敏感。揣测不同于理性的分析和思考。对别人的想法和行为进行揣测，只会让你感觉更加痛苦。猜测不同于真相，即便你猜测的准确无误，这也不同于去亲自询问真相。接纳事物本来的模样，而不是蒙上了猜测，假象，揣测后的样子。唯有建立正面积极的自我身份认同感，才不容易受他人评判的影响。每个人都有情绪，但并不是每个人都能控制自己的情绪。管控好自己的情绪，也并不是失去自我。</p>
 <p>最重要的情绪管理是你要相信没有一种情绪不应该。情绪能够帮助我们更全面地认识自己，了解自己的价值观、兴趣爱好，帮助我们确定人生方向。学会管理情绪，管理我们的敏感、焦虑、恐惧、愤怒、怀疑等等，往往能帮助我们突破自我的能力边界。</p>
 ]]></content>
+      <categories>
+        <category>随记</category>
+      </categories>
       <tags>
         <tag>情感随记</tag>
       </tags>
@@ -452,6 +485,9 @@
 
 <p><img src="https://pic.imgdb.cn/item/626657b9239250f7c522788f.png" alt="image-20220425155956939"></p>
 ]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
       <tags>
         <tag>Hexo</tag>
       </tags>
@@ -461,6 +497,9 @@
     <url>/2022/01/23/a38ecb549ebc/</url>
     <content><![CDATA[<p>z-blog虽然写作方便，但是毕竟没有几个能看的主题，最重要的是居然还都要钱。。<br>“要钱谁跟你玩啊？”“对不对”<br>就是之前写的文章不能搬家了，2022从头开始</p>
 ]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
       <tags>
         <tag>Hexo</tag>
       </tags>
@@ -471,6 +510,9 @@
     <content><![CDATA[<h5 id="Macos系统"><a href="#Macos系统" class="headerlink" title="Macos系统"></a><strong>Macos系统</strong></h5><p>复制下面的保存为.sh格式，用的时候拖放到终端里面运行就行<br><code>#!/bin/bash echo &quot;正在打开新的微信！！！&quot; nohup /Applications/WeChat.app/Contents/MacOS/WeChat &gt; /dev/null 2&gt;&amp;1 &amp;</code></p>
 <h5 id="Windows系统"><a href="#Windows系统" class="headerlink" title="Windows系统"></a><strong>Windows系统</strong></h5><p>桌面新建一个文本文档，多开几个复制几行，另存为bat文件<br><code>start &quot;&quot; &quot;C:\Program Files (x86)\Tencent\WeChat\WeChat.exe&quot;</code></p>
 ]]></content>
+      <categories>
+        <category>网络技巧</category>
+      </categories>
       <tags>
         <tag>奇淫技巧</tag>
       </tags>
@@ -480,6 +522,9 @@
     <url>/2022/01/24/6569c0fc0445/</url>
     <content><![CDATA[<p><strong>下面写的是python的代码块语法高亮</strong><br> <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>);</span><br></pre></td></tr></table></figure><br><strong>做法就是在三个引号的后面标注一下语言</strong></p>
 ]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
       <tags>
         <tag>Markdown</tag>
       </tags>
@@ -498,6 +543,9 @@
 <p>8、一句誓言，即便最后落了空，但在说出口的那个当下，彼此一定是真心相爱的。所以，誓言这种东西无法衡量坚贞，也不能判断对错;更不能以誓言为证据，在分手后苦苦纠缠:彼此折磨。只要在听到誓言的当下，我们能够感受到真诚与幸福，或许这就够了吧~</p>
 <p>9、是爱情让我们了解了人生，是爱情让我们了解了无常。爱情只是我们人生中一部分，即使是没有结局的爱情，也一定有它背后的意义呢。爱情的终极目标本就不在于能否终老，而是我们都投入地爱过彼此，我们都有所成长，我们都变成了更好的人，这才是最重要的~</p>
 ]]></content>
+      <categories>
+        <category>随记</category>
+      </categories>
       <tags>
         <tag>情感随记</tag>
       </tags>
