@@ -38,6 +38,14 @@
       </tags>
   </entry>
   <entry>
+    <title>Go语言原生http库的网络请求</title>
+    <url>/2022/05/25/823afe6e65af/</url>
+    <content><![CDATA[<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;io/ioutil&quot;</span></span><br><span class="line">    <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello, world&quot;</span>)</span><br><span class="line">    resp, err := http.Get(<span class="string">&quot;http://www.baidu.com/&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;http get error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    body, err := ioutil.ReadAll(resp.Body)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;read error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="type">string</span>(body))</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Golang</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Golang连接mysql数据库</title>
     <url>/2022/04/06/64dd2dcf1241/</url>
     <content><![CDATA[<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
@@ -53,11 +61,23 @@
       </tags>
   </entry>
   <entry>
-    <title>Go语言原生http库的网络请求</title>
-    <url>/2022/05/25/823afe6e65af/</url>
-    <content><![CDATA[<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;io/ioutil&quot;</span></span><br><span class="line">    <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello, world&quot;</span>)</span><br><span class="line">    resp, err := http.Get(<span class="string">&quot;http://www.baidu.com/&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;http get error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    body, err := ioutil.ReadAll(resp.Body)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;read error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="type">string</span>(body))</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    <title>Mac下Homebrew常用命令</title>
+    <url>/2022/03/01/b0ae6af3502b/</url>
+    <content><![CDATA[<p><strong>brewhome国内镜像</strong><br>&#x2F;bin&#x2F;zsh -c “$(curl -fsSL <a href="https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;">https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</a></p>
+<p><strong>查看帮助信息</strong><br>brew help</p>
+<p><strong>查看版本</strong><br>brew -v</p>
+<p><strong>更新brew</strong><br>brew update</p>
+<p><strong>安装</strong><br>brew install XX</p>
+<p><strong>查询可更新的包</strong><br>brew outdated</p>
+<p><strong>更新包</strong><br>brew upgrade 全部<br>brew upgrade 包名 指定包</p>
+<p><strong>清理旧版本</strong><br>brew cleanup</p>
+<h5 id="锁定不想更新的包"><a href="#锁定不想更新的包" class="headerlink" title="锁定不想更新的包"></a><strong>锁定不想更新的包</strong></h5><p><strong>锁定某个包</strong><br>brew pin $FORMULA<br><strong>取消锁定</strong><br>brew unpin $FORMULA<br><strong>查看包信息</strong><br>brew info 包名</p>
+<p><strong>查看安装列表</strong><br>brew list</p>
+<p><strong>查询可用包</strong><br>brew search [包名]</p>
+<h5 id="服务管理"><a href="#服务管理" class="headerlink" title="服务管理"></a><strong>服务管理</strong></h5><p><strong>查看服务列表</strong><br>brew services list<br><strong>启动服务</strong><br>brew services start 服务名<br><strong>停止服务</strong><br>brew services stop 服务名<br><strong>重启服务</strong><br>brew services restart 服务名<br><strong>清除已卸载应用无用的配置</strong><br>brew services cleanup</p>
+]]></content>
       <tags>
-        <tag>Golang</tag>
+        <tag>Homebrew</tag>
       </tags>
   </entry>
   <entry>
@@ -71,6 +91,17 @@
 <figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo server -p <span class="number">5000</span>    <span class="comment">#更改端口，默认端口4000</span></span><br><span class="line">hexo server -i <span class="number">192.168</span>.<span class="number">1.1</span> <span class="comment">#自定义 IP</span></span><br><span class="line">hexo help                <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version             <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MacOS系统环境，批量替换文件种的字符串</title>
+    <url>/2022/05/23/e89773f480e9/</url>
+    <content><![CDATA[<p>先用终端CD到需要操作的目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -379,26 +410,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Mac下Homebrew常用命令</title>
-    <url>/2022/03/01/b0ae6af3502b/</url>
-    <content><![CDATA[<p><strong>brewhome国内镜像</strong><br>&#x2F;bin&#x2F;zsh -c “$(curl -fsSL <a href="https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;">https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</a></p>
-<p><strong>查看帮助信息</strong><br>brew help</p>
-<p><strong>查看版本</strong><br>brew -v</p>
-<p><strong>更新brew</strong><br>brew update</p>
-<p><strong>安装</strong><br>brew install XX</p>
-<p><strong>查询可更新的包</strong><br>brew outdated</p>
-<p><strong>更新包</strong><br>brew upgrade 全部<br>brew upgrade 包名 指定包</p>
-<p><strong>清理旧版本</strong><br>brew cleanup</p>
-<h5 id="锁定不想更新的包"><a href="#锁定不想更新的包" class="headerlink" title="锁定不想更新的包"></a><strong>锁定不想更新的包</strong></h5><p><strong>锁定某个包</strong><br>brew pin $FORMULA<br><strong>取消锁定</strong><br>brew unpin $FORMULA<br><strong>查看包信息</strong><br>brew info 包名</p>
-<p><strong>查看安装列表</strong><br>brew list</p>
-<p><strong>查询可用包</strong><br>brew search [包名]</p>
-<h5 id="服务管理"><a href="#服务管理" class="headerlink" title="服务管理"></a><strong>服务管理</strong></h5><p><strong>查看服务列表</strong><br>brew services list<br><strong>启动服务</strong><br>brew services start 服务名<br><strong>停止服务</strong><br>brew services stop 服务名<br><strong>重启服务</strong><br>brew services restart 服务名<br><strong>清除已卸载应用无用的配置</strong><br>brew services cleanup</p>
-]]></content>
-      <tags>
-        <tag>Homebrew</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>win11命令行激活</title>
     <url>/2022/02/16/c177b9827d5a/</url>
     <content><![CDATA[<p>1.卸载系统自带密钥</p>
@@ -415,17 +426,6 @@
 ]]></content>
       <tags>
         <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MacOS系统环境，批量替换文件种的字符串</title>
-    <url>/2022/05/23/e89773f480e9/</url>
-    <content><![CDATA[<p>先用终端CD到需要操作的目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
