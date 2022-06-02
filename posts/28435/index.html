@@ -1,0 +1,432 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>vue框架使用B站开源项目flv.js拉视频流 | Kimto blog</title><meta name="keywords" content="flv.js"><meta name="author" content="Kimto Lee"><meta name="copyright" content="Kimto Lee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="flv项目地址bilibili flv.js 安装依赖1npm install --save flv.js  vue页面1234567891011 &lt;div class&#x3D;&quot;video&quot;&gt;      &lt;video       id&#x3D;&quot;vPull&quot;       controls       autoplay       muted">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue框架使用B站开源项目flv.js拉视频流">
+<meta property="og:url" content="https://www.kimtoli.com/posts/28435/index.html">
+<meta property="og:site_name" content="Kimto blog">
+<meta property="og:description" content="flv项目地址bilibili flv.js 安装依赖1npm install --save flv.js  vue页面1234567891011 &lt;div class&#x3D;&quot;video&quot;&gt;      &lt;video       id&#x3D;&quot;vPull&quot;       controls       autoplay       muted">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tva3.sinaimg.cn/large/0072Vf1pgy1foxkil4o6qj31hc0u0nbz.jpg">
+<meta property="article:published_time" content="2022-05-01T17:08:32.000Z">
+<meta property="article:modified_time" content="2022-06-01T13:40:39.140Z">
+<meta property="article:author" content="Kimto Lee">
+<meta property="article:tag" content="flv.js">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva3.sinaimg.cn/large/0072Vf1pgy1foxkil4o6qj31hc0u0nbz.jpg"><link rel="shortcut icon" href="https://pic.imgdb.cn/item/629717b109475431299f140b.jpg"><link rel="canonical" href="https://www.kimtoli.com/posts/28435/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://fastly.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://fastly.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'vue框架使用B站开源项目flv.js拉视频流',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-01 21:40:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/iconfont.css"><meta name="baidu-site-verification" content="code-21hd4aYDX8" /><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Kimto blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic.imgdb.cn/item/629717b109475431299f140b.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-home-fill"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw iconfont icon-grouping"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw iconfont icon-tool"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://api.molure.cn/"><span> 陌路人api</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://kimto.gitee.io/blog"><span> love_tree</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://tva3.sinaimg.cn/large/0072Vf1pgy1foxkil4o6qj31hc0u0nbz.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Kimto blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-home-fill"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw iconfont icon-grouping"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw iconfont icon-tool"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener" href="https://api.molure.cn/"><span> 陌路人api</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://kimto.gitee.io/blog"><span> love_tree</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">vue框架使用B站开源项目flv.js拉视频流</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-01T17:08:32.000Z" title="发表于 2022-05-02 01:08:32">2022-05-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-01T13:40:39.140Z" title="更新于 2022-06-01 21:40:39">2022-06-01</time></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="flv项目地址"><a href="#flv项目地址" class="headerlink" title="flv项目地址"></a>flv项目地址</h3><p><a target="_blank" rel="noopener" href="https://github.com/Bilibili/flv.js/">bilibili flv.js</a></p>
+<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save flv.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="vue页面"><a href="#vue页面" class="headerlink" title="vue页面"></a>vue页面</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;video&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">video</span></span></span><br><span class="line"><span class="tag">       <span class="attr">id</span>=<span class="string">&quot;vPull&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">controls</span></span></span><br><span class="line"><span class="tag">       <span class="attr">autoplay</span></span></span><br><span class="line"><span class="tag">       <span class="attr">muted</span></span></span><br><span class="line"><span class="tag">       <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Js部分"><a href="#Js部分" class="headerlink" title="Js部分"></a>Js部分</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> flv <span class="keyword">from</span> <span class="string">&quot;flv.js&quot;</span>;</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">name</span>: <span class="string">&quot;&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">player</span>: <span class="literal">null</span>,</span></span><br><span class="line"><span class="language-javascript">    &#125;;</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">play</span>(<span class="params">urls</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">let</span> video = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;vPull&quot;</span>); <span class="comment">//定义播放路径</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span> (flv.<span class="title function_">isSupported</span>()) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">player</span> = flv.<span class="title function_">createPlayer</span>(</span></span><br><span class="line"><span class="language-javascript">          &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">type</span>: <span class="string">&quot;flv&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">isLive</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">url</span>: urls,</span></span><br><span class="line"><span class="language-javascript">          &#125;,</span></span><br><span class="line"><span class="language-javascript">          &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">enableWorker</span>: <span class="literal">false</span>, <span class="comment">//不启用分离线程</span></span></span><br><span class="line"><span class="language-javascript">            <span class="attr">enableStashBuffer</span>: <span class="literal">false</span>, <span class="comment">//关闭IO隐藏缓冲区</span></span></span><br><span class="line"><span class="language-javascript">            <span class="attr">isLive</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">lazyLoad</span>: <span class="literal">false</span>,</span></span><br><span class="line"><span class="language-javascript">          &#125;</span></span><br><span class="line"><span class="language-javascript">        );</span></span><br><span class="line"><span class="language-javascript">      &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;不支持的格式&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span>;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">this</span>.<span class="property">player</span>.<span class="title function_">attachMediaElement</span>(video);</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">this</span>.<span class="property">player</span>.<span class="title function_">load</span>();</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">this</span>.<span class="property">player</span>.<span class="title function_">play</span>();</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">destruction</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="comment">//销毁对象</span></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">player</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">player</span>.<span class="title function_">pause</span>();</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">player</span>.<span class="title function_">destroy</span>();</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">this</span>.<span class="property">player</span> = <span class="literal">null</span>;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">created</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">this</span>.<span class="title function_">play</span>(<span class="string">&#x27;http://1011.hlsplay.aodianyun.com/demo/game.flv&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> flv <span class="keyword">from</span> <span class="string">&quot;flv.js&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建flv播放器"><a href="#创建flv播放器" class="headerlink" title="创建flv播放器"></a>创建flv播放器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> player = flv.<span class="title function_">createPlayer</span>(<span class="attr">mediaDataSource</span>: <span class="title class_">MediaDataSource</span>, config?: <span class="title class_">Config</span>);</span><br></pre></td></tr></table></figure>
+
+<p><code>createPlayer()</code>方法有两个参数，<code>MediaDataSource</code>和config两个参数，<code>MediaDataSource</code>必传，config可传可不传，返回值为<code>player</code>;</p>
+<h3 id="MediaDataSource"><a href="#MediaDataSource" class="headerlink" title="MediaDataSource"></a>MediaDataSource</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>指示媒体类型，<code>&#39;flv&#39;</code>或<code>&#39;mp4&#39;</code></td>
+</tr>
+<tr>
+<td><code>isLive?</code></td>
+<td><code>boolean</code></td>
+<td>指示数据源是否为实时流</td>
+</tr>
+<tr>
+<td><code>cors?</code></td>
+<td><code>boolean</code></td>
+<td>指示是否启用<code>CORS</code>进行<code>http</code>提取</td>
+</tr>
+<tr>
+<td><code>withCredentials?</code></td>
+<td><code>boolean</code></td>
+<td>指示是否对<code>Cookie</code>进行<code>http</code>提取</td>
+</tr>
+<tr>
+<td><code>hasAudio?</code></td>
+<td><code>boolean</code></td>
+<td>指示流是否有音轨</td>
+</tr>
+<tr>
+<td><code>hasVideo?</code></td>
+<td><code>boolean</code></td>
+<td>指示流中是否有视频轨道</td>
+</tr>
+<tr>
+<td><code>duration?</code></td>
+<td><code>number</code></td>
+<td>指示总媒体持续时间（以毫秒为单位）</td>
+</tr>
+<tr>
+<td><code>filesize?</code></td>
+<td><code>number</code></td>
+<td>指示媒体文件的总文件大小，以字节为单位</td>
+</tr>
+<tr>
+<td><code>url?</code></td>
+<td><code>string</code></td>
+<td>表示媒体URL，可以以<code>&#39;https(s)&#39;</code>或<code>&#39;ws(s)&#39;``（WebSocket）</code>开头</td>
+</tr>
+<tr>
+<td><code>segments?</code></td>
+<td><code>Array</code></td>
+<td>多段播放的可选字段，请参见<code>MediaSegment</code></td>
+</tr>
+</tbody></table>
+<p>如果<code>segments</code>存在字段，则<code>transmuxer</code>会将其<code>MediaDataSource</code>视为多部分源。</p>
+<p>在多部分模式下，结构中的<code>duration filesize url</code>字段<code>MediaDataSource</code>将被忽略。</p>
+<h3 id="MediaSegment"><a href="#MediaSegment" class="headerlink" title="MediaSegment"></a>MediaSegment</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>duration</code></td>
+<td><code>number</code></td>
+<td>必填字段，表示段持续时间（以毫秒为单位）</td>
+</tr>
+<tr>
+<td><code>filesize?</code></td>
+<td><code>number</code></td>
+<td>可选字段，以字节为单位指示段文件大小</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><code>string</code></td>
+<td>必填字段，指示段文件<code>URL</code></td>
+</tr>
+</tbody></table>
+<h3 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>enableWorker</code></td>
+<td><code>boolean</code></td>
+<td><code>FALSE</code></td>
+<td>启用分离的线程进行转换（暂时不稳定）</td>
+</tr>
+<tr>
+<td><code>enableStashBuffer</code></td>
+<td><code>boolean</code></td>
+<td><code>TRUE</code></td>
+<td>启用IO隐藏缓冲区。如果您需要实时（最小延迟）进行实时流播放，则设置为<code>false</code>，但是如果网络抖动，则可能会停顿。</td>
+</tr>
+<tr>
+<td><code>stashInitialSize</code></td>
+<td><code>number</code></td>
+<td><code>384KB</code></td>
+<td>表示IO暂存缓冲区的初始大小。默认值为384KB。指出合适的尺寸可以改善视频负载&#x2F;搜索时间。</td>
+</tr>
+<tr>
+<td><code>isLive</code></td>
+<td><code>boolean</code></td>
+<td><code>FALSE</code></td>
+<td>同样要<code>isLive</code>在<code>MediaDataSource</code>，如果忽略已经在<code>MediaDataSource</code>结构集合。</td>
+</tr>
+<tr>
+<td><code>lazyLoad</code></td>
+<td><code>boolean</code></td>
+<td><code>TRUE</code></td>
+<td>如果有足够的数据可播放，则中止http连接。</td>
+</tr>
+<tr>
+<td><code>lazyLoadMaxDuration</code></td>
+<td><code>number</code></td>
+<td><code>3 * 60</code></td>
+<td>指示要保留多少秒的数据<code>lazyLoad</code>。</td>
+</tr>
+<tr>
+<td><code>lazyLoadRecoverDuration</code></td>
+<td><code>number</code></td>
+<td><code>30</code></td>
+<td>指示<code>lazyLoad</code>恢复时间边界，以秒为单位。</td>
+</tr>
+<tr>
+<td><code>deferLoadAfterSourceOpen</code></td>
+<td><code>boolean</code></td>
+<td><code>TRUE</code></td>
+<td>在<code>MediaSourcesourceopen</code>事件触发后加载。在<code>Chrome</code>上，在后台打开的标签页可能不会触发<code>sourceopen</code>事件，除非切换到该标签页。</td>
+</tr>
+<tr>
+<td><code>autoCleanupSourceBuffer</code></td>
+<td><code>boolean</code></td>
+<td><code>FALSE</code></td>
+<td>对<code>SourceBuffer</code>进行自动清理</td>
+</tr>
+<tr>
+<td><code>autoCleanupMaxBackwardDuration</code></td>
+<td><code>number</code></td>
+<td><code>3 * 60</code></td>
+<td>当向后缓冲区持续时间超过此值（以秒为单位）时，请对<code>SourceBuffer</code>进行自动清理</td>
+</tr>
+<tr>
+<td><code>autoCleanupMinBackwardDuration</code></td>
+<td><code>number</code></td>
+<td><code>2 * 60</code></td>
+<td>指示进行自动清除时为反向缓冲区保留的持续时间（以秒为单位）。</td>
+</tr>
+<tr>
+<td><code>fixAudioTimestampGap</code></td>
+<td><code>boolean</code></td>
+<td><code>TRUE</code></td>
+<td>当检测到较大的音频时间戳间隙时，请填充无声音频帧，以避免<code>A / V</code>不同步。</td>
+</tr>
+<tr>
+<td><code>accurateSeek</code></td>
+<td><code>boolean</code></td>
+<td><code>FALSE</code></td>
+<td>精确查找任何帧，不限于视频<code>IDR</code>帧，但可能会慢一些。可用的<code>Chrome &gt; 50</code>，<code>FireFox</code>和<code>Safari</code>。</td>
+</tr>
+<tr>
+<td><code>seekType</code></td>
+<td><code>string</code></td>
+<td><code>range</code></td>
+<td><code>range</code>‘使用范围请求进行查找，或’param’在url中添加参数以指示请求范围。</td>
+</tr>
+<tr>
+<td><code>seekParamStart</code></td>
+<td><code>string</code></td>
+<td><code>bstart</code></td>
+<td>指示的搜索起始参数名称 <code>seekType = &#39;param&#39;</code></td>
+</tr>
+<tr>
+<td><code>seekParamEnd</code></td>
+<td><code>string</code></td>
+<td><code>bend</code></td>
+<td>指示的搜索结束参数名称 <code>seekType = &#39;param&#39;</code></td>
+</tr>
+<tr>
+<td><code>rangeLoadZeroStart</code></td>
+<td><code>boolean</code></td>
+<td><code>FALSE</code></td>
+<td><code>Range: bytes=0-</code>如果使用范围查找，则发送首次负载</td>
+</tr>
+<tr>
+<td><code>customSeekHandler</code></td>
+<td><code>object</code></td>
+<td><code>undefined</code></td>
+<td>指示自定义搜索处理程序</td>
+</tr>
+<tr>
+<td><code>reuseRedirectedURL</code></td>
+<td><code>boolean</code></td>
+<td><code>FALSE</code></td>
+<td>重复使用301&#x2F;302重定向的<code>url</code>进行子序列请求，例如搜索，重新连接等。</td>
+</tr>
+<tr>
+<td><code>referrerPolicy</code></td>
+<td><code>string</code></td>
+<td><code>no-referrer-when-downgrade</code></td>
+<td>指示使用<code>FetchStreamLoader</code>时的推荐人策略</td>
+</tr>
+<tr>
+<td><code>headers</code></td>
+<td><code>object</code></td>
+<td><code>undefined</code></td>
+<td>指示将添加到请求的其他标头</td>
+</tr>
+</tbody></table>
+<h3 id="flv-isSupported"><a href="#flv-isSupported" class="headerlink" title="flv.isSupported()"></a>flv.isSupported()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">isSupported</span>(<span class="params"></span>): boolean;</span><br></pre></td></tr></table></figure>
+
+<p>player实例存在返回true，否则返回fasle</p>
+<h3 id="flv-getFeatureList"><a href="#flv-getFeatureList" class="headerlink" title="flv.getFeatureList()"></a>flv.getFeatureList()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getFeatureList</span>(<span class="params"></span>): <span class="title class_">FeatureList</span>;</span><br></pre></td></tr></table></figure>
+
+<p>返回 FeatureList 对象</p>
+<h3 id="FeatureList"><a href="#FeatureList" class="headerlink" title="FeatureList"></a>FeatureList</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>mseFlvPlayback</code></td>
+<td><code>boolean</code></td>
+<td>等同于<code>flv.isSupported()</code></td>
+</tr>
+<tr>
+<td><code>mseLiveFlvPlayback</code></td>
+<td><code>boolean</code></td>
+<td>指示HTTP FLV实时流是否可以在您的浏览器上工作。</td>
+</tr>
+<tr>
+<td><code>networkStreamIO</code></td>
+<td><code>boolean</code></td>
+<td>指示网络加载程序是否正在流式传输。</td>
+</tr>
+<tr>
+<td><code>networkLoaderName</code></td>
+<td><code>string</code></td>
+<td>指示网络加载程序类型名称。</td>
+</tr>
+<tr>
+<td><code>nativeMP4H264Playback</code></td>
+<td><code>boolean</code></td>
+<td>指示您的浏览器是否本身支持H.264 MP4视频文件。</td>
+</tr>
+<tr>
+<td><code>nativeWebmVP8Playback</code></td>
+<td><code>boolean</code></td>
+<td>指示您的浏览器是否本机支持WebM VP8视频文件。</td>
+</tr>
+<tr>
+<td><code>nativeWebmVP9Playback</code></td>
+<td><code>boolean</code></td>
+<td>指示您的浏览器是否本机支持WebM VP9视频文件。</td>
+</tr>
+</tbody></table>
+<h3 id="Player对象"><a href="#Player对象" class="headerlink" title="Player对象"></a>Player对象</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">interface <span class="title class_">Player</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">mediaDataSource: MediaDataSource, config?: Config</span>): <span class="title class_">Player</span>;</span><br><span class="line">    <span class="title function_">destroy</span>(): <span class="keyword">void</span>;</span><br><span class="line">    <span class="title function_">on</span>(<span class="attr">event</span>: string, <span class="attr">listener</span>: <span class="title class_">Function</span>): <span class="keyword">void</span>;</span><br><span class="line">    <span class="title function_">off</span>(<span class="attr">event</span>: string, <span class="attr">listener</span>: <span class="title class_">Function</span>): <span class="keyword">void</span>;</span><br><span class="line">    <span class="title function_">attachMediaElement</span>(<span class="attr">mediaElement</span>: <span class="title class_">HTMLMediaElement</span>): <span class="keyword">void</span>;</span><br><span class="line">    <span class="title function_">detachMediaElement</span>(): <span class="keyword">void</span>;</span><br><span class="line">    <span class="title function_">load</span>(): <span class="keyword">void</span>;<span class="comment">//加载</span></span><br><span class="line">    <span class="title function_">unload</span>(): <span class="keyword">void</span>;<span class="comment">//卸载</span></span><br><span class="line">    <span class="title function_">play</span>(): <span class="title class_">Promise</span>&lt;<span class="keyword">void</span>&gt;;<span class="comment">//播放</span></span><br><span class="line">    <span class="title function_">pause</span>(): <span class="keyword">void</span>;<span class="comment">//暂停</span></span><br><span class="line">    <span class="attr">type</span>: string;</span><br><span class="line">    <span class="attr">buffered</span>: <span class="title class_">TimeRanges</span>;</span><br><span class="line">    <span class="attr">duration</span>: number;</span><br><span class="line">    <span class="attr">volume</span>: number;</span><br><span class="line">    <span class="attr">muted</span>: boolean;</span><br><span class="line">    <span class="attr">currentTime</span>: number;</span><br><span class="line">    <span class="attr">mediaInfo</span>: <span class="title class_">Object</span>;</span><br><span class="line">    <span class="attr">statisticsInfo</span>: <span class="title class_">Object</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其余API参见bibilibi flv.js官方文档</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.kimtoli.com">Kimto Lee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.kimtoli.com/posts/28435/">https://www.kimtoli.com/posts/28435/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.kimtoli.com" target="_blank">Kimto blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/flv-js/">flv.js</a></div><div class="post_share"><div class="social-share" data-image="https://tva3.sinaimg.cn/large/0072Vf1pgy1foxkil4o6qj31hc0u0nbz.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://fastly.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/d2cb55ec/"><img class="prev-cover" src="https://tva1.sinaimg.cn/large/0072Vf1pgy1foxkj74bl3j31hc0u0ng2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MacOS系统环境，批量替换文件种的字符串</div></div></a></div><div class="next-post pull-right"><a href="/posts/34393/"><img class="next-cover" src="https://s2.loli.net/2022/04/06/SHmPfbEgRMj3dnT.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">关于hexo d出现SSL:443的报错终极解决方案</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic.imgdb.cn/item/629717b109475431299f140b.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Kimto Lee</div><div class="author-info__description">李金涛-个人博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/hellojintao"><i></i><span>我的Github主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/he" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:lijintao@kimtoli.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">I want to be different in your heart!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#flv%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80"><span class="toc-number">1.</span> <span class="toc-text">flv项目地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="toc-number">2.</span> <span class="toc-text">安装依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue%E9%A1%B5%E9%9D%A2"><span class="toc-number">3.</span> <span class="toc-text">vue页面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Js%E9%83%A8%E5%88%86"><span class="toc-number">4.</span> <span class="toc-text">Js部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API"><span class="toc-number">5.</span> <span class="toc-text">API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAflv%E6%92%AD%E6%94%BE%E5%99%A8"><span class="toc-number">6.</span> <span class="toc-text">创建flv播放器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MediaDataSource"><span class="toc-number">7.</span> <span class="toc-text">MediaDataSource</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MediaSegment"><span class="toc-number">8.</span> <span class="toc-text">MediaSegment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Config"><span class="toc-number">9.</span> <span class="toc-text">Config</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flv-isSupported"><span class="toc-number">10.</span> <span class="toc-text">flv.isSupported()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flv-getFeatureList"><span class="toc-number">11.</span> <span class="toc-text">flv.getFeatureList()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FeatureList"><span class="toc-number">12.</span> <span class="toc-text">FeatureList</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Player%E5%AF%B9%E8%B1%A1"><span class="toc-number">13.</span> <span class="toc-text">Player对象</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/28711/" title="Go语言原生http库的网络请求">Go语言原生http库的网络请求</a><time datetime="2022-05-25T05:13:10.000Z" title="发表于 2022-05-25 13:13:10">2022-05-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/d2cb55ec/" title="MacOS系统环境，批量替换文件种的字符串">MacOS系统环境，批量替换文件种的字符串</a><time datetime="2022-05-23T10:03:20.000Z" title="发表于 2022-05-23 18:03:20">2022-05-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/28435/" title="vue框架使用B站开源项目flv.js拉视频流">vue框架使用B站开源项目flv.js拉视频流</a><time datetime="2022-05-01T17:08:32.000Z" title="发表于 2022-05-02 01:08:32">2022-05-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/34393/" title="关于hexo d出现SSL:443的报错终极解决方案">关于hexo d出现SSL:443的报错终极解决方案</a><time datetime="2022-04-25T08:03:22.000Z" title="发表于 2022-04-25 16:03:22">2022-04-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/33701/" title="那些爱情观超级正的句子">那些爱情观超级正的句子</a><time datetime="2022-04-25T07:35:22.000Z" title="发表于 2022-04-25 15:35:22">2022-04-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Kimto Lee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="https://fastly.jsdelivr.net/npm/hexo-theme-butterfly@4.2.2/source/js/utils.min.js"></script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-butterfly@4.2.2/source/js/main.min.js"></script><script src="https://fastly.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://fastly.jsdelivr.net/npm/hexo-theme-butterfly@4.2.2/source/js/search/local-search.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://fastly.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://fastly.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://fastly.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>

@@ -18,8 +18,8 @@
   
   <entry>
     <title>Go语言原生http库的网络请求</title>
-    <link href="https://www.kimtoli.com/2022/05/25/823afe6e65af/"/>
-    <id>https://www.kimtoli.com/2022/05/25/823afe6e65af/</id>
+    <link href="https://www.kimtoli.com/posts/28711/"/>
+    <id>https://www.kimtoli.com/posts/28711/</id>
     <published>2022-05-25T05:13:10.000Z</published>
     <updated>2022-06-01T13:39:26.268Z</updated>
     
@@ -42,10 +42,10 @@
   
   <entry>
     <title>MacOS系统环境，批量替换文件种的字符串</title>
-    <link href="https://www.kimtoli.com/2022/05/23/e89773f480e9/"/>
-    <id>https://www.kimtoli.com/2022/05/23/e89773f480e9/</id>
+    <link href="https://www.kimtoli.com/posts/d2cb55ec/"/>
+    <id>https://www.kimtoli.com/posts/d2cb55ec/</id>
     <published>2022-05-23T10:03:20.000Z</published>
-    <updated>2022-06-01T13:40:29.839Z</updated>
+    <updated>2022-06-02T09:04:14.634Z</updated>
     
     <content type="html"><![CDATA[<p>先用终端CD到需要操作的目录</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -67,8 +67,8 @@
   
   <entry>
     <title>vue框架使用B站开源项目flv.js拉视频流</title>
-    <link href="https://www.kimtoli.com/2022/05/02/3a1c388b9baa/"/>
-    <id>https://www.kimtoli.com/2022/05/02/3a1c388b9baa/</id>
+    <link href="https://www.kimtoli.com/posts/28435/"/>
+    <id>https://www.kimtoli.com/posts/28435/</id>
     <published>2022-05-01T17:08:32.000Z</published>
     <updated>2022-06-01T13:40:39.140Z</updated>
     
@@ -91,8 +91,8 @@
   
   <entry>
     <title>关于hexo d出现SSL:443的报错终极解决方案</title>
-    <link href="https://www.kimtoli.com/2022/04/25/a49a42aa59c4/"/>
-    <id>https://www.kimtoli.com/2022/04/25/a49a42aa59c4/</id>
+    <link href="https://www.kimtoli.com/posts/34393/"/>
+    <id>https://www.kimtoli.com/posts/34393/</id>
     <published>2022-04-25T08:03:22.000Z</published>
     <updated>2022-06-01T13:38:33.500Z</updated>
     
@@ -115,8 +115,8 @@
   
   <entry>
     <title>那些爱情观超级正的句子</title>
-    <link href="https://www.kimtoli.com/2022/04/25/d7971d2240bb/"/>
-    <id>https://www.kimtoli.com/2022/04/25/d7971d2240bb/</id>
+    <link href="https://www.kimtoli.com/posts/33701/"/>
+    <id>https://www.kimtoli.com/posts/33701/</id>
     <published>2022-04-25T07:35:22.000Z</published>
     <updated>2022-06-01T13:38:57.042Z</updated>
     
@@ -140,8 +140,8 @@
   
   <entry>
     <title>做自己情绪的主人，不要被情绪伤害到自己和身边的人！</title>
-    <link href="https://www.kimtoli.com/2022/04/20/f6eb36481dbb/"/>
-    <id>https://www.kimtoli.com/2022/04/20/f6eb36481dbb/</id>
+    <link href="https://www.kimtoli.com/posts/56281/"/>
+    <id>https://www.kimtoli.com/posts/56281/</id>
     <published>2022-04-20T06:10:18.000Z</published>
     <updated>2022-06-01T13:39:18.318Z</updated>
     
@@ -165,8 +165,8 @@
   
   <entry>
     <title>Golang实战案例：用Golang实现用户登录验证</title>
-    <link href="https://www.kimtoli.com/2022/04/11/8ce30903afbf/"/>
-    <id>https://www.kimtoli.com/2022/04/11/8ce30903afbf/</id>
+    <link href="https://www.kimtoli.com/posts/49730/"/>
+    <id>https://www.kimtoli.com/posts/49730/</id>
     <published>2022-04-11T01:28:54.000Z</published>
     <updated>2022-06-01T13:39:44.576Z</updated>
     
@@ -189,8 +189,8 @@
   
   <entry>
     <title>Golang连接mysql数据库</title>
-    <link href="https://www.kimtoli.com/2022/04/06/64dd2dcf1241/"/>
-    <id>https://www.kimtoli.com/2022/04/06/64dd2dcf1241/</id>
+    <link href="https://www.kimtoli.com/posts/58986/"/>
+    <id>https://www.kimtoli.com/posts/58986/</id>
     <published>2022-04-06T06:56:53.000Z</published>
     <updated>2022-06-01T13:39:33.467Z</updated>
     
@@ -213,8 +213,8 @@
   
   <entry>
     <title>macOS环境下的ssh配置</title>
-    <link href="https://www.kimtoli.com/2022/04/06/92812954a869/"/>
-    <id>https://www.kimtoli.com/2022/04/06/92812954a869/</id>
+    <link href="https://www.kimtoli.com/posts/42683/"/>
+    <id>https://www.kimtoli.com/posts/42683/</id>
     <published>2022-04-06T05:46:14.000Z</published>
     <updated>2022-06-01T13:40:17.206Z</updated>
     
@@ -237,8 +237,8 @@
   
   <entry>
     <title>2022年了，还会有人不了解短视频运营吗</title>
-    <link href="https://www.kimtoli.com/2022/04/02/ccd9ff6b80fc/"/>
-    <id>https://www.kimtoli.com/2022/04/02/ccd9ff6b80fc/</id>
+    <link href="https://www.kimtoli.com/posts/40410/"/>
+    <id>https://www.kimtoli.com/posts/40410/</id>
     <published>2022-04-02T15:57:02.000Z</published>
     <updated>2022-06-01T13:38:24.413Z</updated>
     
@@ -262,8 +262,8 @@
   
   <entry>
     <title>Mac下Homebrew常用命令</title>
-    <link href="https://www.kimtoli.com/2022/03/01/b0ae6af3502b/"/>
-    <id>https://www.kimtoli.com/2022/03/01/b0ae6af3502b/</id>
+    <link href="https://www.kimtoli.com/posts/1269/"/>
+    <id>https://www.kimtoli.com/posts/1269/</id>
     <published>2022-03-01T03:08:38.000Z</published>
     <updated>2022-06-01T13:40:07.507Z</updated>
     
@@ -286,8 +286,8 @@
   
   <entry>
     <title>微信多开解决方案</title>
-    <link href="https://www.kimtoli.com/2022/02/24/9d1c410f8e59/"/>
-    <id>https://www.kimtoli.com/2022/02/24/9d1c410f8e59/</id>
+    <link href="https://www.kimtoli.com/posts/63138/"/>
+    <id>https://www.kimtoli.com/posts/63138/</id>
     <published>2022-02-24T08:42:36.000Z</published>
     <updated>2022-06-01T13:39:11.682Z</updated>
     
@@ -310,8 +310,8 @@
   
   <entry>
     <title>hexo常用命令</title>
-    <link href="https://www.kimtoli.com/2022/02/18/3ca0d4b2c93f/"/>
-    <id>https://www.kimtoli.com/2022/02/18/3ca0d4b2c93f/</id>
+    <link href="https://www.kimtoli.com/posts/33f59116/"/>
+    <id>https://www.kimtoli.com/posts/33f59116/</id>
     <published>2022-02-18T02:02:54.000Z</published>
     <updated>2022-06-01T13:39:51.368Z</updated>
     
@@ -335,8 +335,8 @@
   
   <entry>
     <title>win11命令行激活</title>
-    <link href="https://www.kimtoli.com/2022/02/16/c177b9827d5a/"/>
-    <id>https://www.kimtoli.com/2022/02/16/c177b9827d5a/</id>
+    <link href="https://www.kimtoli.com/posts/dd02cd92/"/>
+    <id>https://www.kimtoli.com/posts/dd02cd92/</id>
     <published>2022-02-16T03:16:25.000Z</published>
     <updated>2022-06-01T13:40:46.290Z</updated>
     
@@ -363,8 +363,8 @@
   
   <entry>
     <title>记录一下Markdown代码高亮</title>
-    <link href="https://www.kimtoli.com/2022/01/24/6569c0fc0445/"/>
-    <id>https://www.kimtoli.com/2022/01/24/6569c0fc0445/</id>
+    <link href="https://www.kimtoli.com/posts/b7689663/"/>
+    <id>https://www.kimtoli.com/posts/b7689663/</id>
     <published>2022-01-24T09:27:15.000Z</published>
     <updated>2022-06-01T13:38:39.526Z</updated>
     
@@ -387,8 +387,8 @@
   
   <entry>
     <title>开始使用hexo框架做个人博客了</title>
-    <link href="https://www.kimtoli.com/2022/01/23/a38ecb549ebc/"/>
-    <id>https://www.kimtoli.com/2022/01/23/a38ecb549ebc/</id>
+    <link href="https://www.kimtoli.com/posts/24db9c80/"/>
+    <id>https://www.kimtoli.com/posts/24db9c80/</id>
     <published>2022-01-23T10:38:45.000Z</published>
     <updated>2022-06-01T13:38:46.504Z</updated>
     
