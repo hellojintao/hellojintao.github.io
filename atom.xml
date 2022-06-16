@@ -6,7 +6,7 @@
   <link href="https://www.kimtoli.com/atom.xml" rel="self"/>
   
   <link href="https://www.kimtoli.com/"/>
-  <updated>2022-06-16T03:30:04.231Z</updated>
+  <updated>2022-06-16T03:31:44.956Z</updated>
   <id>https://www.kimtoli.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.kimtoli.com/posts/dd02cd92/"/>
     <id>https://www.kimtoli.com/posts/dd02cd92/</id>
     <published>2022-06-16T03:30:01.000Z</published>
-    <updated>2022-06-16T03:30:04.231Z</updated>
+    <updated>2022-06-16T03:31:44.956Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1.卸载系统自带密钥</p><p><code>slmgr.vbs /upk</code></p><p>2.安装新密钥</p><p><code>slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</code></p><p>3.指定激活服务器</p><p><code>slmgr /skms kms.03k.org</code></p><p>4.激活系统</p><p><code>slmgr /ato</code></p><p>备用密钥如下：</p><p>Win11专业版：<code>VK7JG-NPHTM-C97JM-9MPGT-3V66T</code></p><p>Win10：<code>PVMJN-6DFY6-9CCP6-7BKTT-D3WVR</code></p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1.卸载系统自带密钥</p><p><code>slmgr.vbs /upk</code></p><p>2.安装新密钥</p><p><code>slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</code></p><p>3.指定激活服务器</p><p><code>slmgr /skms kms.03k.org</code></p><p>4.激活系统</p><p><code>slmgr /ato</code></p><p>备用密钥如下：</p><p>Win11专业版：<code>VK7JG-NPHTM-C97JM-9MPGT-3V66T</code></p><p>Win10专业版：<code>W2Q8R-TMQXF-BTDMR-Y69TP-7JGCB</code></p>]]></content>
     
     
       
