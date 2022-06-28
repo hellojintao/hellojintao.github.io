@@ -73,43 +73,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MacOS系统环境，批量替换文件种的字符串</title>
-    <url>/posts/d2cb55ec/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>先用终端CD到需要操作的目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>系统运维</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mac下Homebrew常用命令</title>
-    <url>/posts/1269/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>brewhome国内镜像</strong><br>&#x2F;bin&#x2F;zsh -c “$(curl -fsSL <a href="https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;">https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</a></p>
-<p><strong>查看帮助信息</strong><br>brew help</p>
-<p><strong>查看版本</strong><br>brew -v</p>
-<p><strong>更新brew</strong><br>brew update</p>
-<p><strong>安装</strong><br>brew install XX</p>
-<p><strong>查询可更新的包</strong><br>brew outdated</p>
-<p><strong>更新包</strong><br>brew upgrade 全部<br>brew upgrade 包名 指定包</p>
-<p><strong>清理旧版本</strong><br>brew cleanup</p>
-<h5 id="锁定不想更新的包"><a href="#锁定不想更新的包" class="headerlink" title="锁定不想更新的包"></a><strong>锁定不想更新的包</strong></h5><p><strong>锁定某个包</strong><br>brew pin $FORMULA<br><strong>取消锁定</strong><br>brew unpin $FORMULA<br><strong>查看包信息</strong><br>brew info 包名</p>
-<p><strong>查看安装列表</strong><br>brew list</p>
-<p><strong>查询可用包</strong><br>brew search [包名]</p>
-<h5 id="服务管理"><a href="#服务管理" class="headerlink" title="服务管理"></a><strong>服务管理</strong></h5><p><strong>查看服务列表</strong><br>brew services list<br><strong>启动服务</strong><br>brew services start 服务名<br><strong>停止服务</strong><br>brew services stop 服务名<br><strong>重启服务</strong><br>brew services restart 服务名<br><strong>清除已卸载应用无用的配置</strong><br>brew services cleanup</p>
-]]></content>
-      <categories>
-        <category>技术开发</category>
-      </categories>
-      <tags>
-        <tag>Homebrew</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Win11命令行激活</title>
     <url>/posts/dd02cd92/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1.卸载系统自带密钥</p>
@@ -144,6 +107,43 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MacOS系统环境，批量替换文件种的字符串</title>
+    <url>/posts/d2cb55ec/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>先用终端CD到需要操作的目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>系统运维</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac下Homebrew常用命令</title>
+    <url>/posts/1269/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>brewhome国内镜像</strong><br>&#x2F;bin&#x2F;zsh -c “$(curl -fsSL <a href="https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;">https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</a></p>
+<p><strong>查看帮助信息</strong><br>brew help</p>
+<p><strong>查看版本</strong><br>brew -v</p>
+<p><strong>更新brew</strong><br>brew update</p>
+<p><strong>安装</strong><br>brew install XX</p>
+<p><strong>查询可更新的包</strong><br>brew outdated</p>
+<p><strong>更新包</strong><br>brew upgrade 全部<br>brew upgrade 包名 指定包</p>
+<p><strong>清理旧版本</strong><br>brew cleanup</p>
+<h5 id="锁定不想更新的包"><a href="#锁定不想更新的包" class="headerlink" title="锁定不想更新的包"></a><strong>锁定不想更新的包</strong></h5><p><strong>锁定某个包</strong><br>brew pin $FORMULA<br><strong>取消锁定</strong><br>brew unpin $FORMULA<br><strong>查看包信息</strong><br>brew info 包名</p>
+<p><strong>查看安装列表</strong><br>brew list</p>
+<p><strong>查询可用包</strong><br>brew search [包名]</p>
+<h5 id="服务管理"><a href="#服务管理" class="headerlink" title="服务管理"></a><strong>服务管理</strong></h5><p><strong>查看服务列表</strong><br>brew services list<br><strong>启动服务</strong><br>brew services start 服务名<br><strong>停止服务</strong><br>brew services stop 服务名<br><strong>重启服务</strong><br>brew services restart 服务名<br><strong>清除已卸载应用无用的配置</strong><br>brew services cleanup</p>
+]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
+      <tags>
+        <tag>Homebrew</tag>
       </tags>
   </entry>
   <entry>
@@ -547,6 +547,22 @@
       </categories>
       <tags>
         <tag>情感随记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿里云OSS图床url无法预览解决方案</title>
+    <url>/posts/a94ab2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>阿里云OSS做图床的优势就是国内访问速度比较快，但是细心的同学会发现，在用浏览器访问图片地址的时候是直接跳转了下载而不是预览，这个就有点难受了，解决方式有2个，写文章记录一下。</p>
+<h3 id="方式一：绑定已备案的域名"><a href="#方式一：绑定已备案的域名" class="headerlink" title="方式一：绑定已备案的域名"></a>方式一：绑定已备案的域名</h3><p>首先需要在Bucket列表里面进入图床的存储桶，然后在左侧边栏找到传输管理-域名管理,按照下图绑定域名后，再打开地址就可以预览，而不是下载图片文件了，但是域名必须经过了备案。</p>
+<p><img src="https://kimto.oss-cn-qingdao.aliyuncs.com/img/202206281632074.png" alt="image-20220628163221744" style="zoom:33%;" /><img src="https://kimto.oss-cn-qingdao.aliyuncs.com/img/202206281633667.png" alt="image-20220628163352631" style="zoom:33%;" /></p>
+<h3 id="方式二：手动设置head-http头"><a href="#方式二：手动设置head-http头" class="headerlink" title="方式二：手动设置head-http头"></a>方式二：手动设置head-http头</h3><p>首先你在上传到阿里云OSS图片后，阿里云存储图片时<strong>Content-Type</strong>属性是以<strong>image&#x2F;jpeg</strong>储存，所以访问会直接下载，我们如果把请求头<strong>Content-Type</strong>属性设置成<strong>image&#x2F;jpg</strong>，这种方式需要手动调整有点麻烦，其实阿里云官方也做了处理方案，但是我个人觉得还是有点麻烦。。。所以长期用的话，建议还是绑定备案域名。</p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>图床</tag>
+        <tag>阿里云OSS</tag>
       </tags>
   </entry>
 </search>
