@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Kimto blog</title>
+  <title>卿以君歌</title>
   
-  <subtitle>李金涛博客</subtitle>
+  <subtitle>Kimto Blog</subtitle>
   <link href="https://www.kimtoli.com/atom.xml" rel="self"/>
   
   <link href="https://www.kimtoli.com/"/>
@@ -10,7 +10,7 @@
   <id>https://www.kimtoli.com/</id>
   
   <author>
-    <name>Kimto Lee</name>
+    <name>Kimto Li</name>
     
   </author>
   
