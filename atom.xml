@@ -6,7 +6,7 @@
   <link href="https://www.kimtoli.com/atom.xml" rel="self"/>
   
   <link href="https://www.kimtoli.com/"/>
-  <updated>2022-06-29T06:06:42.969Z</updated>
+  <updated>2022-06-29T06:06:52.966Z</updated>
   <id>https://www.kimtoli.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.kimtoli.com/posts/bd442ae4/"/>
     <id>https://www.kimtoli.com/posts/bd442ae4/</id>
     <published>2022-06-29T06:00:31.000Z</published>
-    <updated>2022-06-29T06:06:42.969Z</updated>
+    <updated>2022-06-29T06:06:52.966Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有时候写博客有些内容不是给别人看的，只是为了丰富自己的知识库，需要用到隐藏主页显示博客的功能，网上找了几个方式，改了个最合适最简单的，记录一下。</p><p>忘记说，仅限butterfly主题哈，其他主题的配置文件目录不一定在哪。</p><h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>需要先定位到 <code>themes/butterfly/layout/includes/mixins/post-ui.pug</code></p><p>需要添加一行条件判断代码 <code>if article.hide !== true</code>，需要保证缩进关系属于递进。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mixin <span class="title function_">postUI</span>(posts)</span><br><span class="line">  each article , index <span class="keyword">in</span> page.<span class="property">posts</span>.<span class="property">data</span></span><br><span class="line">    <span class="keyword">if</span> article.<span class="property">hide</span> !== <span class="literal">true</span></span><br><span class="line">      .<span class="property">recent</span>-post-item</span><br></pre></td></tr></table></figure><h3 id="配置文章"><a href="#配置文章" class="headerlink" title="配置文章"></a>配置文章</h3><p>在文章md文件的头部信息中加入hide: true的属性</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 隐藏部分文章不在首页显示</span><br><span class="line">hide: true</span><br><span class="line"><span class="section">date: 2022-06-29 14:00:31</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure><h3 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h3><p>重新hexo d一下，你会发现只要文章配置了hide: true的都不在主页显示了，但是归档页还是可以看到的，另外如果设置了标签和分类，从对应页面也是可以看到的。</p>]]></content>
     
@@ -45,7 +45,7 @@
     <link href="https://www.kimtoli.com/posts/c13a618d/"/>
     <id>https://www.kimtoli.com/posts/c13a618d/</id>
     <published>2022-06-29T05:34:14.000Z</published>
-    <updated>2022-06-29T05:54:29.262Z</updated>
+    <updated>2022-06-29T06:08:17.946Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="结算方式与服务费"><a href="#结算方式与服务费" class="headerlink" title="结算方式与服务费"></a>结算方式与服务费</h3><table><thead><tr><th>结算方式</th><th>服务费标准</th><th>示例</th></tr></thead><tbody><tr><td>按单结算</td><td>15%</td><td>单价100元，实际结算85元，此单服务费15元</td></tr></tbody></table><h3 id="关于接单押金"><a href="#关于接单押金" class="headerlink" title="关于接单押金"></a>关于接单押金</h3><table><thead><tr><th>免押金</th><th>10%押金</th></tr></thead><tbody><tr><td><strong>中短途免押陪练&#x2F;代练</strong>（10星以内）</td><td>10星内普通陪练&#x2F;代练以及10星外所有代练&#x2F;陪练</td></tr></tbody></table>]]></content>
     
@@ -57,6 +57,8 @@
     
     
     
+    
+    <category term="游戏陪玩" scheme="https://www.kimtoli.com/tags/%E6%B8%B8%E6%88%8F%E9%99%AA%E7%8E%A9/"/>
     
   </entry>
   
