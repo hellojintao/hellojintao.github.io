@@ -73,6 +73,20 @@
       </tags>
   </entry>
   <entry>
+    <title>MacOS系统环境，批量替换文件种的字符串</title>
+    <url>/posts/d2cb55ec/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>先用终端CD到需要操作的目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>系统运维</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Win11命令行激活</title>
     <url>/posts/dd02cd92/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1.卸载系统自带密钥</p>
@@ -110,20 +124,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MacOS系统环境，批量替换文件种的字符串</title>
-    <url>/posts/d2cb55ec/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>先用终端CD到需要操作的目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>系统运维</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Mac下Homebrew常用命令</title>
     <url>/posts/1269/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>brewhome国内镜像</strong><br>&#x2F;bin&#x2F;zsh -c “$(curl -fsSL <a href="https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;">https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</a></p>
@@ -144,20 +144,6 @@
       </categories>
       <tags>
         <tag>Homebrew</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macOS环境下的ssh配置</title>
-    <url>/posts/42683/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="查看本机有没有ssh秘钥"><a href="#查看本机有没有ssh秘钥" class="headerlink" title="查看本机有没有ssh秘钥"></a>查看本机有没有ssh秘钥</h4><p>终端输入以下内容并<code>cd ~/.ssh</code>回车，如果能打开说明是有ssh文件的</p>
-<h4 id="查看已生成的ssh秘钥"><a href="#查看已生成的ssh秘钥" class="headerlink" title="查看已生成的ssh秘钥"></a>查看已生成的ssh秘钥</h4><p><code>cat /Users/电脑用户名/.ssh/id_rsa.pub</code></p>
-<h4 id="生成新的ssh秘钥"><a href="#生成新的ssh秘钥" class="headerlink" title="生成新的ssh秘钥"></a>生成新的ssh秘钥</h4><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p>
-]]></content>
-      <categories>
-        <category>技术开发</category>
-      </categories>
-      <tags>
-        <tag>ssh</tag>
       </tags>
   </entry>
   <entry>
@@ -455,6 +441,20 @@
       </categories>
       <tags>
         <tag>flv.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macOS环境下的ssh配置</title>
+    <url>/posts/42683/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="查看本机有没有ssh秘钥"><a href="#查看本机有没有ssh秘钥" class="headerlink" title="查看本机有没有ssh秘钥"></a>查看本机有没有ssh秘钥</h4><p>终端输入以下内容并<code>cd ~/.ssh</code>回车，如果能打开说明是有ssh文件的</p>
+<h4 id="查看已生成的ssh秘钥"><a href="#查看已生成的ssh秘钥" class="headerlink" title="查看已生成的ssh秘钥"></a>查看已生成的ssh秘钥</h4><p><code>cat /Users/电脑用户名/.ssh/id_rsa.pub</code></p>
+<h4 id="生成新的ssh秘钥"><a href="#生成新的ssh秘钥" class="headerlink" title="生成新的ssh秘钥"></a>生成新的ssh秘钥</h4><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p>
+]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
+      <tags>
+        <tag>ssh</tag>
       </tags>
   </entry>
   <entry>
