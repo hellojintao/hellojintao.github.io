@@ -87,29 +87,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Mac下Homebrew常用命令</title>
-    <url>/posts/1269/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>brewhome国内镜像</strong><br>&#x2F;bin&#x2F;zsh -c “$(curl -fsSL <a href="https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;">https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</a></p>
-<p><strong>查看帮助信息</strong><br>brew help</p>
-<p><strong>查看版本</strong><br>brew -v</p>
-<p><strong>更新brew</strong><br>brew update</p>
-<p><strong>安装</strong><br>brew install XX</p>
-<p><strong>查询可更新的包</strong><br>brew outdated</p>
-<p><strong>更新包</strong><br>brew upgrade 全部<br>brew upgrade 包名 指定包</p>
-<p><strong>清理旧版本</strong><br>brew cleanup</p>
-<h5 id="锁定不想更新的包"><a href="#锁定不想更新的包" class="headerlink" title="锁定不想更新的包"></a><strong>锁定不想更新的包</strong></h5><p><strong>锁定某个包</strong><br>brew pin $FORMULA<br><strong>取消锁定</strong><br>brew unpin $FORMULA<br><strong>查看包信息</strong><br>brew info 包名</p>
-<p><strong>查看安装列表</strong><br>brew list</p>
-<p><strong>查询可用包</strong><br>brew search [包名]</p>
-<h5 id="服务管理"><a href="#服务管理" class="headerlink" title="服务管理"></a><strong>服务管理</strong></h5><p><strong>查看服务列表</strong><br>brew services list<br><strong>启动服务</strong><br>brew services start 服务名<br><strong>停止服务</strong><br>brew services stop 服务名<br><strong>重启服务</strong><br>brew services restart 服务名<br><strong>清除已卸载应用无用的配置</strong><br>brew services cleanup</p>
-]]></content>
-      <categories>
-        <category>技术开发</category>
-      </categories>
-      <tags>
-        <tag>Homebrew</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Win11命令行激活</title>
     <url>/posts/dd02cd92/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1.卸载系统自带密钥</p>
@@ -147,17 +124,47 @@
       </tags>
   </entry>
   <entry>
-    <title>macOS环境下的ssh配置</title>
-    <url>/posts/42683/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="查看本机有没有ssh秘钥"><a href="#查看本机有没有ssh秘钥" class="headerlink" title="查看本机有没有ssh秘钥"></a>查看本机有没有ssh秘钥</h4><p>终端输入以下内容并<code>cd ~/.ssh</code>回车，如果能打开说明是有ssh文件的</p>
-<h4 id="查看已生成的ssh秘钥"><a href="#查看已生成的ssh秘钥" class="headerlink" title="查看已生成的ssh秘钥"></a>查看已生成的ssh秘钥</h4><p><code>cat /Users/电脑用户名/.ssh/id_rsa.pub</code></p>
-<h4 id="生成新的ssh秘钥"><a href="#生成新的ssh秘钥" class="headerlink" title="生成新的ssh秘钥"></a>生成新的ssh秘钥</h4><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p>
+    <title>Mac下Homebrew常用命令</title>
+    <url>/posts/1269/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>brewhome国内镜像</strong><br>&#x2F;bin&#x2F;zsh -c “$(curl -fsSL <a href="https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;">https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</a></p>
+<p><strong>查看帮助信息</strong><br>brew help</p>
+<p><strong>查看版本</strong><br>brew -v</p>
+<p><strong>更新brew</strong><br>brew update</p>
+<p><strong>安装</strong><br>brew install XX</p>
+<p><strong>查询可更新的包</strong><br>brew outdated</p>
+<p><strong>更新包</strong><br>brew upgrade 全部<br>brew upgrade 包名 指定包</p>
+<p><strong>清理旧版本</strong><br>brew cleanup</p>
+<h5 id="锁定不想更新的包"><a href="#锁定不想更新的包" class="headerlink" title="锁定不想更新的包"></a><strong>锁定不想更新的包</strong></h5><p><strong>锁定某个包</strong><br>brew pin $FORMULA<br><strong>取消锁定</strong><br>brew unpin $FORMULA<br><strong>查看包信息</strong><br>brew info 包名</p>
+<p><strong>查看安装列表</strong><br>brew list</p>
+<p><strong>查询可用包</strong><br>brew search [包名]</p>
+<h5 id="服务管理"><a href="#服务管理" class="headerlink" title="服务管理"></a><strong>服务管理</strong></h5><p><strong>查看服务列表</strong><br>brew services list<br><strong>启动服务</strong><br>brew services start 服务名<br><strong>停止服务</strong><br>brew services stop 服务名<br><strong>重启服务</strong><br>brew services restart 服务名<br><strong>清除已卸载应用无用的配置</strong><br>brew services cleanup</p>
 ]]></content>
       <categories>
         <category>技术开发</category>
       </categories>
       <tags>
-        <tag>ssh</tag>
+        <tag>Homebrew</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>优雅的隐藏部分文章不在首页显示</title>
+    <url>/posts/bd442ae4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有时候写博客有些内容不是给别人看的，只是为了丰富自己的知识库，需要用到隐藏主页显示博客的功能，网上找了几个方式，改了个最合适最简单的，记录一下。</p>
+<p>忘记说，仅限butterfly主题哈，其他主题的配置文件目录不一定在哪。</p>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>需要先定位到 <code>themes/butterfly/layout/includes/mixins/post-ui.pug</code></p>
+<p>需要添加一行条件判断代码 <code>if article.hide !== true</code>，需要保证缩进关系属于递进。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">mixin <span class="title function_">postUI</span>(posts)</span><br><span class="line">  each article , index <span class="keyword">in</span> page.<span class="property">posts</span>.<span class="property">data</span></span><br><span class="line">    <span class="keyword">if</span> article.<span class="property">hide</span> !== <span class="literal">true</span></span><br><span class="line">      .<span class="property">recent</span>-post-item</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置文章"><a href="#配置文章" class="headerlink" title="配置文章"></a>配置文章</h3><p>在文章md文件的头部信息中加入hide: true的属性</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 隐藏部分文章不在首页显示</span><br><span class="line">hide: true</span><br><span class="line"><span class="section">date: 2022-06-29 14:00:31</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h3><p>重新hexo d一下，你会发现只要文章配置了hide: true的都不在主页显示了，但是归档页还是可以看到的，另外如果设置了标签和分类，从对应页面也是可以看到的。</p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -458,18 +465,9 @@
       </tags>
   </entry>
   <entry>
-    <title>优雅的隐藏部分文章不在首页显示</title>
-    <url>/posts/bd442ae4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有时候写博客有些内容不是给别人看的，只是为了丰富自己的知识库，需要用到隐藏主页显示博客的功能，网上找了几个方式，改了个最合适最简单的，记录一下。</p>
-<p>忘记说，仅限butterfly主题哈，其他主题的配置文件目录不一定在哪。</p>
-<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>需要先定位到 <code>themes/butterfly/layout/includes/mixins/post-ui.pug</code></p>
-<p>需要添加一行条件判断代码 <code>if article.hide !== true</code>，需要保证缩进关系属于递进。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">mixin <span class="title function_">postUI</span>(posts)</span><br><span class="line">  each article , index <span class="keyword">in</span> page.<span class="property">posts</span>.<span class="property">data</span></span><br><span class="line">    <span class="keyword">if</span> article.<span class="property">hide</span> !== <span class="literal">true</span></span><br><span class="line">      .<span class="property">recent</span>-post-item</span><br></pre></td></tr></table></figure>
-
-<h3 id="配置文章"><a href="#配置文章" class="headerlink" title="配置文章"></a>配置文章</h3><p>在文章md文件的头部信息中加入hide: true的属性</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 隐藏部分文章不在首页显示</span><br><span class="line">hide: true</span><br><span class="line"><span class="section">date: 2022-06-29 14:00:31</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h3><p>重新hexo d一下，你会发现只要文章配置了hide: true的都不在主页显示了，但是归档页还是可以看到的，另外如果设置了标签和分类，从对应页面也是可以看到的。</p>
+    <title>开始使用hexo框架做个人博客了</title>
+    <url>/posts/24db9c80/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>z-blog虽然写作方便，但是毕竟没有几个能看的主题，最重要的是居然还都要钱。。<br>“要钱谁跟你玩啊？”“对不对”<br>就是之前写的文章不能搬家了，2022从头开始</p>
 ]]></content>
       <categories>
         <category>博客</category>
@@ -498,43 +496,17 @@
       </tags>
   </entry>
   <entry>
-    <title>关于hexo d出现SSL:443的报错终极解决方案</title>
-    <url>/posts/34393/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>网上的hexo部署教程都是把repo项的Github地址设置成https地址，我用了一段时间之后发现，因为大陆的政策问题（你懂的）会导致在执行hexo d部署项目的时候提示代码超时，很头疼啊，也不可能一直搭梯子啊，再说也不稳定，后来在从CSDN上找到了解决思路，把repo项的Github地址设置成Git地址就很丝滑了。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line"></span><br><span class="line"><span class="string">​</span>    <span class="attr">github:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://pic.imgdb.cn/item/626657b9239250f7c522788f.png" alt="image-20220425155956939"></p>
+    <title>macOS环境下的ssh配置</title>
+    <url>/posts/42683/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="查看本机有没有ssh秘钥"><a href="#查看本机有没有ssh秘钥" class="headerlink" title="查看本机有没有ssh秘钥"></a>查看本机有没有ssh秘钥</h4><p>终端输入以下内容并<code>cd ~/.ssh</code>回车，如果能打开说明是有ssh文件的</p>
+<h4 id="查看已生成的ssh秘钥"><a href="#查看已生成的ssh秘钥" class="headerlink" title="查看已生成的ssh秘钥"></a>查看已生成的ssh秘钥</h4><p><code>cat /Users/电脑用户名/.ssh/id_rsa.pub</code></p>
+<h4 id="生成新的ssh秘钥"><a href="#生成新的ssh秘钥" class="headerlink" title="生成新的ssh秘钥"></a>生成新的ssh秘钥</h4><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p>
 ]]></content>
       <categories>
-        <category>博客</category>
+        <category>技术开发</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>开始使用hexo框架做个人博客了</title>
-    <url>/posts/24db9c80/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>z-blog虽然写作方便，但是毕竟没有几个能看的主题，最重要的是居然还都要钱。。<br>“要钱谁跟你玩啊？”“对不对”<br>就是之前写的文章不能搬家了，2022从头开始</p>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信多开解决方案</title>
-    <url>/posts/63138/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h5 id="Macos系统"><a href="#Macos系统" class="headerlink" title="Macos系统"></a><strong>Macos系统</strong></h5><p>复制下面的保存为.sh格式，用的时候拖放到终端里面运行就行<br><code>#!/bin/bash echo &quot;正在打开新的微信！！！&quot; nohup /Applications/WeChat.app/Contents/MacOS/WeChat &gt; /dev/null 2&gt;&amp;1 &amp;</code></p>
-<h5 id="Windows系统"><a href="#Windows系统" class="headerlink" title="Windows系统"></a><strong>Windows系统</strong></h5><p>桌面新建一个文本文档，多开几个复制几行，另存为bat文件<br><code>start &quot;&quot; &quot;C:\Program Files (x86)\Tencent\WeChat\WeChat.exe&quot;</code></p>
-]]></content>
-      <categories>
-        <category>网络技巧</category>
-      </categories>
-      <tags>
-        <tag>奇淫技巧</tag>
+        <tag>ssh</tag>
       </tags>
   </entry>
   <entry>
@@ -572,6 +544,50 @@
       </tags>
   </entry>
   <entry>
+    <title>关于hexo d出现SSL:443的报错终极解决方案</title>
+    <url>/posts/34393/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>网上的hexo部署教程都是把repo项的Github地址设置成https地址，我用了一段时间之后发现，因为大陆的政策问题（你懂的）会导致在执行hexo d部署项目的时候提示代码超时，很头疼啊，也不可能一直搭梯子啊，再说也不稳定，后来在从CSDN上找到了解决思路，把repo项的Github地址设置成Git地址就很丝滑了。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line"></span><br><span class="line"><span class="string">​</span>    <span class="attr">github:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/626657b9239250f7c522788f.png" alt="image-20220425155956939"></p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信多开解决方案</title>
+    <url>/posts/63138/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h5 id="Macos系统"><a href="#Macos系统" class="headerlink" title="Macos系统"></a><strong>Macos系统</strong></h5><p>复制下面的保存为.sh格式，用的时候拖放到终端里面运行就行<br><code>#!/bin/bash echo &quot;正在打开新的微信！！！&quot; nohup /Applications/WeChat.app/Contents/MacOS/WeChat &gt; /dev/null 2&gt;&amp;1 &amp;</code></p>
+<h5 id="Windows系统"><a href="#Windows系统" class="headerlink" title="Windows系统"></a><strong>Windows系统</strong></h5><p>桌面新建一个文本文档，多开几个复制几行，另存为bat文件<br><code>start &quot;&quot; &quot;C:\Program Files (x86)\Tencent\WeChat\WeChat.exe&quot;</code></p>
+]]></content>
+      <categories>
+        <category>网络技巧</category>
+      </categories>
+      <tags>
+        <tag>奇淫技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿里云OSS图床url无法预览解决方案</title>
+    <url>/posts/a94ab2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>阿里云OSS做图床的优势就是国内访问速度比较快，但是细心的同学会发现，在用浏览器访问图片地址的时候是直接跳转了下载而不是预览，这个就有点难受了，解决方式有2个，写文章记录一下。</p>
+<h3 id="方式一：绑定已备案的域名"><a href="#方式一：绑定已备案的域名" class="headerlink" title="方式一：绑定已备案的域名"></a>方式一：绑定已备案的域名</h3><p>首先需要在Bucket列表里面进入图床的存储桶，然后在左侧边栏找到传输管理-域名管理,按照下图绑定域名后，再打开地址就可以预览，而不是下载图片文件了，但是域名必须经过了备案。</p>
+<p><img src="https://kimto.oss-cn-qingdao.aliyuncs.com/img/202206281632074.png" alt="image-20220628163221744" style="zoom:33%;" /><img src="https://kimto.oss-cn-qingdao.aliyuncs.com/img/202206281633667.png" alt="image-20220628163352631" style="zoom:33%;" /></p>
+<h3 id="方式二：手动设置head-http头"><a href="#方式二：手动设置head-http头" class="headerlink" title="方式二：手动设置head-http头"></a>方式二：手动设置head-http头</h3><p>首先你在上传到阿里云OSS图片后，阿里云存储图片时<strong>Content-Type</strong>属性是以<strong>image&#x2F;jpeg</strong>储存，所以访问会直接下载，我们如果把请求头<strong>Content-Type</strong>属性设置成<strong>image&#x2F;jpg</strong>，这种方式需要手动调整有点麻烦，其实阿里云官方也做了处理方案，但是我个人觉得还是有点麻烦。。。所以长期用的话，建议还是绑定备案域名。</p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>图床</tag>
+        <tag>阿里云OSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>记录一下Markdown代码高亮</title>
     <url>/posts/b7689663/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>下面写的是python的代码块语法高亮</strong><br> <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>);</span><br></pre></td></tr></table></figure><br><strong>做法就是在三个引号的后面标注一下语言</strong></p>
@@ -602,22 +618,6 @@
       </categories>
       <tags>
         <tag>情感随记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阿里云OSS图床url无法预览解决方案</title>
-    <url>/posts/a94ab2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>阿里云OSS做图床的优势就是国内访问速度比较快，但是细心的同学会发现，在用浏览器访问图片地址的时候是直接跳转了下载而不是预览，这个就有点难受了，解决方式有2个，写文章记录一下。</p>
-<h3 id="方式一：绑定已备案的域名"><a href="#方式一：绑定已备案的域名" class="headerlink" title="方式一：绑定已备案的域名"></a>方式一：绑定已备案的域名</h3><p>首先需要在Bucket列表里面进入图床的存储桶，然后在左侧边栏找到传输管理-域名管理,按照下图绑定域名后，再打开地址就可以预览，而不是下载图片文件了，但是域名必须经过了备案。</p>
-<p><img src="https://kimto.oss-cn-qingdao.aliyuncs.com/img/202206281632074.png" alt="image-20220628163221744" style="zoom:33%;" /><img src="https://kimto.oss-cn-qingdao.aliyuncs.com/img/202206281633667.png" alt="image-20220628163352631" style="zoom:33%;" /></p>
-<h3 id="方式二：手动设置head-http头"><a href="#方式二：手动设置head-http头" class="headerlink" title="方式二：手动设置head-http头"></a>方式二：手动设置head-http头</h3><p>首先你在上传到阿里云OSS图片后，阿里云存储图片时<strong>Content-Type</strong>属性是以<strong>image&#x2F;jpeg</strong>储存，所以访问会直接下载，我们如果把请求头<strong>Content-Type</strong>属性设置成<strong>image&#x2F;jpg</strong>，这种方式需要手动调整有点麻烦，其实阿里云官方也做了处理方案，但是我个人觉得还是有点麻烦。。。所以长期用的话，建议还是绑定备案域名。</p>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>图床</tag>
-        <tag>阿里云OSS</tag>
       </tags>
   </entry>
 </search>
