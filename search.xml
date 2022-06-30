@@ -87,27 +87,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Win11命令行激活</title>
-    <url>/posts/dd02cd92/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1.卸载系统自带密钥</p>
-<p><code>slmgr.vbs /upk</code></p>
-<p>2.安装新密钥</p>
-<p><code>slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</code></p>
-<p>3.指定激活服务器</p>
-<p><code>slmgr /skms kms.03k.org</code></p>
-<p>4.激活系统</p>
-<p><code>slmgr /ato</code></p>
-<p>备用密钥如下：</p>
-<p>Win11专业版：<code>VK7JG-NPHTM-C97JM-9MPGT-3V66T</code></p>
-]]></content>
-      <categories>
-        <category>系统运维</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Mac下Homebrew常用命令</title>
     <url>/posts/1269/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>brewhome国内镜像</strong><br>&#x2F;bin&#x2F;zsh -c “$(curl -fsSL <a href="https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;">https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</a></p>
@@ -128,6 +107,27 @@
       </categories>
       <tags>
         <tag>Homebrew</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Win11命令行激活</title>
+    <url>/posts/dd02cd92/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1.卸载系统自带密钥</p>
+<p><code>slmgr.vbs /upk</code></p>
+<p>2.安装新密钥</p>
+<p><code>slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</code></p>
+<p>3.指定激活服务器</p>
+<p><code>slmgr /skms kms.03k.org</code></p>
+<p>4.激活系统</p>
+<p><code>slmgr /ato</code></p>
+<p>备用密钥如下：</p>
+<p>Win11专业版：<code>VK7JG-NPHTM-C97JM-9MPGT-3V66T</code></p>
+]]></content>
+      <categories>
+        <category>系统运维</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
