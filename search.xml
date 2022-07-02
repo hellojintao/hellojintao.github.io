@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Golang实战案例：用Golang实现用户登录验证</title>
-    <url>/posts/49730/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>用<a href="https://so.csdn.net/so/search?q=Go%E8%AF%AD%E8%A8%80&amp;spm=1001.2101.3001.7020"> Go 语言</a>实现登录验证，有 3 次机会。为了不要那么麻烦，这次示例就不用数据库了，直接 if 判断用户名为 zhangsan ，密码为 123456 ，则提示登录成功，否则提示还有几次机会，次数用完，提示登录失败。代码如下：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> name <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> pwd <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> loginChance = <span class="number">3</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++&#123;</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入用户名：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;name)</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入密码：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;pwd)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> name == <span class="string">&quot;zhangsan&quot;</span> &amp;&amp; pwd== <span class="string">&quot;123456&quot;</span> &#123;</span><br><span class="line">			fmt.Println(<span class="string">&quot;恭喜你登录成功！&quot;</span>)</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			loginChance--</span><br><span class="line">			fmt.Printf(<span class="string">&quot;你还有%v次登录机会！\n&quot;</span>,loginChance)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> loginChance == <span class="number">0</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;机会用完，登录失败。&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>执行结果如下图所示：</p>
-<p>测试一（登录成功）：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190621162721450.png" alt="在这里插入图片描述"></p>
-<p>测试二（登录失败）：</p>
-<p><img src="https://s2.loli.net/2022/04/11/13bAvfWyHwxGq2E.png" alt="在这里插入图片描述"></p>
-]]></content>
-      <categories>
-        <category>技术开发</category>
-      </categories>
-      <tags>
-        <tag>Golang</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2022年了，还会有人不了解短视频运营吗</title>
     <url>/posts/40410/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>前言：如果您打算对岗位的人力预算是 1 个人，或者想急于见到成果，那就建议不要在这个项目上浪费人力物力了，现在的短视频平台内容饱和程度已经不像 4-5 年前了，创作成本要是那么低的话，岂不是抖音上 1/5 的人要当老板了。。</p>
@@ -63,37 +45,16 @@
       </tags>
   </entry>
   <entry>
-    <title>Golang连接mysql数据库</title>
-    <url>/posts/58986/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="安装mysql"><a class="markdownIt-Anchor" href="#安装mysql">#</a> 安装 mysql</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
-<h3 id="启动mysql"><a class="markdownIt-Anchor" href="#启动mysql">#</a> 启动 mysql</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql.server start</span><br></pre></td></tr></table></figure>
-<h3 id="登录mysql"><a class="markdownIt-Anchor" href="#登录mysql">#</a> 登录 mysql</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root</span><br></pre></td></tr></table></figure>
-<h3 id="mysql数据库go驱动安装"><a class="markdownIt-Anchor" href="#mysql数据库go驱动安装">#</a> mysql 数据库 go 驱动安装</h3>
-<p>golang 连接数据库用户的驱动是：`go-sql-driver’<br>
-打开终端执行命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">go get -u github.com/go-sql-driver/mysql</span><br></pre></td></tr></table></figure>
-<h3 id="mysql数据库连接"><a class="markdownIt-Anchor" href="#mysql数据库连接">#</a> mysql 数据库连接</h3>
-<p>构建连接，格式是：” 用户名：密码 @tcp (IP: 端口)/ 数据库？charset=utf8”<br>
- 打开数据库，前者是驱动名，所以要导入：  <code>“github.com/go-sql-driver/mysql”</code> <br>
- 设置数据库最大连接数和设置上数据库最大闲置连接数<br>
-验证连接：使用 Ping () 函数<br>
-代码参考如下：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//数据库配置</span></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    userName = <span class="string">&quot;root&quot;</span></span><br><span class="line">    password = <span class="string">&quot;123456&quot;</span></span><br><span class="line">    ip = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line">    port = <span class="string">&quot;3306&quot;</span></span><br><span class="line">    dbName = <span class="string">&quot;loginserver&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">//Db数据库连接池</span></span><br><span class="line"><span class="keyword">var</span> DB *sql.DB</span><br><span class="line"></span><br><span class="line"><span class="comment">//注意方法名大写，就是public</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">InitDB</span><span class="params">()</span></span>  &#123;</span><br><span class="line">    <span class="comment">//构建连接：&quot;用户名:密码@tcp(IP:端口)/数据库?charset=utf8&quot;</span></span><br><span class="line">    path := strings.Join([]<span class="type">string</span>&#123;userName, <span class="string">&quot;:&quot;</span>, password, <span class="string">&quot;@tcp(&quot;</span>,ip, <span class="string">&quot;:&quot;</span>, port, <span class="string">&quot;)/&quot;</span>, dbName, <span class="string">&quot;?charset=utf8&quot;</span>&#125;, <span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//打开数据库,前者是驱动名，所以要导入： _ &quot;github.com/go-sql-driver/mysql&quot;</span></span><br><span class="line">    DB, _ = sql.Open(<span class="string">&quot;mysql&quot;</span>, path)</span><br><span class="line">    <span class="comment">//设置数据库最大连接数</span></span><br><span class="line">    DB.SetConnMaxLifetime(<span class="number">100</span>)</span><br><span class="line">    <span class="comment">//设置上数据库最大闲置连接数</span></span><br><span class="line">    DB.SetMaxIdleConns(<span class="number">10</span>)</span><br><span class="line">    <span class="comment">//验证连接</span></span><br><span class="line">    <span class="keyword">if</span> err := DB.Ping(); err != <span class="literal">nil</span>&#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;opon database fail&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="string">&quot;connnect success&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>Golang实战案例：用Golang实现用户登录验证</title>
+    <url>/posts/49730/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>用<a href="https://so.csdn.net/so/search?q=Go%E8%AF%AD%E8%A8%80&amp;spm=1001.2101.3001.7020"> Go 语言</a>实现登录验证，有 3 次机会。为了不要那么麻烦，这次示例就不用数据库了，直接 if 判断用户名为 zhangsan ，密码为 123456 ，则提示登录成功，否则提示还有几次机会，次数用完，提示登录失败。代码如下：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> name <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> pwd <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> loginChance = <span class="number">3</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++&#123;</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入用户名：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;name)</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入密码：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;pwd)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> name == <span class="string">&quot;zhangsan&quot;</span> &amp;&amp; pwd== <span class="string">&quot;123456&quot;</span> &#123;</span><br><span class="line">			fmt.Println(<span class="string">&quot;恭喜你登录成功！&quot;</span>)</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			loginChance--</span><br><span class="line">			fmt.Printf(<span class="string">&quot;你还有%v次登录机会！\n&quot;</span>,loginChance)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> loginChance == <span class="number">0</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;机会用完，登录失败。&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>执行结果如下图所示：</p>
+<p>测试一（登录成功）：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190621162721450.png" alt="在这里插入图片描述"></p>
+<p>测试二（登录失败）：</p>
+<p><img src="https://s2.loli.net/2022/04/11/13bAvfWyHwxGq2E.png" alt="在这里插入图片描述"></p>
 ]]></content>
-      <categories>
-        <category>技术开发</category>
-      </categories>
-      <tags>
-        <tag>Golang</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Go语言原生http库的网络请求</title>
-    <url>/posts/28711/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;io/ioutil&quot;</span></span><br><span class="line">    <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello, world&quot;</span>)</span><br><span class="line">    resp, err := http.Get(<span class="string">&quot;http://www.baidu.com/&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;http get error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    body, err := ioutil.ReadAll(resp.Body)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;read error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="type">string</span>(body))</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>技术开发</category>
       </categories>
@@ -162,6 +123,45 @@ brew update</p>
       </categories>
       <tags>
         <tag>Homebrew</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Golang连接mysql数据库</title>
+    <url>/posts/58986/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="安装mysql"><a class="markdownIt-Anchor" href="#安装mysql">#</a> 安装 mysql</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">brew install mysql</span><br></pre></td></tr></table></figure>
+<h3 id="启动mysql"><a class="markdownIt-Anchor" href="#启动mysql">#</a> 启动 mysql</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql.server start</span><br></pre></td></tr></table></figure>
+<h3 id="登录mysql"><a class="markdownIt-Anchor" href="#登录mysql">#</a> 登录 mysql</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root</span><br></pre></td></tr></table></figure>
+<h3 id="mysql数据库go驱动安装"><a class="markdownIt-Anchor" href="#mysql数据库go驱动安装">#</a> mysql 数据库 go 驱动安装</h3>
+<p>golang 连接数据库用户的驱动是：`go-sql-driver’<br>
+打开终端执行命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">go get -u github.com/go-sql-driver/mysql</span><br></pre></td></tr></table></figure>
+<h3 id="mysql数据库连接"><a class="markdownIt-Anchor" href="#mysql数据库连接">#</a> mysql 数据库连接</h3>
+<p>构建连接，格式是：” 用户名：密码 @tcp (IP: 端口)/ 数据库？charset=utf8”<br>
+ 打开数据库，前者是驱动名，所以要导入：  <code>“github.com/go-sql-driver/mysql”</code> <br>
+ 设置数据库最大连接数和设置上数据库最大闲置连接数<br>
+验证连接：使用 Ping () 函数<br>
+代码参考如下：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//数据库配置</span></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    userName = <span class="string">&quot;root&quot;</span></span><br><span class="line">    password = <span class="string">&quot;123456&quot;</span></span><br><span class="line">    ip = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line">    port = <span class="string">&quot;3306&quot;</span></span><br><span class="line">    dbName = <span class="string">&quot;loginserver&quot;</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">//Db数据库连接池</span></span><br><span class="line"><span class="keyword">var</span> DB *sql.DB</span><br><span class="line"></span><br><span class="line"><span class="comment">//注意方法名大写，就是public</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">InitDB</span><span class="params">()</span></span>  &#123;</span><br><span class="line">    <span class="comment">//构建连接：&quot;用户名:密码@tcp(IP:端口)/数据库?charset=utf8&quot;</span></span><br><span class="line">    path := strings.Join([]<span class="type">string</span>&#123;userName, <span class="string">&quot;:&quot;</span>, password, <span class="string">&quot;@tcp(&quot;</span>,ip, <span class="string">&quot;:&quot;</span>, port, <span class="string">&quot;)/&quot;</span>, dbName, <span class="string">&quot;?charset=utf8&quot;</span>&#125;, <span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//打开数据库,前者是驱动名，所以要导入： _ &quot;github.com/go-sql-driver/mysql&quot;</span></span><br><span class="line">    DB, _ = sql.Open(<span class="string">&quot;mysql&quot;</span>, path)</span><br><span class="line">    <span class="comment">//设置数据库最大连接数</span></span><br><span class="line">    DB.SetConnMaxLifetime(<span class="number">100</span>)</span><br><span class="line">    <span class="comment">//设置上数据库最大闲置连接数</span></span><br><span class="line">    DB.SetMaxIdleConns(<span class="number">10</span>)</span><br><span class="line">    <span class="comment">//验证连接</span></span><br><span class="line">    <span class="keyword">if</span> err := DB.Ping(); err != <span class="literal">nil</span>&#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;opon database fail&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="string">&quot;connnect success&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
+      <tags>
+        <tag>Golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Go语言原生http库的网络请求</title>
+    <url>/posts/28711/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;io/ioutil&quot;</span></span><br><span class="line">    <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello, world&quot;</span>)</span><br><span class="line">    resp, err := http.Get(<span class="string">&quot;http://www.baidu.com/&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;http get error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    body, err := ioutil.ReadAll(resp.Body)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;read error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="type">string</span>(body))</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
+      <tags>
+        <tag>Golang</tag>
       </tags>
   </entry>
   <entry>
@@ -530,25 +530,6 @@ brew update</p>
       </tags>
   </entry>
   <entry>
-    <title>做自己情绪的主人，不要被情绪伤害到自己和身边的人！</title>
-    <url>/posts/56281/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>情绪管理人人都需要。理解自己的情绪，能够用自己的思维去思考和控制自己的行动，这是情绪管理最基本的要求。对于情绪敏感的人而言，总是能够时刻觉察到他人的情绪，并且他们会很在意他人的情绪，总是会以为他人的情绪和自己有关。</p>
-<p>有研究表明，当人产生各种各样的情绪时，最先受损的是自身的免疫系统。情绪会通过内分泌系统，控制我们的身体器官，使我们的免疫力下降，抵抗力下降，疾病也就随之而来了。早在《黄帝内经》中就有记载：“怒伤肝、喜伤心、思伤脾、空伤肾。” 情绪是不可避免的，但我们可以合理的控制它，化解他。</p>
-<p>对待情绪最正确的态度就是，承认自己是有情绪的人，也承认他人是有情绪的人。来了就接受，不要刻意压制自己的情绪，人人都是有情绪的人，人人都需要情绪。当情绪来临时，我们都因为自己的冲动后悔过，每次都会告诉自己这样是不对的，但下次仍会重复上次的冲动。为情绪买单的原因是，我们没有建立属于自己的情绪控制系统。</p>
-<p><img src="https://pic.imgdb.cn/item/625fd10a239250f7c5e68d22.jpg" alt=""></p>
-<p>当事情发生，我们的通常情况会是这样，在脑海里反复的回想让我们产生这种情绪的事件。我们会及其的聚焦到这件事上，通过不断地心理暗示证明我们的处理是对的。暗示自己处理这件事时的情绪是正确。这是正确的做法是，给大脑‘放个假’转移自己的注意力，刷刷微博，看看小品电视剧等等。转移注意力的过程，就是在给自己赢得时间，让自己冷静下来，回归理性的状态。理性不存在的时候情绪便会控制我们的一切。</p>
-<p>当一切回归平静，这时我们要思考是什么让我们产生这样的情绪。当我们找出原因不必自责，这是你向情绪管理成功迈出的又一步。除了审视自己我们也要审视事情本身。我们对有些事情的看法存在很多偏见和非理性的成分，而导致的情绪反应，比一般事件更值得深思。认识到自己的想法不一定就是现实，这会使我们更理性的处理自己的情绪。</p>
-<p>管理情绪的第二个方面是：相信自己，相信对方。有时候假想别人的想法，只会使自己的情绪更加敏感。揣测不同于理性的分析和思考。对别人的想法和行为进行揣测，只会让你感觉更加痛苦。猜测不同于真相，即便你猜测的准确无误，这也不同于去亲自询问真相。接纳事物本来的模样，而不是蒙上了猜测，假象，揣测后的样子。唯有建立正面积极的自我身份认同感，才不容易受他人评判的影响。每个人都有情绪，但并不是每个人都能控制自己的情绪。管控好自己的情绪，也并不是失去自我。</p>
-<p>最重要的情绪管理是你要相信没有一种情绪不应该。情绪能够帮助我们更全面地认识自己，了解自己的价值观、兴趣爱好，帮助我们确定人生方向。学会管理情绪，管理我们的敏感、焦虑、恐惧、愤怒、怀疑等等，往往能帮助我们突破自我的能力边界。</p>
-]]></content>
-      <categories>
-        <category>随记</category>
-      </categories>
-      <tags>
-        <tag>情感随记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>优雅的隐藏部分文章不在首页显示</title>
     <url>/posts/bd442ae4/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有时候写博客有些内容不是给别人看的，只是为了丰富自己的知识库，需要用到隐藏主页显示博客的功能，网上找了几个方式，改了个最合适最简单的，记录一下。</p>
@@ -585,20 +566,22 @@ brew update</p>
       </tags>
   </entry>
   <entry>
-    <title>微信多开解决方案</title>
-    <url>/posts/63138/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h5 id="macos系统"><a class="markdownIt-Anchor" href="#macos系统">#</a> <strong>Macos 系统</strong></h5>
-<p>复制下面的保存为.sh 格式，用的时候拖放到终端里面运行就行<br>
- <code>#!/bin/bash echo &quot;正在打开新的微信！！！&quot; nohup /Applications/WeChat.app/Contents/MacOS/WeChat &gt; /dev/null 2&gt;&amp;1 &amp;</code></p>
-<h5 id="windows系统"><a class="markdownIt-Anchor" href="#windows系统">#</a> <strong>Windows 系统</strong></h5>
-<p>桌面新建一个文本文档，多开几个复制几行，另存为 bat 文件<br>
- <code>start &quot;&quot; &quot;C:\Program Files (x86)\Tencent\WeChat\WeChat.exe&quot;</code></p>
+    <title>做自己情绪的主人，不要被情绪伤害到自己和身边的人！</title>
+    <url>/posts/56281/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>情绪管理人人都需要。理解自己的情绪，能够用自己的思维去思考和控制自己的行动，这是情绪管理最基本的要求。对于情绪敏感的人而言，总是能够时刻觉察到他人的情绪，并且他们会很在意他人的情绪，总是会以为他人的情绪和自己有关。</p>
+<p>有研究表明，当人产生各种各样的情绪时，最先受损的是自身的免疫系统。情绪会通过内分泌系统，控制我们的身体器官，使我们的免疫力下降，抵抗力下降，疾病也就随之而来了。早在《黄帝内经》中就有记载：“怒伤肝、喜伤心、思伤脾、空伤肾。” 情绪是不可避免的，但我们可以合理的控制它，化解他。</p>
+<p>对待情绪最正确的态度就是，承认自己是有情绪的人，也承认他人是有情绪的人。来了就接受，不要刻意压制自己的情绪，人人都是有情绪的人，人人都需要情绪。当情绪来临时，我们都因为自己的冲动后悔过，每次都会告诉自己这样是不对的，但下次仍会重复上次的冲动。为情绪买单的原因是，我们没有建立属于自己的情绪控制系统。</p>
+<p><img src="https://pic.imgdb.cn/item/625fd10a239250f7c5e68d22.jpg" alt=""></p>
+<p>当事情发生，我们的通常情况会是这样，在脑海里反复的回想让我们产生这种情绪的事件。我们会及其的聚焦到这件事上，通过不断地心理暗示证明我们的处理是对的。暗示自己处理这件事时的情绪是正确。这是正确的做法是，给大脑‘放个假’转移自己的注意力，刷刷微博，看看小品电视剧等等。转移注意力的过程，就是在给自己赢得时间，让自己冷静下来，回归理性的状态。理性不存在的时候情绪便会控制我们的一切。</p>
+<p>当一切回归平静，这时我们要思考是什么让我们产生这样的情绪。当我们找出原因不必自责，这是你向情绪管理成功迈出的又一步。除了审视自己我们也要审视事情本身。我们对有些事情的看法存在很多偏见和非理性的成分，而导致的情绪反应，比一般事件更值得深思。认识到自己的想法不一定就是现实，这会使我们更理性的处理自己的情绪。</p>
+<p>管理情绪的第二个方面是：相信自己，相信对方。有时候假想别人的想法，只会使自己的情绪更加敏感。揣测不同于理性的分析和思考。对别人的想法和行为进行揣测，只会让你感觉更加痛苦。猜测不同于真相，即便你猜测的准确无误，这也不同于去亲自询问真相。接纳事物本来的模样，而不是蒙上了猜测，假象，揣测后的样子。唯有建立正面积极的自我身份认同感，才不容易受他人评判的影响。每个人都有情绪，但并不是每个人都能控制自己的情绪。管控好自己的情绪，也并不是失去自我。</p>
+<p>最重要的情绪管理是你要相信没有一种情绪不应该。情绪能够帮助我们更全面地认识自己，了解自己的价值观、兴趣爱好，帮助我们确定人生方向。学会管理情绪，管理我们的敏感、焦虑、恐惧、愤怒、怀疑等等，往往能帮助我们突破自我的能力边界。</p>
 ]]></content>
       <categories>
-        <category>网络技巧</category>
+        <category>随记</category>
       </categories>
       <tags>
-        <tag>奇淫技巧</tag>
+        <tag>情感随记</tag>
       </tags>
   </entry>
   <entry>
@@ -616,17 +599,20 @@ brew update</p>
       </tags>
   </entry>
   <entry>
-    <title>记录一下Markdown代码高亮</title>
-    <url>/posts/b7689663/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>下面写的是 python 的代码块语法高亮</strong></p>
- <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>);</span><br></pre></td></tr></table></figure>
-<p><strong>做法就是在三个引号的后面标注一下语言</strong></p>
+    <title>微信多开解决方案</title>
+    <url>/posts/63138/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h5 id="macos系统"><a class="markdownIt-Anchor" href="#macos系统">#</a> <strong>Macos 系统</strong></h5>
+<p>复制下面的保存为.sh 格式，用的时候拖放到终端里面运行就行<br>
+ <code>#!/bin/bash echo &quot;正在打开新的微信！！！&quot; nohup /Applications/WeChat.app/Contents/MacOS/WeChat &gt; /dev/null 2&gt;&amp;1 &amp;</code></p>
+<h5 id="windows系统"><a class="markdownIt-Anchor" href="#windows系统">#</a> <strong>Windows 系统</strong></h5>
+<p>桌面新建一个文本文档，多开几个复制几行，另存为 bat 文件<br>
+ <code>start &quot;&quot; &quot;C:\Program Files (x86)\Tencent\WeChat\WeChat.exe&quot;</code></p>
 ]]></content>
       <categories>
-        <category>博客</category>
+        <category>网络技巧</category>
       </categories>
       <tags>
-        <tag>Markdown</tag>
+        <tag>奇淫技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -670,22 +656,17 @@ brew update</p>
       </tags>
   </entry>
   <entry>
-    <title>阿里云OSS图床url无法预览解决方案</title>
-    <url>/posts/a94ab2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h3>
-<p>阿里云 OSS 做图床的优势就是国内访问速度比较快，但是细心的同学会发现，在用浏览器访问图片地址的时候是直接跳转了下载而不是预览，这个就有点难受了，解决方式有 2 个，写文章记录一下。</p>
-<h3 id="方式一绑定已备案的域名"><a class="markdownIt-Anchor" href="#方式一绑定已备案的域名">#</a> 方式一：绑定已备案的域名</h3>
-<p>首先需要在 Bucket 列表里面进入图床的存储桶，然后在左侧边栏找到传输管理 - 域名管理，按照下图绑定域名后，再打开地址就可以预览，而不是下载图片文件了，但是域名必须经过了备案。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hellojintao/img/img/202206281632074.png" alt="image-20220628163221744" style="zoom:33%;" /><img src="https://cdn.jsdelivr.net/gh/hellojintao/img/img/202206281633667.png" alt="image-20220628163352631" style="zoom:33%;" /></p>
-<h3 id="方式二手动设置head-http头"><a class="markdownIt-Anchor" href="#方式二手动设置head-http头">#</a> 方式二：手动设置 head-http 头</h3>
-<p>首先你在上传到阿里云 OSS 图片后，阿里云存储图片时<strong> Content-Type</strong> 属性是以<strong> image/jpeg</strong> 储存，所以访问会直接下载，我们如果把请求头<strong> Content-Type</strong> 属性设置成<strong> image/jpg</strong>，这种方式需要手动调整有点麻烦，其实阿里云官方也做了处理方案，但是我个人觉得还是有点麻烦。。。所以长期用的话，建议还是绑定备案域名。</p>
+    <title>记录一下Markdown代码高亮</title>
+    <url>/posts/b7689663/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>下面写的是 python 的代码块语法高亮</strong></p>
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>做法就是在三个引号的后面标注一下语言</strong></p>
 ]]></content>
       <categories>
         <category>博客</category>
       </categories>
       <tags>
-        <tag>图床</tag>
-        <tag>阿里云OSS</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -707,6 +688,25 @@ brew update</p>
       </categories>
       <tags>
         <tag>情感随记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿里云OSS图床url无法预览解决方案</title>
+    <url>/posts/a94ab2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前言"><a class="markdownIt-Anchor" href="#前言">#</a> 前言</h3>
+<p>阿里云 OSS 做图床的优势就是国内访问速度比较快，但是细心的同学会发现，在用浏览器访问图片地址的时候是直接跳转了下载而不是预览，这个就有点难受了，解决方式有 2 个，写文章记录一下。</p>
+<h3 id="方式一绑定已备案的域名"><a class="markdownIt-Anchor" href="#方式一绑定已备案的域名">#</a> 方式一：绑定已备案的域名</h3>
+<p>首先需要在 Bucket 列表里面进入图床的存储桶，然后在左侧边栏找到传输管理 - 域名管理，按照下图绑定域名后，再打开地址就可以预览，而不是下载图片文件了，但是域名必须经过了备案。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hellojintao/img/img/202206281632074.png" alt="image-20220628163221744" style="zoom:33%;" /><img src="https://cdn.jsdelivr.net/gh/hellojintao/img/img/202206281633667.png" alt="image-20220628163352631" style="zoom:33%;" /></p>
+<h3 id="方式二手动设置head-http头"><a class="markdownIt-Anchor" href="#方式二手动设置head-http头">#</a> 方式二：手动设置 head-http 头</h3>
+<p>首先你在上传到阿里云 OSS 图片后，阿里云存储图片时<strong> Content-Type</strong> 属性是以<strong> image/jpeg</strong> 储存，所以访问会直接下载，我们如果把请求头<strong> Content-Type</strong> 属性设置成<strong> image/jpg</strong>，这种方式需要手动调整有点麻烦，其实阿里云官方也做了处理方案，但是我个人觉得还是有点麻烦。。。所以长期用的话，建议还是绑定备案域名。</p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>图床</tag>
+        <tag>阿里云OSS</tag>
       </tags>
   </entry>
 </search>
