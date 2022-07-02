@@ -115,6 +115,61 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo常用命令</title>
+    <url>/posts/33f59116/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="hexo常用命令"><a class="markdownIt-Anchor" href="#hexo常用命令">#</a> hexo 常用命令</h4>
+<p>本地预览命令组合</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo g == hexo generate     <span class="comment">#生成</span></span><br><span class="line">hexo s == hexo server         <span class="comment">#启动服务预览</span></span><br></pre></td></tr></table></figure>
+<p>部署命令组合</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo clean                   <span class="comment">#清除缓存</span></span><br><span class="line">hexo g == hexo generate      <span class="comment">#生成静态网页</span></span><br><span class="line">hexo d == hexo deploy        <span class="comment">#开始部署</span></span><br><span class="line">hexo g -d                    <span class="comment">#生成部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d  <span class="comment">#复合命令</span></span><br></pre></td></tr></table></figure>
+<p>其它</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo server -p <span class="number">5000</span>    <span class="comment">#更改端口，默认端口4000</span></span><br><span class="line">hexo server -i <span class="number">192.168</span>.<span class="number">1.1</span> <span class="comment">#自定义 IP</span></span><br><span class="line">hexo help                <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version             <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macOS环境下的ssh配置</title>
+    <url>/posts/42683/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="查看本机有没有ssh秘钥"><a class="markdownIt-Anchor" href="#查看本机有没有ssh秘钥">#</a> 查看本机有没有 ssh 秘钥</h4>
+<p>终端输入以下内容并 <code>cd ~/.ssh</code>  回车，如果能打开说明是有 ssh 文件的</p>
+<h4 id="查看已生成的ssh秘钥"><a class="markdownIt-Anchor" href="#查看已生成的ssh秘钥">#</a> 查看已生成的 ssh 秘钥</h4>
+<p><code>cat /Users/电脑用户名/.ssh/id_rsa.pub</code></p>
+<h4 id="生成新的ssh秘钥"><a class="markdownIt-Anchor" href="#生成新的ssh秘钥">#</a> 生成新的 ssh 秘钥</h4>
+<p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p>
+]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
+      <tags>
+        <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Win11命令行激活</title>
+    <url>/posts/dd02cd92/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1. 卸载系统自带密钥</p>
+<p><code>slmgr.vbs /upk</code></p>
+<p>2. 安装新密钥</p>
+<p><code>slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</code></p>
+<p>3. 指定激活服务器</p>
+<p><code>slmgr /skms kms.03k.org</code></p>
+<p>4. 激活系统</p>
+<p><code>slmgr /ato</code></p>
+<p>备用密钥如下：</p>
+<p>Win11 专业版： <code>VK7JG-NPHTM-C97JM-9MPGT-3V66T</code></p>
+]]></content>
+      <categories>
+        <category>系统运维</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mac下Homebrew常用命令</title>
     <url>/posts/1269/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>brewhome 国内镜像</strong><br>
@@ -162,61 +217,6 @@ brew update</p>
       </categories>
       <tags>
         <tag>Homebrew</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Win11命令行激活</title>
-    <url>/posts/dd02cd92/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1. 卸载系统自带密钥</p>
-<p><code>slmgr.vbs /upk</code></p>
-<p>2. 安装新密钥</p>
-<p><code>slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</code></p>
-<p>3. 指定激活服务器</p>
-<p><code>slmgr /skms kms.03k.org</code></p>
-<p>4. 激活系统</p>
-<p><code>slmgr /ato</code></p>
-<p>备用密钥如下：</p>
-<p>Win11 专业版： <code>VK7JG-NPHTM-C97JM-9MPGT-3V66T</code></p>
-]]></content>
-      <categories>
-        <category>系统运维</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo常用命令</title>
-    <url>/posts/33f59116/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="hexo常用命令"><a class="markdownIt-Anchor" href="#hexo常用命令">#</a> hexo 常用命令</h4>
-<p>本地预览命令组合</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo g == hexo generate     <span class="comment">#生成</span></span><br><span class="line">hexo s == hexo server         <span class="comment">#启动服务预览</span></span><br></pre></td></tr></table></figure>
-<p>部署命令组合</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo clean                   <span class="comment">#清除缓存</span></span><br><span class="line">hexo g == hexo generate      <span class="comment">#生成静态网页</span></span><br><span class="line">hexo d == hexo deploy        <span class="comment">#开始部署</span></span><br><span class="line">hexo g -d                    <span class="comment">#生成部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d  <span class="comment">#复合命令</span></span><br></pre></td></tr></table></figure>
-<p>其它</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo server -p <span class="number">5000</span>    <span class="comment">#更改端口，默认端口4000</span></span><br><span class="line">hexo server -i <span class="number">192.168</span>.<span class="number">1.1</span> <span class="comment">#自定义 IP</span></span><br><span class="line">hexo help                <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version             <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macOS环境下的ssh配置</title>
-    <url>/posts/42683/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="查看本机有没有ssh秘钥"><a class="markdownIt-Anchor" href="#查看本机有没有ssh秘钥">#</a> 查看本机有没有 ssh 秘钥</h4>
-<p>终端输入以下内容并 <code>cd ~/.ssh</code>  回车，如果能打开说明是有 ssh 文件的</p>
-<h4 id="查看已生成的ssh秘钥"><a class="markdownIt-Anchor" href="#查看已生成的ssh秘钥">#</a> 查看已生成的 ssh 秘钥</h4>
-<p><code>cat /Users/电脑用户名/.ssh/id_rsa.pub</code></p>
-<h4 id="生成新的ssh秘钥"><a class="markdownIt-Anchor" href="#生成新的ssh秘钥">#</a> 生成新的 ssh 秘钥</h4>
-<p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p>
-]]></content>
-      <categories>
-        <category>技术开发</category>
-      </categories>
-      <tags>
-        <tag>ssh</tag>
       </tags>
   </entry>
   <entry>
