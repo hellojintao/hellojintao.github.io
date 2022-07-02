@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Golang实战案例：用Golang实现用户登录验证</title>
+    <url>/posts/49730/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>用<a href="https://so.csdn.net/so/search?q=Go%E8%AF%AD%E8%A8%80&amp;spm=1001.2101.3001.7020"> Go 语言</a>实现登录验证，有 3 次机会。为了不要那么麻烦，这次示例就不用数据库了，直接 if 判断用户名为 zhangsan ，密码为 123456 ，则提示登录成功，否则提示还有几次机会，次数用完，提示登录失败。代码如下：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> name <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> pwd <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> loginChance = <span class="number">3</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++&#123;</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入用户名：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;name)</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入密码：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;pwd)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> name == <span class="string">&quot;zhangsan&quot;</span> &amp;&amp; pwd== <span class="string">&quot;123456&quot;</span> &#123;</span><br><span class="line">			fmt.Println(<span class="string">&quot;恭喜你登录成功！&quot;</span>)</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			loginChance--</span><br><span class="line">			fmt.Printf(<span class="string">&quot;你还有%v次登录机会！\n&quot;</span>,loginChance)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> loginChance == <span class="number">0</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;机会用完，登录失败。&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>执行结果如下图所示：</p>
+<p>测试一（登录成功）：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190621162721450.png" alt="在这里插入图片描述"></p>
+<p>测试二（登录失败）：</p>
+<p><img src="https://s2.loli.net/2022/04/11/13bAvfWyHwxGq2E.png" alt="在这里插入图片描述"></p>
+]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
+      <tags>
+        <tag>Golang</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2022年了，还会有人不了解短视频运营吗</title>
     <url>/posts/40410/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>前言：如果您打算对岗位的人力预算是 1 个人，或者想急于见到成果，那就建议不要在这个项目上浪费人力物力了，现在的短视频平台内容饱和程度已经不像 4-5 年前了，创作成本要是那么低的话，岂不是抖音上 1/5 的人要当老板了。。</p>
@@ -73,24 +91,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Golang实战案例：用Golang实现用户登录验证</title>
-    <url>/posts/49730/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>用<a href="https://so.csdn.net/so/search?q=Go%E8%AF%AD%E8%A8%80&amp;spm=1001.2101.3001.7020"> Go 语言</a>实现登录验证，有 3 次机会。为了不要那么麻烦，这次示例就不用数据库了，直接 if 判断用户名为 zhangsan ，密码为 123456 ，则提示登录成功，否则提示还有几次机会，次数用完，提示登录失败。代码如下：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> name <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> pwd <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> loginChance = <span class="number">3</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++&#123;</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入用户名：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;name)</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入密码：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;pwd)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> name == <span class="string">&quot;zhangsan&quot;</span> &amp;&amp; pwd== <span class="string">&quot;123456&quot;</span> &#123;</span><br><span class="line">			fmt.Println(<span class="string">&quot;恭喜你登录成功！&quot;</span>)</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			loginChance--</span><br><span class="line">			fmt.Printf(<span class="string">&quot;你还有%v次登录机会！\n&quot;</span>,loginChance)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> loginChance == <span class="number">0</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;机会用完，登录失败。&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>执行结果如下图所示：</p>
-<p>测试一（登录成功）：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190621162721450.png" alt="在这里插入图片描述"></p>
-<p>测试二（登录失败）：</p>
-<p><img src="https://s2.loli.net/2022/04/11/13bAvfWyHwxGq2E.png" alt="在这里插入图片描述"></p>
-]]></content>
-      <categories>
-        <category>技术开发</category>
-      </categories>
-      <tags>
-        <tag>Golang</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Go语言原生http库的网络请求</title>
     <url>/posts/28711/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">    <span class="string">&quot;io/ioutil&quot;</span></span><br><span class="line">    <span class="string">&quot;net/http&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello, world&quot;</span>)</span><br><span class="line">    resp, err := http.Get(<span class="string">&quot;http://www.baidu.com/&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;http get error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    body, err := ioutil.ReadAll(resp.Body)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">&quot;read error&quot;</span>, err)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(<span class="type">string</span>(body))</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
@@ -112,6 +112,27 @@
       </categories>
       <tags>
         <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Win11命令行激活</title>
+    <url>/posts/dd02cd92/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1. 卸载系统自带密钥</p>
+<p><code>slmgr.vbs /upk</code></p>
+<p>2. 安装新密钥</p>
+<p><code>slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</code></p>
+<p>3. 指定激活服务器</p>
+<p><code>slmgr /skms kms.03k.org</code></p>
+<p>4. 激活系统</p>
+<p><code>slmgr /ato</code></p>
+<p>备用密钥如下：</p>
+<p>Win11 专业版： <code>VK7JG-NPHTM-C97JM-9MPGT-3V66T</code></p>
+]]></content>
+      <categories>
+        <category>系统运维</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -182,24 +203,20 @@ brew update</p>
       </tags>
   </entry>
   <entry>
-    <title>Win11命令行激活</title>
-    <url>/posts/dd02cd92/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1. 卸载系统自带密钥</p>
-<p><code>slmgr.vbs /upk</code></p>
-<p>2. 安装新密钥</p>
-<p><code>slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</code></p>
-<p>3. 指定激活服务器</p>
-<p><code>slmgr /skms kms.03k.org</code></p>
-<p>4. 激活系统</p>
-<p><code>slmgr /ato</code></p>
-<p>备用密钥如下：</p>
-<p>Win11 专业版： <code>VK7JG-NPHTM-C97JM-9MPGT-3V66T</code></p>
+    <title>macOS环境下的ssh配置</title>
+    <url>/posts/42683/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="查看本机有没有ssh秘钥"><a class="markdownIt-Anchor" href="#查看本机有没有ssh秘钥">#</a> 查看本机有没有 ssh 秘钥</h4>
+<p>终端输入以下内容并 <code>cd ~/.ssh</code>  回车，如果能打开说明是有 ssh 文件的</p>
+<h4 id="查看已生成的ssh秘钥"><a class="markdownIt-Anchor" href="#查看已生成的ssh秘钥">#</a> 查看已生成的 ssh 秘钥</h4>
+<p><code>cat /Users/电脑用户名/.ssh/id_rsa.pub</code></p>
+<h4 id="生成新的ssh秘钥"><a class="markdownIt-Anchor" href="#生成新的ssh秘钥">#</a> 生成新的 ssh 秘钥</h4>
+<p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p>
 ]]></content>
       <categories>
-        <category>系统运维</category>
+        <category>技术开发</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
+        <tag>ssh</tag>
       </tags>
   </entry>
   <entry>
@@ -513,20 +530,22 @@ brew update</p>
       </tags>
   </entry>
   <entry>
-    <title>macOS环境下的ssh配置</title>
-    <url>/posts/42683/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="查看本机有没有ssh秘钥"><a class="markdownIt-Anchor" href="#查看本机有没有ssh秘钥">#</a> 查看本机有没有 ssh 秘钥</h4>
-<p>终端输入以下内容并 <code>cd ~/.ssh</code>  回车，如果能打开说明是有 ssh 文件的</p>
-<h4 id="查看已生成的ssh秘钥"><a class="markdownIt-Anchor" href="#查看已生成的ssh秘钥">#</a> 查看已生成的 ssh 秘钥</h4>
-<p><code>cat /Users/电脑用户名/.ssh/id_rsa.pub</code></p>
-<h4 id="生成新的ssh秘钥"><a class="markdownIt-Anchor" href="#生成新的ssh秘钥">#</a> 生成新的 ssh 秘钥</h4>
-<p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p>
+    <title>做自己情绪的主人，不要被情绪伤害到自己和身边的人！</title>
+    <url>/posts/56281/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>情绪管理人人都需要。理解自己的情绪，能够用自己的思维去思考和控制自己的行动，这是情绪管理最基本的要求。对于情绪敏感的人而言，总是能够时刻觉察到他人的情绪，并且他们会很在意他人的情绪，总是会以为他人的情绪和自己有关。</p>
+<p>有研究表明，当人产生各种各样的情绪时，最先受损的是自身的免疫系统。情绪会通过内分泌系统，控制我们的身体器官，使我们的免疫力下降，抵抗力下降，疾病也就随之而来了。早在《黄帝内经》中就有记载：“怒伤肝、喜伤心、思伤脾、空伤肾。” 情绪是不可避免的，但我们可以合理的控制它，化解他。</p>
+<p>对待情绪最正确的态度就是，承认自己是有情绪的人，也承认他人是有情绪的人。来了就接受，不要刻意压制自己的情绪，人人都是有情绪的人，人人都需要情绪。当情绪来临时，我们都因为自己的冲动后悔过，每次都会告诉自己这样是不对的，但下次仍会重复上次的冲动。为情绪买单的原因是，我们没有建立属于自己的情绪控制系统。</p>
+<p><img src="https://pic.imgdb.cn/item/625fd10a239250f7c5e68d22.jpg" alt=""></p>
+<p>当事情发生，我们的通常情况会是这样，在脑海里反复的回想让我们产生这种情绪的事件。我们会及其的聚焦到这件事上，通过不断地心理暗示证明我们的处理是对的。暗示自己处理这件事时的情绪是正确。这是正确的做法是，给大脑‘放个假’转移自己的注意力，刷刷微博，看看小品电视剧等等。转移注意力的过程，就是在给自己赢得时间，让自己冷静下来，回归理性的状态。理性不存在的时候情绪便会控制我们的一切。</p>
+<p>当一切回归平静，这时我们要思考是什么让我们产生这样的情绪。当我们找出原因不必自责，这是你向情绪管理成功迈出的又一步。除了审视自己我们也要审视事情本身。我们对有些事情的看法存在很多偏见和非理性的成分，而导致的情绪反应，比一般事件更值得深思。认识到自己的想法不一定就是现实，这会使我们更理性的处理自己的情绪。</p>
+<p>管理情绪的第二个方面是：相信自己，相信对方。有时候假想别人的想法，只会使自己的情绪更加敏感。揣测不同于理性的分析和思考。对别人的想法和行为进行揣测，只会让你感觉更加痛苦。猜测不同于真相，即便你猜测的准确无误，这也不同于去亲自询问真相。接纳事物本来的模样，而不是蒙上了猜测，假象，揣测后的样子。唯有建立正面积极的自我身份认同感，才不容易受他人评判的影响。每个人都有情绪，但并不是每个人都能控制自己的情绪。管控好自己的情绪，也并不是失去自我。</p>
+<p>最重要的情绪管理是你要相信没有一种情绪不应该。情绪能够帮助我们更全面地认识自己，了解自己的价值观、兴趣爱好，帮助我们确定人生方向。学会管理情绪，管理我们的敏感、焦虑、恐惧、愤怒、怀疑等等，往往能帮助我们突破自我的能力边界。</p>
 ]]></content>
       <categories>
-        <category>技术开发</category>
+        <category>随记</category>
       </categories>
       <tags>
-        <tag>ssh</tag>
+        <tag>情感随记</tag>
       </tags>
   </entry>
   <entry>
@@ -552,22 +571,17 @@ brew update</p>
       </tags>
   </entry>
   <entry>
-    <title>做自己情绪的主人，不要被情绪伤害到自己和身边的人！</title>
-    <url>/posts/56281/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>情绪管理人人都需要。理解自己的情绪，能够用自己的思维去思考和控制自己的行动，这是情绪管理最基本的要求。对于情绪敏感的人而言，总是能够时刻觉察到他人的情绪，并且他们会很在意他人的情绪，总是会以为他人的情绪和自己有关。</p>
-<p>有研究表明，当人产生各种各样的情绪时，最先受损的是自身的免疫系统。情绪会通过内分泌系统，控制我们的身体器官，使我们的免疫力下降，抵抗力下降，疾病也就随之而来了。早在《黄帝内经》中就有记载：“怒伤肝、喜伤心、思伤脾、空伤肾。” 情绪是不可避免的，但我们可以合理的控制它，化解他。</p>
-<p>对待情绪最正确的态度就是，承认自己是有情绪的人，也承认他人是有情绪的人。来了就接受，不要刻意压制自己的情绪，人人都是有情绪的人，人人都需要情绪。当情绪来临时，我们都因为自己的冲动后悔过，每次都会告诉自己这样是不对的，但下次仍会重复上次的冲动。为情绪买单的原因是，我们没有建立属于自己的情绪控制系统。</p>
-<p><img src="https://pic.imgdb.cn/item/625fd10a239250f7c5e68d22.jpg" alt=""></p>
-<p>当事情发生，我们的通常情况会是这样，在脑海里反复的回想让我们产生这种情绪的事件。我们会及其的聚焦到这件事上，通过不断地心理暗示证明我们的处理是对的。暗示自己处理这件事时的情绪是正确。这是正确的做法是，给大脑‘放个假’转移自己的注意力，刷刷微博，看看小品电视剧等等。转移注意力的过程，就是在给自己赢得时间，让自己冷静下来，回归理性的状态。理性不存在的时候情绪便会控制我们的一切。</p>
-<p>当一切回归平静，这时我们要思考是什么让我们产生这样的情绪。当我们找出原因不必自责，这是你向情绪管理成功迈出的又一步。除了审视自己我们也要审视事情本身。我们对有些事情的看法存在很多偏见和非理性的成分，而导致的情绪反应，比一般事件更值得深思。认识到自己的想法不一定就是现实，这会使我们更理性的处理自己的情绪。</p>
-<p>管理情绪的第二个方面是：相信自己，相信对方。有时候假想别人的想法，只会使自己的情绪更加敏感。揣测不同于理性的分析和思考。对别人的想法和行为进行揣测，只会让你感觉更加痛苦。猜测不同于真相，即便你猜测的准确无误，这也不同于去亲自询问真相。接纳事物本来的模样，而不是蒙上了猜测，假象，揣测后的样子。唯有建立正面积极的自我身份认同感，才不容易受他人评判的影响。每个人都有情绪，但并不是每个人都能控制自己的情绪。管控好自己的情绪，也并不是失去自我。</p>
-<p>最重要的情绪管理是你要相信没有一种情绪不应该。情绪能够帮助我们更全面地认识自己，了解自己的价值观、兴趣爱好，帮助我们确定人生方向。学会管理情绪，管理我们的敏感、焦虑、恐惧、愤怒、怀疑等等，往往能帮助我们突破自我的能力边界。</p>
+    <title>关于hexo d出现SSL:443的报错终极解决方案</title>
+    <url>/posts/34393/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>网上的 hexo 部署教程都是把 repo 项的 Github 地址设置成 https 地址，我用了一段时间之后发现，因为大陆的政策问题（你懂的）会导致在执行 hexo d 部署项目的时候提示代码超时，很头疼啊，也不可能一直搭梯子啊，再说也不稳定，后来在从 CSDN 上找到了解决思路，把 repo 项的 Github 地址设置成 Git 地址就很丝滑了。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line"></span><br><span class="line"><span class="string">​</span>    <span class="attr">github:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://pic.imgdb.cn/item/626657b9239250f7c522788f.png" alt="image-20220425155956939"></p>
 ]]></content>
       <categories>
-        <category>随记</category>
+        <category>博客</category>
       </categories>
       <tags>
-        <tag>情感随记</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -599,6 +613,20 @@ brew update</p>
       </categories>
       <tags>
         <tag>奇淫技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记录一下Markdown代码高亮</title>
+    <url>/posts/b7689663/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>下面写的是 python 的代码块语法高亮</strong></p>
+ <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>做法就是在三个引号的后面标注一下语言</strong></p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -639,34 +667,6 @@ brew update</p>
 ]]></content>
       <tags>
         <tag>游戏陪玩</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于hexo d出现SSL:443的报错终极解决方案</title>
-    <url>/posts/34393/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>网上的 hexo 部署教程都是把 repo 项的 Github 地址设置成 https 地址，我用了一段时间之后发现，因为大陆的政策问题（你懂的）会导致在执行 hexo d 部署项目的时候提示代码超时，很头疼啊，也不可能一直搭梯子啊，再说也不稳定，后来在从 CSDN 上找到了解决思路，把 repo 项的 Github 地址设置成 Git 地址就很丝滑了。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line"></span><br><span class="line"><span class="string">​</span>    <span class="attr">github:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://pic.imgdb.cn/item/626657b9239250f7c522788f.png" alt="image-20220425155956939"></p>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记录一下Markdown代码高亮</title>
-    <url>/posts/b7689663/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>下面写的是 python 的代码块语法高亮</strong></p>
- <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>);</span><br></pre></td></tr></table></figure>
-<p><strong>做法就是在三个引号的后面标注一下语言</strong></p>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
