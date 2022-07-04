@@ -102,6 +102,19 @@
       </tags>
   </entry>
   <entry>
+    <title>MacOS系统环境，批量替换文件种的字符串</title>
+    <url>/posts/d2cb55ec/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>先用终端 CD 到需要操作的目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>系统运维</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mac下Homebrew常用命令</title>
     <url>/posts/1269/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>brewhome 国内镜像</strong><br>
@@ -152,19 +165,6 @@ brew update</p>
       </tags>
   </entry>
   <entry>
-    <title>MacOS系统环境，批量替换文件种的字符串</title>
-    <url>/posts/d2cb55ec/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>先用终端 CD 到需要操作的目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grep -ilr &#x27;old_string&#x27; * | xargs -I@ sed -i &#x27;&#x27; &#x27;s/old_string/new_string/g&#x27; @</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>系统运维</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Win11命令行激活</title>
     <url>/posts/dd02cd92/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1. 卸载系统自带密钥</p>
@@ -183,6 +183,23 @@ brew update</p>
       </categories>
       <tags>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo常用命令</title>
+    <url>/posts/33f59116/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="hexo常用命令"><a class="markdownIt-Anchor" href="#hexo常用命令">#</a> hexo 常用命令</h4>
+<p>本地预览命令组合</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo g == hexo generate     <span class="comment">#生成</span></span><br><span class="line">hexo s == hexo server         <span class="comment">#启动服务预览</span></span><br></pre></td></tr></table></figure>
+<p>部署命令组合</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo clean                   <span class="comment">#清除缓存</span></span><br><span class="line">hexo g == hexo generate      <span class="comment">#生成静态网页</span></span><br><span class="line">hexo d == hexo deploy        <span class="comment">#开始部署</span></span><br><span class="line">hexo g -d                    <span class="comment">#生成部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d  <span class="comment">#复合命令</span></span><br></pre></td></tr></table></figure>
+<p>其它</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo server -p <span class="number">5000</span>    <span class="comment">#更改端口，默认端口4000</span></span><br><span class="line">hexo server -i <span class="number">192.168</span>.<span class="number">1.1</span> <span class="comment">#自定义 IP</span></span><br><span class="line">hexo help                <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version             <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -560,23 +577,6 @@ brew update</p>
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line"></span><br><span class="line"><span class="string">​</span>    <span class="attr">github:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://pic.imgdb.cn/item/626657b9239250f7c522788f.png" alt="image-20220425155956939"></p>
 ]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo常用命令</title>
-    <url>/posts/33f59116/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="hexo常用命令"><a class="markdownIt-Anchor" href="#hexo常用命令">#</a> hexo 常用命令</h4>
-<p>本地预览命令组合</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo g == hexo generate     <span class="comment">#生成</span></span><br><span class="line">hexo s == hexo server         <span class="comment">#启动服务预览</span></span><br></pre></td></tr></table></figure>
-<p>部署命令组合</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo clean                   <span class="comment">#清除缓存</span></span><br><span class="line">hexo g == hexo generate      <span class="comment">#生成静态网页</span></span><br><span class="line">hexo d == hexo deploy        <span class="comment">#开始部署</span></span><br><span class="line">hexo g -d                    <span class="comment">#生成部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d  <span class="comment">#复合命令</span></span><br></pre></td></tr></table></figure>
-<p>其它</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo server -p <span class="number">5000</span>    <span class="comment">#更改端口，默认端口4000</span></span><br><span class="line">hexo server -i <span class="number">192.168</span>.<span class="number">1.1</span> <span class="comment">#自定义 IP</span></span><br><span class="line">hexo help                <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version             <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>博客</category>
       </categories>
