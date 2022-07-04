@@ -6,7 +6,7 @@
   <link href="https://www.kimtoli.com/atom.xml" rel="self"/>
   
   <link href="https://www.kimtoli.com/"/>
-  <updated>2022-07-04T04:04:04.935Z</updated>
+  <updated>2022-07-04T04:33:36.773Z</updated>
   <id>https://www.kimtoli.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.kimtoli.com/posts/bd442ae4/"/>
     <id>https://www.kimtoli.com/posts/bd442ae4/</id>
     <published>2022-06-29T06:00:31.000Z</published>
-    <updated>2022-07-04T04:04:04.935Z</updated>
+    <updated>2022-07-04T04:33:36.773Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有时候写博客有些内容不是给别人看的，只是为了丰富自己的知识库，需要用到隐藏主页显示博客的功能，网上找了几个方式，改了个最合适最简单的，记录一下。</p><p>忘记说，仅限 butterfly 主题哈，其他主题的配置文件目录不一定在哪。</p><h3 id="修改配置文件"><a class="markdownIt-Anchor" href="#修改配置文件">#</a> 修改配置文件</h3><p>需要先定位到  <code>themes/butterfly/layout/includes/mixins/post-ui.pug</code></p><p>需要添加一行条件判断代码  <code>if article.hide !== true</code> ，需要保证缩进关系属于递进。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mixin <span class="title function_">postUI</span>(posts)</span><br><span class="line">  each article , index <span class="keyword">in</span> page.<span class="property">posts</span>.<span class="property">data</span></span><br><span class="line">    <span class="keyword">if</span> article.<span class="property">hide</span> !== <span class="literal">true</span></span><br><span class="line">      .<span class="property">recent</span>-post-item</span><br></pre></td></tr></table></figure><h3 id="配置文章"><a class="markdownIt-Anchor" href="#配置文章">#</a> 配置文章</h3><p>在文章 md 文件的头部信息中加入 hide: true 的属性</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 隐藏部分文章不在首页显示</span><br><span class="line">hide: true</span><br><span class="line"><span class="section">date: 2022-06-29 14:00:31</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure><h3 id="大功告成"><a class="markdownIt-Anchor" href="#大功告成">#</a> 大功告成</h3><p>重新 hexo d 一下，你会发现只要文章配置了 hide: true 的都不在主页显示了，但是归档页还是可以看到的，另外如果设置了标签和分类，从对应页面也是可以看到的。</p>]]></content>
     

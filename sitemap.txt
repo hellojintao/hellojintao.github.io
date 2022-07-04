@@ -24,8 +24,8 @@ https://www.kimtoli.com/posts/40410/
 https://www.kimtoli.com/
 https://www.kimtoli.com/tags/%E7%9F%AD%E8%A7%86%E9%A2%91/
 https://www.kimtoli.com/tags/Golang/
-https://www.kimtoli.com/tags/Mac/
 https://www.kimtoli.com/tags/Homebrew/
+https://www.kimtoli.com/tags/Mac/
 https://www.kimtoli.com/tags/Windows/
 https://www.kimtoli.com/tags/Hexo/
 https://www.kimtoli.com/tags/ssh/
