@@ -6,7 +6,7 @@
   <link href="https://www.kimtoli.com/atom.xml" rel="self"/>
   
   <link href="https://www.kimtoli.com/"/>
-  <updated>2022-07-04T04:33:36.773Z</updated>
+  <updated>2022-07-05T03:55:29.011Z</updated>
   <id>https://www.kimtoli.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.kimtoli.com/posts/bd442ae4/"/>
     <id>https://www.kimtoli.com/posts/bd442ae4/</id>
     <published>2022-06-29T06:00:31.000Z</published>
-    <updated>2022-07-04T04:33:36.773Z</updated>
+    <updated>2022-07-05T03:55:29.011Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有时候写博客有些内容不是给别人看的，只是为了丰富自己的知识库，需要用到隐藏主页显示博客的功能，网上找了几个方式，改了个最合适最简单的，记录一下。</p><p>忘记说，仅限butterfly主题哈，其他主题的配置文件目录不一定在哪。</p><h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>需要先定位到 <code>themes/butterfly/layout/includes/mixins/post-ui.pug</code></p><p>需要添加一行条件判断代码 <code>if article.hide !== true</code>，需要保证缩进关系属于递进。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mixin <span class="title function_">postUI</span>(posts)</span><br><span class="line">  each article , index <span class="keyword">in</span> page.<span class="property">posts</span>.<span class="property">data</span></span><br><span class="line">    <span class="keyword">if</span> article.<span class="property">hide</span> !== <span class="literal">true</span></span><br><span class="line">      .<span class="property">recent</span>-post-item</span><br></pre></td></tr></table></figure><h3 id="配置文章"><a href="#配置文章" class="headerlink" title="配置文章"></a>配置文章</h3><p>在文章md文件的头部信息中加入hide: true的属性</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 隐藏部分文章不在首页显示</span><br><span class="line">hide: true</span><br><span class="line"><span class="section">date: 2022-06-29 14:00:31</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure><h3 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h3><p>重新hexo d一下，你会发现只要文章配置了hide: true的都不在主页显示了，但是归档页还是可以看到的，另外如果设置了标签和分类，从对应页面也是可以看到的。</p>]]></content>
     
@@ -67,9 +67,9 @@
     <link href="https://www.kimtoli.com/posts/a94ab2/"/>
     <id>https://www.kimtoli.com/posts/a94ab2/</id>
     <published>2022-06-28T08:47:54.000Z</published>
-    <updated>2022-07-03T02:16:03.329Z</updated>
+    <updated>2022-07-05T03:56:53.980Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>阿里云OSS做图床的优势就是国内访问速度比较快，但是细心的同学会发现，在用浏览器访问图片地址的时候是直接跳转了下载而不是预览，这个就有点难受了，解决方式有2个，写文章记录一下。</p><img src="https://kimto.oss-cn-qingdao.aliyuncs.com/img/post/202206281649970.png" alt="image-20220628163352631" style="zoom:33%;" /><h3 id="方式一：绑定已备案的域名"><a href="#方式一：绑定已备案的域名" class="headerlink" title="方式一：绑定已备案的域名"></a>方式一：绑定已备案的域名</h3><p>首先需要在Bucket列表里面进入图床的存储桶，然后在左侧边栏找到传输管理-域名管理,按照下图绑定域名后，再打开地址就可以预览，而不是下载图片文件了，但是域名必须经过了备案。</p><p><img src="https://kimto.oss-cn-qingdao.aliyuncs.com/img/post/202206281633291.png" alt="image-20220628163221744" style="zoom:33%;" /><img src="https://kimto.oss-cn-qingdao.aliyuncs.com/img/post/202206281633667.png" alt="image-20220628163352631" style="zoom:33%;" /></p><h3 id="方式二：手动设置head-http头"><a href="#方式二：手动设置head-http头" class="headerlink" title="方式二：手动设置head-http头"></a>方式二：手动设置head-http头</h3><p>首先你在上传到阿里云OSS图片后，阿里云存储图片时<strong>Content-Type</strong>属性是以<strong>image&#x2F;jpeg</strong>储存，所以访问会直接下载，我们如果把请求头<strong>Content-Type</strong>属性设置成<strong>image&#x2F;jpg</strong>，这种方式需要手动调整有点麻烦，其实阿里云官方也做了处理方案，但是我个人觉得还是有点麻烦。。。所以长期用的话，建议还是绑定备案域名。</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>阿里云OSS做图床的优势就是国内访问速度比较快，但是细心的同学会发现，在用浏览器访问图片地址的时候是直接跳转了下载而不是预览，这个就有点难受了，解决方式有2个，写文章记录一下。</p><img src="URL http://alioss.kimtoli.com/img/post/202206281649970.png" alt="image-20220628163352631" style="zoom:33%;" /><h3 id="方式一：绑定已备案的域名"><a href="#方式一：绑定已备案的域名" class="headerlink" title="方式一：绑定已备案的域名"></a>方式一：绑定已备案的域名</h3><p>首先需要在Bucket列表里面进入图床的存储桶，然后在左侧边栏找到传输管理-域名管理,按照下图绑定域名后，再打开地址就可以预览，而不是下载图片文件了，但是域名必须经过了备案。</p><p><img src="https://kimto.oss-cn-qingdao.aliyuncs.com/img/post/202206281633291.png" alt="image-20220628163221744" style="zoom:33%;" /><img src="https://kimto.oss-cn-qingdao.aliyuncs.com/img/post/202206281633667.png" alt="image-20220628163352631" style="zoom:33%;" /></p><h3 id="方式二：手动设置head-http头"><a href="#方式二：手动设置head-http头" class="headerlink" title="方式二：手动设置head-http头"></a>方式二：手动设置head-http头</h3><p>首先你在上传到阿里云OSS图片后，阿里云存储图片时<strong>Content-Type</strong>属性是以<strong>image&#x2F;jpeg</strong>储存，所以访问会直接下载，我们如果把请求头<strong>Content-Type</strong>属性设置成<strong>image&#x2F;jpg</strong>，这种方式需要手动调整有点麻烦，其实阿里云官方也做了处理方案，但是我个人觉得还是有点麻烦。。。所以长期用的话，建议还是绑定备案域名。</p>]]></content>
     
     
       
