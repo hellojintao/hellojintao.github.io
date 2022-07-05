@@ -239,13 +239,6 @@
   </url>
   
   <url>
-    <loc>https://www.kimtoli.com/tags/Homebrew/</loc>
-    <lastmod>2022-07-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.kimtoli.com/tags/Windows/</loc>
     <lastmod>2022-07-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -260,14 +253,21 @@
   </url>
   
   <url>
-    <loc>https://www.kimtoli.com/tags/ssh/</loc>
+    <loc>https://www.kimtoli.com/tags/flv-js/</loc>
     <lastmod>2022-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.kimtoli.com/tags/flv-js/</loc>
+    <loc>https://www.kimtoli.com/tags/Homebrew/</loc>
+    <lastmod>2022-07-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.kimtoli.com/tags/ssh/</loc>
     <lastmod>2022-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
