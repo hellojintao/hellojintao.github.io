@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.kimtoli.com/about/index.html</loc>
+    <loc>https://www.kimtoli.com/link/index.html</loc>
     
     <lastmod>2022-07-05</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://www.kimtoli.com/link/index.html</loc>
+    <loc>https://www.kimtoli.com/about/index.html</loc>
     
     <lastmod>2022-07-05</lastmod>
     
@@ -232,7 +232,7 @@
   </url>
   
   <url>
-    <loc>https://www.kimtoli.com/tags/Homebrew/</loc>
+    <loc>https://www.kimtoli.com/tags/Mac/</loc>
     <lastmod>2022-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -253,7 +253,7 @@
   </url>
   
   <url>
-    <loc>https://www.kimtoli.com/tags/ssh/</loc>
+    <loc>https://www.kimtoli.com/tags/Homebrew/</loc>
     <lastmod>2022-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -309,7 +309,7 @@
   </url>
   
   <url>
-    <loc>https://www.kimtoli.com/tags/Mac/</loc>
+    <loc>https://www.kimtoli.com/tags/ssh/</loc>
     <lastmod>2022-07-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
