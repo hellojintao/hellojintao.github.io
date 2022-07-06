@@ -110,22 +110,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo常用命令</title>
-    <url>/posts/33f59116/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h4><p>本地预览命令组合</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo g == hexo generate     <span class="comment">#生成</span></span><br><span class="line">hexo s == hexo server         <span class="comment">#启动服务预览</span></span><br></pre></td></tr></table></figure>
-<p>部署命令组合</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo clean                   <span class="comment">#清除缓存</span></span><br><span class="line">hexo g == hexo generate      <span class="comment">#生成静态网页</span></span><br><span class="line">hexo d == hexo deploy        <span class="comment">#开始部署</span></span><br><span class="line">hexo g -d                    <span class="comment">#生成部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d  <span class="comment">#复合命令</span></span><br></pre></td></tr></table></figure>
-<p>其它</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo server -p <span class="number">5000</span>    <span class="comment">#更改端口，默认端口4000</span></span><br><span class="line">hexo server -i <span class="number">192.168</span>.<span class="number">1.1</span> <span class="comment">#自定义 IP</span></span><br><span class="line">hexo help                <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version             <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Win11命令行激活</title>
     <url>/posts/dd02cd92/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1.卸载系统自带密钥</p>
@@ -144,6 +128,22 @@
       </categories>
       <tags>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo常用命令</title>
+    <url>/posts/33f59116/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h4><p>本地预览命令组合</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo g == hexo generate     <span class="comment">#生成</span></span><br><span class="line">hexo s == hexo server         <span class="comment">#启动服务预览</span></span><br></pre></td></tr></table></figure>
+<p>部署命令组合</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo clean                   <span class="comment">#清除缓存</span></span><br><span class="line">hexo g == hexo generate      <span class="comment">#生成静态网页</span></span><br><span class="line">hexo d == hexo deploy        <span class="comment">#开始部署</span></span><br><span class="line">hexo g -d                    <span class="comment">#生成部署</span></span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d  <span class="comment">#复合命令</span></span><br></pre></td></tr></table></figure>
+<p>其它</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">hexo server -p <span class="number">5000</span>    <span class="comment">#更改端口，默认端口4000</span></span><br><span class="line">hexo server -i <span class="number">192.168</span>.<span class="number">1.1</span> <span class="comment">#自定义 IP</span></span><br><span class="line">hexo help                <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version             <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -479,6 +479,25 @@
       </tags>
   </entry>
   <entry>
+    <title>做自己情绪的主人，不要被情绪伤害到自己和身边的人！</title>
+    <url>/posts/56281/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>情绪管理人人都需要。理解自己的情绪，能够用自己的思维去思考和控制自己的行动，这是情绪管理最基本的要求。对于情绪敏感的人而言，总是能够时刻觉察到他人的情绪，并且他们会很在意他人的情绪，总是会以为他人的情绪和自己有关。</p>
+<p>有研究表明，当人产生各种各样的情绪时，最先受损的是自身的免疫系统。情绪会通过内分泌系统，控制我们的身体器官，使我们的免疫力下降，抵抗力下降，疾病也就随之而来了。早在《黄帝内经》中就有记载：“怒伤肝、喜伤心、思伤脾、空伤肾。”情绪是不可避免的，但我们可以合理的控制它，化解他。</p>
+<p>对待情绪最正确的态度就是，承认自己是有情绪的人，也承认他人是有情绪的人。来了就接受，不要刻意压制自己的情绪，人人都是有情绪的人，人人都需要情绪。当情绪来临时，我们都因为自己的冲动后悔过，每次都会告诉自己这样是不对的，但下次仍会重复上次的冲动。为情绪买单的原因是，我们没有建立属于自己的情绪控制系统。</p>
+<p><img src="https://pic.imgdb.cn/item/625fd10a239250f7c5e68d22.jpg"></p>
+<p>当事情发生，我们的通常情况会是这样，在脑海里反复的回想让我们产生这种情绪的事件。我们会及其的聚焦到这件事上，通过不断地心理暗示证明我们的处理是对的。暗示自己处理这件事时的情绪是正确。这是正确的做法是，给大脑‘放个假’转移自己的注意力，刷刷微博，看看小品电视剧等等。转移注意力的过程，就是在给自己赢得时间，让自己冷静下来，回归理性的状态。理性不存在的时候情绪便会控制我们的一切。</p>
+<p>当一切回归平静，这时我们要思考是什么让我们产生这样的情绪。当我们找出原因不必自责，这是你向情绪管理成功迈出的又一步。除了审视自己我们也要审视事情本身。我们对有些事情的看法存在很多偏见和非理性的成分，而导致的情绪反应，比一般事件更值得深思。认识到自己的想法不一定就是现实，这会使我们更理性的处理自己的情绪。</p>
+<p>管理情绪的第二个方面是：相信自己，相信对方。有时候假想别人的想法，只会使自己的情绪更加敏感。揣测不同于理性的分析和思考。对别人的想法和行为进行揣测，只会让你感觉更加痛苦。猜测不同于真相，即便你猜测的准确无误，这也不同于去亲自询问真相。接纳事物本来的模样，而不是蒙上了猜测，假象，揣测后的样子。唯有建立正面积极的自我身份认同感，才不容易受他人评判的影响。每个人都有情绪，但并不是每个人都能控制自己的情绪。管控好自己的情绪，也并不是失去自我。</p>
+<p>最重要的情绪管理是你要相信没有一种情绪不应该。情绪能够帮助我们更全面地认识自己，了解自己的价值观、兴趣爱好，帮助我们确定人生方向。学会管理情绪，管理我们的敏感、焦虑、恐惧、愤怒、怀疑等等，往往能帮助我们突破自我的能力边界。</p>
+]]></content>
+      <categories>
+        <category>随记</category>
+      </categories>
+      <tags>
+        <tag>情感随记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于hexo d出现SSL:443的报错终极解决方案</title>
     <url>/posts/34393/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>网上的hexo部署教程都是把repo项的Github地址设置成https地址，我用了一段时间之后发现，因为大陆的政策问题（你懂的）会导致在执行hexo d部署项目的时候提示代码超时，很头疼啊，也不可能一直搭梯子啊，再说也不稳定，后来在从CSDN上找到了解决思路，把repo项的Github地址设置成Git地址就很丝滑了。</p>
@@ -503,25 +522,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>做自己情绪的主人，不要被情绪伤害到自己和身边的人！</title>
-    <url>/posts/56281/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>情绪管理人人都需要。理解自己的情绪，能够用自己的思维去思考和控制自己的行动，这是情绪管理最基本的要求。对于情绪敏感的人而言，总是能够时刻觉察到他人的情绪，并且他们会很在意他人的情绪，总是会以为他人的情绪和自己有关。</p>
-<p>有研究表明，当人产生各种各样的情绪时，最先受损的是自身的免疫系统。情绪会通过内分泌系统，控制我们的身体器官，使我们的免疫力下降，抵抗力下降，疾病也就随之而来了。早在《黄帝内经》中就有记载：“怒伤肝、喜伤心、思伤脾、空伤肾。”情绪是不可避免的，但我们可以合理的控制它，化解他。</p>
-<p>对待情绪最正确的态度就是，承认自己是有情绪的人，也承认他人是有情绪的人。来了就接受，不要刻意压制自己的情绪，人人都是有情绪的人，人人都需要情绪。当情绪来临时，我们都因为自己的冲动后悔过，每次都会告诉自己这样是不对的，但下次仍会重复上次的冲动。为情绪买单的原因是，我们没有建立属于自己的情绪控制系统。</p>
-<p><img src="https://pic.imgdb.cn/item/625fd10a239250f7c5e68d22.jpg"></p>
-<p>当事情发生，我们的通常情况会是这样，在脑海里反复的回想让我们产生这种情绪的事件。我们会及其的聚焦到这件事上，通过不断地心理暗示证明我们的处理是对的。暗示自己处理这件事时的情绪是正确。这是正确的做法是，给大脑‘放个假’转移自己的注意力，刷刷微博，看看小品电视剧等等。转移注意力的过程，就是在给自己赢得时间，让自己冷静下来，回归理性的状态。理性不存在的时候情绪便会控制我们的一切。</p>
-<p>当一切回归平静，这时我们要思考是什么让我们产生这样的情绪。当我们找出原因不必自责，这是你向情绪管理成功迈出的又一步。除了审视自己我们也要审视事情本身。我们对有些事情的看法存在很多偏见和非理性的成分，而导致的情绪反应，比一般事件更值得深思。认识到自己的想法不一定就是现实，这会使我们更理性的处理自己的情绪。</p>
-<p>管理情绪的第二个方面是：相信自己，相信对方。有时候假想别人的想法，只会使自己的情绪更加敏感。揣测不同于理性的分析和思考。对别人的想法和行为进行揣测，只会让你感觉更加痛苦。猜测不同于真相，即便你猜测的准确无误，这也不同于去亲自询问真相。接纳事物本来的模样，而不是蒙上了猜测，假象，揣测后的样子。唯有建立正面积极的自我身份认同感，才不容易受他人评判的影响。每个人都有情绪，但并不是每个人都能控制自己的情绪。管控好自己的情绪，也并不是失去自我。</p>
-<p>最重要的情绪管理是你要相信没有一种情绪不应该。情绪能够帮助我们更全面地认识自己，了解自己的价值观、兴趣爱好，帮助我们确定人生方向。学会管理情绪，管理我们的敏感、焦虑、恐惧、愤怒、怀疑等等，往往能帮助我们突破自我的能力边界。</p>
-]]></content>
-      <categories>
-        <category>随记</category>
-      </categories>
-      <tags>
-        <tag>情感随记</tag>
       </tags>
   </entry>
   <entry>
@@ -584,6 +584,22 @@
       </tags>
   </entry>
   <entry>
+    <title>阿里云OSS图床url无法预览解决方案</title>
+    <url>/posts/a94ab2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>阿里云OSS做图床的优势就是国内访问速度比较快，但是细心的同学会发现，在用浏览器访问图片地址的时候是直接跳转了下载而不是预览，这个就有点难受了，解决方式有2个，写文章记录一下。</p>
+<h3 id="方式一：绑定已备案的域名"><a href="#方式一：绑定已备案的域名" class="headerlink" title="方式一：绑定已备案的域名"></a>方式一：绑定已备案的域名</h3><p>首先需要在Bucket列表里面进入图床的存储桶，然后在左侧边栏找到传输管理-域名管理,按照下图绑定域名后，再打开地址就可以预览，而不是下载图片文件了，但是域名必须经过了备案。</p>
+<p><img src="https://cdn.kimtoli.com/img/post/202206281633291.png" alt="image-20220628163221744" style="zoom:33%;" /><img src="https://cdn.kimtoli.com/img/post/202206281633667.png" alt="image-20220628163352631" style="zoom:33%;" /></p>
+<h3 id="方式二：手动设置head-http头"><a href="#方式二：手动设置head-http头" class="headerlink" title="方式二：手动设置head-http头"></a>方式二：手动设置head-http头</h3><p>首先你在上传到阿里云OSS图片后，阿里云存储图片时<strong>Content-Type</strong>属性是以<strong>image&#x2F;jpeg</strong>储存，所以访问会直接下载，我们如果把请求头<strong>Content-Type</strong>属性设置成<strong>image&#x2F;jpg</strong>，这种方式需要手动调整有点麻烦，其实阿里云官方也做了处理方案，但是我个人觉得还是有点麻烦。。。所以长期用的话，建议还是绑定备案域名。</p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>图床</tag>
+        <tag>阿里云OSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>那些爱情观超级正的句子</title>
     <url>/posts/33701/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>前言：最近抖音刷到只要是有关爱情的，几乎全是站在性别的角度吐苦水，甚至是一些带节奏站对立面的，失望的是还是有很多人深信不疑，现在关于爱情的话题已经成了自媒体炒流量的必备Case，很少可以看到爱情观、价值观很正的说法，下面的都是平时看到的积累。</p>
@@ -602,22 +618,6 @@
       </categories>
       <tags>
         <tag>情感随记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阿里云OSS图床url无法预览解决方案</title>
-    <url>/posts/a94ab2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>阿里云OSS做图床的优势就是国内访问速度比较快，但是细心的同学会发现，在用浏览器访问图片地址的时候是直接跳转了下载而不是预览，这个就有点难受了，解决方式有2个，写文章记录一下。</p>
-<h3 id="方式一：绑定已备案的域名"><a href="#方式一：绑定已备案的域名" class="headerlink" title="方式一：绑定已备案的域名"></a>方式一：绑定已备案的域名</h3><p>首先需要在Bucket列表里面进入图床的存储桶，然后在左侧边栏找到传输管理-域名管理,按照下图绑定域名后，再打开地址就可以预览，而不是下载图片文件了，但是域名必须经过了备案。</p>
-<p><img src="https://cdn.kimtoli.com/img/post/202206281633291.png" alt="image-20220628163221744" style="zoom:33%;" /><img src="https://cdn.kimtoli.com/img/post/202206281633667.png" alt="image-20220628163352631" style="zoom:33%;" /></p>
-<h3 id="方式二：手动设置head-http头"><a href="#方式二：手动设置head-http头" class="headerlink" title="方式二：手动设置head-http头"></a>方式二：手动设置head-http头</h3><p>首先你在上传到阿里云OSS图片后，阿里云存储图片时<strong>Content-Type</strong>属性是以<strong>image&#x2F;jpeg</strong>储存，所以访问会直接下载，我们如果把请求头<strong>Content-Type</strong>属性设置成<strong>image&#x2F;jpg</strong>，这种方式需要手动调整有点麻烦，其实阿里云官方也做了处理方案，但是我个人觉得还是有点麻烦。。。所以长期用的话，建议还是绑定备案域名。</p>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>图床</tag>
-        <tag>阿里云OSS</tag>
       </tags>
   </entry>
 </search>
