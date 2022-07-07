@@ -147,24 +147,17 @@
       </tags>
   </entry>
   <entry>
-    <title>优雅的隐藏部分文章不在首页显示</title>
-    <url>/posts/bd442ae4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有时候写博客有些内容不是给别人看的，只是为了丰富自己的知识库，需要用到隐藏主页显示博客的功能，网上找了几个方式，改了个最合适最简单的，记录一下。</p>
-<p>忘记说，仅限butterfly主题哈，其他主题的配置文件目录不一定在哪。</p>
-<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>需要先定位到 <code>themes/butterfly/layout/includes/mixins/post-ui.pug</code></p>
-<p>需要添加一行条件判断代码 <code>if article.hide !== true</code>，需要保证缩进关系属于递进。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">mixin <span class="title function_">postUI</span>(posts)</span><br><span class="line">  each article , index <span class="keyword">in</span> page.<span class="property">posts</span>.<span class="property">data</span></span><br><span class="line">    <span class="keyword">if</span> article.<span class="property">hide</span> !== <span class="literal">true</span></span><br><span class="line">      .<span class="property">recent</span>-post-item</span><br></pre></td></tr></table></figure>
-
-<h3 id="配置文章"><a href="#配置文章" class="headerlink" title="配置文章"></a>配置文章</h3><p>在文章md文件的头部信息中加入hide: true的属性</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 隐藏部分文章不在首页显示</span><br><span class="line">hide: true</span><br><span class="line"><span class="section">date: 2022-06-29 14:00:31</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h3><p>重新hexo d一下，你会发现只要文章配置了hide: true的都不在主页显示了，但是归档页还是可以看到的，另外如果设置了标签和分类，从对应页面也是可以看到的。</p>
+    <title>macOS环境下的ssh配置</title>
+    <url>/posts/42683/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="查看本机有没有ssh秘钥"><a href="#查看本机有没有ssh秘钥" class="headerlink" title="查看本机有没有ssh秘钥"></a>查看本机有没有ssh秘钥</h4><p>终端输入以下内容并<code>cd ~/.ssh</code>回车，如果能打开说明是有ssh文件的</p>
+<h4 id="查看已生成的ssh秘钥"><a href="#查看已生成的ssh秘钥" class="headerlink" title="查看已生成的ssh秘钥"></a>查看已生成的ssh秘钥</h4><p><code>cat /Users/电脑用户名/.ssh/id_rsa.pub</code></p>
+<h4 id="生成新的ssh秘钥"><a href="#生成新的ssh秘钥" class="headerlink" title="生成新的ssh秘钥"></a>生成新的ssh秘钥</h4><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p>
 ]]></content>
       <categories>
-        <category>博客</category>
+        <category>技术开发</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>ssh</tag>
       </tags>
   </entry>
   <entry>
@@ -465,45 +458,24 @@
       </tags>
   </entry>
   <entry>
-    <title>macOS环境下的ssh配置</title>
-    <url>/posts/42683/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="查看本机有没有ssh秘钥"><a href="#查看本机有没有ssh秘钥" class="headerlink" title="查看本机有没有ssh秘钥"></a>查看本机有没有ssh秘钥</h4><p>终端输入以下内容并<code>cd ~/.ssh</code>回车，如果能打开说明是有ssh文件的</p>
-<h4 id="查看已生成的ssh秘钥"><a href="#查看已生成的ssh秘钥" class="headerlink" title="查看已生成的ssh秘钥"></a>查看已生成的ssh秘钥</h4><p><code>cat /Users/电脑用户名/.ssh/id_rsa.pub</code></p>
-<h4 id="生成新的ssh秘钥"><a href="#生成新的ssh秘钥" class="headerlink" title="生成新的ssh秘钥"></a>生成新的ssh秘钥</h4><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p>
-]]></content>
-      <categories>
-        <category>技术开发</category>
-      </categories>
-      <tags>
-        <tag>ssh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于hexo d出现SSL:443的报错终极解决方案</title>
-    <url>/posts/34393/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>网上的hexo部署教程都是把repo项的Github地址设置成https地址，我用了一段时间之后发现，因为大陆的政策问题（你懂的）会导致在执行hexo d部署项目的时候提示代码超时，很头疼啊，也不可能一直搭梯子啊，再说也不稳定，后来在从CSDN上找到了解决思路，把repo项的Github地址设置成Git地址就很丝滑了。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line"></span><br><span class="line"><span class="string">​</span>    <span class="attr">github:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br></pre></td></tr></table></figure>
+    <title>优雅的隐藏部分文章不在首页显示</title>
+    <url>/posts/bd442ae4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有时候写博客有些内容不是给别人看的，只是为了丰富自己的知识库，需要用到隐藏主页显示博客的功能，网上找了几个方式，改了个最合适最简单的，记录一下。</p>
+<p>忘记说，仅限butterfly主题哈，其他主题的配置文件目录不一定在哪。</p>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>需要先定位到 <code>themes/butterfly/layout/includes/mixins/post-ui.pug</code></p>
+<p>需要添加一行条件判断代码 <code>if article.hide !== true</code>，需要保证缩进关系属于递进。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">mixin <span class="title function_">postUI</span>(posts)</span><br><span class="line">  each article , index <span class="keyword">in</span> page.<span class="property">posts</span>.<span class="property">data</span></span><br><span class="line">    <span class="keyword">if</span> article.<span class="property">hide</span> !== <span class="literal">true</span></span><br><span class="line">      .<span class="property">recent</span>-post-item</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://pic.imgdb.cn/item/626657b9239250f7c522788f.png" alt="image-20220425155956939"></p>
+<h3 id="配置文章"><a href="#配置文章" class="headerlink" title="配置文章"></a>配置文章</h3><p>在文章md文件的头部信息中加入hide: true的属性</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 隐藏部分文章不在首页显示</span><br><span class="line">hide: true</span><br><span class="line"><span class="section">date: 2022-06-29 14:00:31</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成"></a>大功告成</h3><p>重新hexo d一下，你会发现只要文章配置了hide: true的都不在主页显示了，但是归档页还是可以看到的，另外如果设置了标签和分类，从对应页面也是可以看到的。</p>
 ]]></content>
       <categories>
         <category>博客</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信多开解决方案</title>
-    <url>/posts/63138/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h5 id="Macos系统"><a href="#Macos系统" class="headerlink" title="Macos系统"></a><strong>Macos系统</strong></h5><p>复制下面的保存为.sh格式，用的时候拖放到终端里面运行就行<br><code>#!/bin/bash echo &quot;正在打开新的微信！！！&quot; nohup /Applications/WeChat.app/Contents/MacOS/WeChat &gt; /dev/null 2&gt;&amp;1 &amp;</code></p>
-<h5 id="Windows系统"><a href="#Windows系统" class="headerlink" title="Windows系统"></a><strong>Windows系统</strong></h5><p>桌面新建一个文本文档，多开几个复制几行，另存为bat文件<br><code>start &quot;&quot; &quot;C:\Program Files (x86)\Tencent\WeChat\WeChat.exe&quot;</code></p>
-]]></content>
-      <categories>
-        <category>网络技巧</category>
-      </categories>
-      <tags>
-        <tag>奇淫技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -526,6 +498,21 @@
       </tags>
   </entry>
   <entry>
+    <title>关于hexo d出现SSL:443的报错终极解决方案</title>
+    <url>/posts/34393/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>网上的hexo部署教程都是把repo项的Github地址设置成https地址，我用了一段时间之后发现，因为大陆的政策问题（你懂的）会导致在执行hexo d部署项目的时候提示代码超时，很头疼啊，也不可能一直搭梯子啊，再说也不稳定，后来在从CSDN上找到了解决思路，把repo项的Github地址设置成Git地址就很丝滑了。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line"></span><br><span class="line"><span class="string">​</span>    <span class="attr">github:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/626657b9239250f7c522788f.png" alt="image-20220425155956939"></p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>开始使用hexo框架做个人博客了</title>
     <url>/posts/24db9c80/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>z-blog虽然写作方便，但是毕竟没有几个能看的主题，最重要的是居然还都要钱。。<br>“要钱谁跟你玩啊？”“对不对”<br>就是之前写的文章不能搬家了，2022从头开始</p>
@@ -535,6 +522,19 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信多开解决方案</title>
+    <url>/posts/63138/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h5 id="Macos系统"><a href="#Macos系统" class="headerlink" title="Macos系统"></a><strong>Macos系统</strong></h5><p>复制下面的保存为.sh格式，用的时候拖放到终端里面运行就行<br><code>#!/bin/bash echo &quot;正在打开新的微信！！！&quot; nohup /Applications/WeChat.app/Contents/MacOS/WeChat &gt; /dev/null 2&gt;&amp;1 &amp;</code></p>
+<h5 id="Windows系统"><a href="#Windows系统" class="headerlink" title="Windows系统"></a><strong>Windows系统</strong></h5><p>桌面新建一个文本文档，多开几个复制几行，另存为bat文件<br><code>start &quot;&quot; &quot;C:\Program Files (x86)\Tencent\WeChat\WeChat.exe&quot;</code></p>
+]]></content>
+      <categories>
+        <category>网络技巧</category>
+      </categories>
+      <tags>
+        <tag>奇淫技巧</tag>
       </tags>
   </entry>
   <entry>
