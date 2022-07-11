@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>卿以君歌</title>
   
-  <subtitle>李金涛个人博客-KimtoBlog</subtitle>
+  <subtitle>李金涛个人博客</subtitle>
   <link href="https://www.kimtoli.com/atom.xml" rel="self"/>
   
   <link href="https://www.kimtoli.com/"/>
@@ -10,7 +10,7 @@
   <id>https://www.kimtoli.com/</id>
   
   <author>
-    <name>卿以君歌</name>
+    <name>李金涛·KimtoLi</name>
     
   </author>
   
