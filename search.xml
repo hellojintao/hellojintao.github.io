@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Golang实战案例：用Golang实现用户登录验证</title>
-    <url>/posts/49730/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>用<a href="https://so.csdn.net/so/search?q=Go%E8%AF%AD%E8%A8%80&spm=1001.2101.3001.7020">Go语言</a>实现登录验证，有3次机会。为了不要那么麻烦，这次示例就不用数据库了，直接if判断用户名为 zhangsan ，密码为 123456 ，则提示登录成功，否则提示还有几次机会，次数用完，提示登录失败。代码如下：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> name <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> pwd <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> loginChance = <span class="number">3</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++&#123;</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入用户名：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;name)</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入密码：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;pwd)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> name == <span class="string">&quot;zhangsan&quot;</span> &amp;&amp; pwd== <span class="string">&quot;123456&quot;</span> &#123;</span><br><span class="line">			fmt.Println(<span class="string">&quot;恭喜你登录成功！&quot;</span>)</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			loginChance--</span><br><span class="line">			fmt.Printf(<span class="string">&quot;你还有%v次登录机会！\n&quot;</span>,loginChance)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> loginChance == <span class="number">0</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;机会用完，登录失败。&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>执行结果如下图所示：</p>
-<p>测试一（登录成功）：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190621162721450.png" alt="在这里插入图片描述"></p>
-<p>测试二（登录失败）：</p>
-<p><img src="https://s2.loli.net/2022/04/11/13bAvfWyHwxGq2E.png" alt="在这里插入图片描述"></p>
-]]></content>
-      <categories>
-        <category>技术开发</category>
-      </categories>
-      <tags>
-        <tag>Golang</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2022年了，还会有人不了解短视频运营吗</title>
     <url>/posts/40410/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>前言：如果您打算对岗位的人力预算是1个人，或者想急于见到成果，那就建议不要在这个项目上浪费人力物力了，现在的短视频平台内容饱和程度已经不像4-5年前了，创作成本要是那么低的话，岂不是抖音上1&#x2F;5的人要当老板了。。</p>
@@ -41,6 +22,25 @@
       </categories>
       <tags>
         <tag>短视频</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Golang实战案例：用Golang实现用户登录验证</title>
+    <url>/posts/49730/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>用<a href="https://so.csdn.net/so/search?q=Go%E8%AF%AD%E8%A8%80&spm=1001.2101.3001.7020">Go语言</a>实现登录验证，有3次机会。为了不要那么麻烦，这次示例就不用数据库了，直接if判断用户名为 zhangsan ，密码为 123456 ，则提示登录成功，否则提示还有几次机会，次数用完，提示登录失败。代码如下：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> name <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> pwd <span class="type">string</span></span><br><span class="line">	<span class="keyword">var</span> loginChance = <span class="number">3</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= <span class="number">3</span>; i++&#123;</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入用户名：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;name)</span><br><span class="line">		fmt.Print(<span class="string">&quot;请输入密码：&quot;</span>)</span><br><span class="line">		fmt.Scanln(&amp;pwd)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> name == <span class="string">&quot;zhangsan&quot;</span> &amp;&amp; pwd== <span class="string">&quot;123456&quot;</span> &#123;</span><br><span class="line">			fmt.Println(<span class="string">&quot;恭喜你登录成功！&quot;</span>)</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			loginChance--</span><br><span class="line">			fmt.Printf(<span class="string">&quot;你还有%v次登录机会！\n&quot;</span>,loginChance)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> loginChance == <span class="number">0</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;机会用完，登录失败。&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>执行结果如下图所示：</p>
+<p>测试一（登录成功）：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190621162721450.png" alt="在这里插入图片描述"></p>
+<p>测试二（登录失败）：</p>
+<p><img src="https://s2.loli.net/2022/04/11/13bAvfWyHwxGq2E.png" alt="在这里插入图片描述"></p>
+]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
+      <tags>
+        <tag>Golang</tag>
       </tags>
   </entry>
   <entry>
@@ -479,21 +479,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于hexo d出现SSL:443的报错终极解决方案</title>
-    <url>/posts/34393/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>网上的hexo部署教程都是把repo项的Github地址设置成https地址，我用了一段时间之后发现，因为大陆的政策问题（你懂的）会导致在执行hexo d部署项目的时候提示代码超时，很头疼啊，也不可能一直搭梯子啊，再说也不稳定，后来在从CSDN上找到了解决思路，把repo项的Github地址设置成Git地址就很丝滑了。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line"></span><br><span class="line"><span class="string">​</span>    <span class="attr">github:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://pic.imgdb.cn/item/626657b9239250f7c522788f.png" alt="image-20220425155956939"></p>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>做自己情绪的主人，不要被情绪伤害到自己和身边的人！</title>
     <url>/posts/56281/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>情绪管理人人都需要。理解自己的情绪，能够用自己的思维去思考和控制自己的行动，这是情绪管理最基本的要求。对于情绪敏感的人而言，总是能够时刻觉察到他人的情绪，并且他们会很在意他人的情绪，总是会以为他人的情绪和自己有关。</p>
@@ -510,6 +495,21 @@
       </categories>
       <tags>
         <tag>情感随记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于hexo d出现SSL:443的报错终极解决方案</title>
+    <url>/posts/34393/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>网上的hexo部署教程都是把repo项的Github地址设置成https地址，我用了一段时间之后发现，因为大陆的政策问题（你懂的）会导致在执行hexo d部署项目的时候提示代码超时，很头疼啊，也不可能一直搭梯子啊，再说也不稳定，后来在从CSDN上找到了解决思路，把repo项的Github地址设置成Git地址就很丝滑了。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">repo:</span> </span><br><span class="line"></span><br><span class="line"><span class="string">​</span>    <span class="attr">github:</span> <span class="string">git@github.com:username/username.github.io.git</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/626657b9239250f7c522788f.png" alt="image-20220425155956939"></p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -571,22 +571,6 @@
       </tags>
   </entry>
   <entry>
-    <title>阿里云OSS图床url无法预览解决方案</title>
-    <url>/posts/a94ab2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>阿里云OSS做图床的优势就是国内访问速度比较快，但是细心的同学会发现，在用浏览器访问图片地址的时候是直接跳转了下载而不是预览，这个就有点难受了，解决方式有2个，写文章记录一下。</p>
-<h3 id="方式一：绑定已备案的域名"><a href="#方式一：绑定已备案的域名" class="headerlink" title="方式一：绑定已备案的域名"></a>方式一：绑定已备案的域名</h3><p>首先需要在Bucket列表里面进入图床的存储桶，然后在左侧边栏找到传输管理-域名管理,按照下图绑定域名后，再打开地址就可以预览，而不是下载图片文件了，但是域名必须经过了备案。</p>
-<p><img src="https://cdn.kimtoli.com/img/post/202206281633291.png" alt="image-20220628163221744" style="zoom:33%;" /><img src="https://cdn.kimtoli.com/img/post/202206281633667.png" alt="image-20220628163352631" style="zoom:33%;" /></p>
-<h3 id="方式二：手动设置head-http头"><a href="#方式二：手动设置head-http头" class="headerlink" title="方式二：手动设置head-http头"></a>方式二：手动设置head-http头</h3><p>首先你在上传到阿里云OSS图片后，阿里云存储图片时<strong>Content-Type</strong>属性是以<strong>image&#x2F;jpeg</strong>储存，所以访问会直接下载，我们如果把请求头<strong>Content-Type</strong>属性设置成<strong>image&#x2F;jpg</strong>，这种方式需要手动调整有点麻烦，其实阿里云官方也做了处理方案，但是我个人觉得还是有点麻烦。。。所以长期用的话，建议还是绑定备案域名。</p>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>图床</tag>
-        <tag>阿里云OSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>陪玩团流程制度</title>
     <url>/posts/1ef4116a/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>技术陪包C不包必赢 ，请老板知悉</p>
@@ -626,13 +610,8 @@
 <td></td>
 <td></td>
 </tr>
-<tr>
-<td><strong>个人报价的浮动部分，上下浮动不得超过建议价20%</strong></td>
-<td></td>
-<td></td>
-</tr>
 </tbody></table>
-<h3 id="吃鸡陪玩价格："><a href="#吃鸡陪玩价格：" class="headerlink" title="吃鸡陪玩价格："></a>吃鸡陪玩价格：</h3><p>吃鸡价格按照小时计算，每小时50元<strong>（备注：个人报价的浮动部分，上下浮动不得超过建议价20%）</strong></p>
+<h3 id="吃鸡陪玩价格："><a href="#吃鸡陪玩价格：" class="headerlink" title="吃鸡陪玩价格："></a>吃鸡陪玩价格：</h3><p>吃鸡价格按照小时计算，每小时50元</p>
 <h3 id="王者技术陪免单规则"><a href="#王者技术陪免单规则" class="headerlink" title="王者技术陪免单规则"></a><strong>王者技术陪免单规则</strong></h3><p>1 陪1，输局非败方前二免单</p>
 <p>1陪2&#x2F;1陪4，恕无免单</p>
 <p>2陪1，输局非败方前二免单</p>
@@ -642,15 +621,32 @@
 <p>匹配&#x2F;娱乐&#x2F;战队赛，恕无免单</p>
 <p>荣耀段位五排，可联系管理推荐人选</p>
 <p>ps:以上免单规则匀不算入娱乐陪（若在群里点了五排，有娱乐陪输局按3陪2结算）</p>
-<h3 id="接私单问题"><a href="#接私单问题" class="headerlink" title="接私单问题"></a><strong>接私单问题</strong></h3><p>陪练和老板🈲互加！！！！🈲止游戏里私下接单</p>
+<h3 id="关于接私单问题"><a href="#关于接私单问题" class="headerlink" title="关于接私单问题"></a>关于接私单问题</h3><p>陪练和老板🈲互加！！！！🈲止游戏里私下接单</p>
 <p>如若发现该陪练罚款️️️立刻退团，并取消所有未结算订单，绝无例外！</p>
 <h3 id="关于订单不愉快类投诉问题"><a href="#关于订单不愉快类投诉问题" class="headerlink" title="关于订单不愉快类投诉问题"></a><strong>关于订单不愉快类投诉问题</strong></h3><p>在游戏的时候有任何问题，可以私信管理投诉️类似混单️娱乐陪不说话️没有给您好的游戏体验以及其他不良问题，情况属实我们都退单。</p>
+<h3 id="关于未成年下单相关免责条款"><a href="#关于未成年下单相关免责条款" class="headerlink" title="关于未成年下单相关免责条款"></a>关于未成年下单相关免责条款</h3><p>本游戏陪玩工会业务均为绿色陪玩，并且会在下单时依法询问下单人员年龄，告知拒绝未成年人下单，如果下单人隐瞒年龄并下单，视为了解并认同本制度，已放弃退款权利。</p>
 ]]></content>
       <categories>
         <category>游戏陪玩</category>
       </categories>
       <tags>
         <tag>游戏陪玩</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿里云OSS图床url无法预览解决方案</title>
+    <url>/posts/a94ab2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>阿里云OSS做图床的优势就是国内访问速度比较快，但是细心的同学会发现，在用浏览器访问图片地址的时候是直接跳转了下载而不是预览，这个就有点难受了，解决方式有2个，写文章记录一下。</p>
+<h3 id="方式一：绑定已备案的域名"><a href="#方式一：绑定已备案的域名" class="headerlink" title="方式一：绑定已备案的域名"></a>方式一：绑定已备案的域名</h3><p>首先需要在Bucket列表里面进入图床的存储桶，然后在左侧边栏找到传输管理-域名管理,按照下图绑定域名后，再打开地址就可以预览，而不是下载图片文件了，但是域名必须经过了备案。</p>
+<p><img src="https://cdn.kimtoli.com/img/post/202206281633291.png" alt="image-20220628163221744" style="zoom:33%;" /><img src="https://cdn.kimtoli.com/img/post/202206281633667.png" alt="image-20220628163352631" style="zoom:33%;" /></p>
+<h3 id="方式二：手动设置head-http头"><a href="#方式二：手动设置head-http头" class="headerlink" title="方式二：手动设置head-http头"></a>方式二：手动设置head-http头</h3><p>首先你在上传到阿里云OSS图片后，阿里云存储图片时<strong>Content-Type</strong>属性是以<strong>image&#x2F;jpeg</strong>储存，所以访问会直接下载，我们如果把请求头<strong>Content-Type</strong>属性设置成<strong>image&#x2F;jpg</strong>，这种方式需要手动调整有点麻烦，其实阿里云官方也做了处理方案，但是我个人觉得还是有点麻烦。。。所以长期用的话，建议还是绑定备案域名。</p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>图床</tag>
+        <tag>阿里云OSS</tag>
       </tags>
   </entry>
   <entry>

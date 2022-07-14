@@ -227,14 +227,14 @@
 
   
   <url>
-    <loc>https://www.kimtoli.com/tags/Golang/</loc>
+    <loc>https://www.kimtoli.com/tags/%E7%9F%AD%E8%A7%86%E9%A2%91/</loc>
     <lastmod>2022-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.kimtoli.com/tags/%E7%9F%AD%E8%A7%86%E9%A2%91/</loc>
+    <loc>https://www.kimtoli.com/tags/Golang/</loc>
     <lastmod>2022-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -304,6 +304,13 @@
   </url>
   
   <url>
+    <loc>https://www.kimtoli.com/tags/%E6%B8%B8%E6%88%8F%E9%99%AA%E7%8E%A9/</loc>
+    <lastmod>2022-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.kimtoli.com/tags/%E5%9B%BE%E5%BA%8A/</loc>
     <lastmod>2022-07-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -317,24 +324,17 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://www.kimtoli.com/tags/%E6%B8%B8%E6%88%8F%E9%99%AA%E7%8E%A9/</loc>
-    <lastmod>2022-07-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
-    <loc>https://www.kimtoli.com/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/</loc>
+    <loc>https://www.kimtoli.com/categories/%E6%96%B0%E5%AA%92%E4%BD%93/</loc>
     <lastmod>2022-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://www.kimtoli.com/categories/%E6%96%B0%E5%AA%92%E4%BD%93/</loc>
+    <loc>https://www.kimtoli.com/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2022-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
