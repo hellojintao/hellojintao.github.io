@@ -571,6 +571,22 @@
       </tags>
   </entry>
   <entry>
+    <title>阿里云OSS图床url无法预览解决方案</title>
+    <url>/posts/a94ab2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>阿里云OSS做图床的优势就是国内访问速度比较快，但是细心的同学会发现，在用浏览器访问图片地址的时候是直接跳转了下载而不是预览，这个就有点难受了，解决方式有2个，写文章记录一下。</p>
+<h3 id="方式一：绑定已备案的域名"><a href="#方式一：绑定已备案的域名" class="headerlink" title="方式一：绑定已备案的域名"></a>方式一：绑定已备案的域名</h3><p>首先需要在Bucket列表里面进入图床的存储桶，然后在左侧边栏找到传输管理-域名管理,按照下图绑定域名后，再打开地址就可以预览，而不是下载图片文件了，但是域名必须经过了备案。</p>
+<p><img src="https://cdn.kimtoli.com/img/post/202206281633291.png" alt="image-20220628163221744" style="zoom:33%;" /><img src="https://cdn.kimtoli.com/img/post/202206281633667.png" alt="image-20220628163352631" style="zoom:33%;" /></p>
+<h3 id="方式二：手动设置head-http头"><a href="#方式二：手动设置head-http头" class="headerlink" title="方式二：手动设置head-http头"></a>方式二：手动设置head-http头</h3><p>首先你在上传到阿里云OSS图片后，阿里云存储图片时<strong>Content-Type</strong>属性是以<strong>image&#x2F;jpeg</strong>储存，所以访问会直接下载，我们如果把请求头<strong>Content-Type</strong>属性设置成<strong>image&#x2F;jpg</strong>，这种方式需要手动调整有点麻烦，其实阿里云官方也做了处理方案，但是我个人觉得还是有点麻烦。。。所以长期用的话，建议还是绑定备案域名。</p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>图床</tag>
+        <tag>阿里云OSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>陪玩团流程制度</title>
     <url>/posts/1ef4116a/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>技术陪包C不包必赢 ，请老板知悉</p>
@@ -631,22 +647,6 @@
       </categories>
       <tags>
         <tag>游戏陪玩</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>阿里云OSS图床url无法预览解决方案</title>
-    <url>/posts/a94ab2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>阿里云OSS做图床的优势就是国内访问速度比较快，但是细心的同学会发现，在用浏览器访问图片地址的时候是直接跳转了下载而不是预览，这个就有点难受了，解决方式有2个，写文章记录一下。</p>
-<h3 id="方式一：绑定已备案的域名"><a href="#方式一：绑定已备案的域名" class="headerlink" title="方式一：绑定已备案的域名"></a>方式一：绑定已备案的域名</h3><p>首先需要在Bucket列表里面进入图床的存储桶，然后在左侧边栏找到传输管理-域名管理,按照下图绑定域名后，再打开地址就可以预览，而不是下载图片文件了，但是域名必须经过了备案。</p>
-<p><img src="https://cdn.kimtoli.com/img/post/202206281633291.png" alt="image-20220628163221744" style="zoom:33%;" /><img src="https://cdn.kimtoli.com/img/post/202206281633667.png" alt="image-20220628163352631" style="zoom:33%;" /></p>
-<h3 id="方式二：手动设置head-http头"><a href="#方式二：手动设置head-http头" class="headerlink" title="方式二：手动设置head-http头"></a>方式二：手动设置head-http头</h3><p>首先你在上传到阿里云OSS图片后，阿里云存储图片时<strong>Content-Type</strong>属性是以<strong>image&#x2F;jpeg</strong>储存，所以访问会直接下载，我们如果把请求头<strong>Content-Type</strong>属性设置成<strong>image&#x2F;jpg</strong>，这种方式需要手动调整有点麻烦，其实阿里云官方也做了处理方案，但是我个人觉得还是有点麻烦。。。所以长期用的话，建议还是绑定备案域名。</p>
-]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>图床</tag>
-        <tag>阿里云OSS</tag>
       </tags>
   </entry>
   <entry>
