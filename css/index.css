@@ -1374,7 +1374,7 @@ body {
   background: var(--global-bg);
   color: var(--font-color);
   font-size: var(--global-font-size);
-  font-family: MiSans-Regular,PingFangSC;
+  font-family: PingFangSC,MiSans-Regular;
   line-height: 2;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -1494,7 +1494,7 @@ a:hover {
 .site-name,
 #aside-content .author-info__name,
 #aside-content .author-info__description {
-  font-family: MiSans-Regular,PingFangSC;
+  font-family: PingFangSC,MiSans-Regular;
 }
 .is-center {
   text-align: center;
@@ -3261,7 +3261,7 @@ h1.page-title + .tag-cloud-list {
   content: '';
 }
 #page-header.full_page {
-  height: 550px;
+  height: 600px;
   background-attachment: fixed;
 }
 #page-header.full_page #site-info {
