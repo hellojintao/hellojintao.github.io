@@ -1,37 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo的npm依赖环境以及博客部署备忘录</title>
-    <url>/posts/28dcdc4c.html</url>
-    <content><![CDATA[<h3 id="pug-以及-stylus-的渲染器"><a href="#pug-以及-stylus-的渲染器" class="headerlink" title="pug 以及 stylus 的渲染器"></a>pug 以及 stylus 的渲染器</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-renderer-pug</span> hexo<span class="literal">-renderer-stylus</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="butterfly开启本地搜索"><a href="#butterfly开启本地搜索" class="headerlink" title="butterfly开启本地搜索"></a>butterfly开启本地搜索</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-generator-search</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="开启hexo-abbrlink文章链接"><a href="#开启hexo-abbrlink文章链接" class="headerlink" title="开启hexo-abbrlink文章链接"></a>开启hexo-abbrlink文章链接</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-abbrlink</span> <span class="literal">--save</span> </span><br></pre></td></tr></table></figure>
-
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink.html</span>     <span class="comment"># 将原来文章的地址修改为这个</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 并添加如下配置：</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>      <span class="comment">#support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>        <span class="comment">#support dec(default) and hex</span></span><br><span class="line">  <span class="attr">drafts:</span> <span class="literal">false</span>   <span class="comment">#(true)Process draft,(false)Do not process draft. false(default) </span></span><br></pre></td></tr></table></figure>
-
-<h3 id="部署必备插件"><a href="#部署必备插件" class="headerlink" title="部署必备插件"></a>部署必备插件</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-deployer-git</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="开启百度站长主动推送文章链接"><a href="#开启百度站长主动推送文章链接" class="headerlink" title="开启百度站长主动推送文章链接"></a>开启百度站长主动推送文章链接</h3><p>安装依赖</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-baidu-url-submit</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
-
-<p>修改配置文件<code>_config.yml</code></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#设置百度主动推送</span></span><br><span class="line"><span class="attr">baidu_url_submit:</span></span><br><span class="line">  <span class="attr">count:</span> <span class="number">200</span>  <span class="comment">#比如200，代表提交最新的200个链接</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">www.kimtoli.com</span> <span class="comment"># 在百度站长平台中注册的域名，这个改为你自己的域名</span></span><br><span class="line">  <span class="attr">token:</span> <span class="string">your_token</span> <span class="comment"># 百度站长token字段</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">baidu_urls.txt</span> <span class="comment"># 新链接会保存在此文本文档里（文本文件的文件名）</span></span><br></pre></td></tr></table></figure>
-
-<p>加入新的deploy项</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:XXX/XXX.github.io.git</span>  <span class="comment"># Github地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">baidu_url_submitter</span>  <span class="comment"># 这一行是新增的配置</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>技术类</category>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Go中netpoll的工作机制</title>
     <url>/posts/794f771b.html</url>
     <content><![CDATA[<h2 id="netpollGenericInit-初始化-poller"><a href="#netpollGenericInit-初始化-poller" class="headerlink" title="netpollGenericInit 初始化 poller"></a>netpollGenericInit 初始化 poller</h2><p>netpollGenericInit 保证 poller 被初始化，原子变量netpollInited保证其仅被初始化一次。</p>
@@ -140,6 +109,36 @@
       </tags>
   </entry>
   <entry>
+    <title>《杀虫》若水</title>
+    <url>/posts/ae350edf.html</url>
+    <content><![CDATA[<p>初夏的天气已经使我心烦意乱</p>
+<p>休憩了太久</p>
+<p>思索几番，不得真谛</p>
+<p>一只弱小的虫，趴在闪烁的悬崖处</p>
+<p>试探着，一个无情之人的善念</p>
+<p>是否会给它一个了断</p>
+<p>先是假装的挣扎</p>
+<p>再来几个诱惑性的旋转舞蹈</p>
+<p>绕过睫毛，似乎还有话要说</p>
+<p>絮絮叨叨，总也说不完</p>
+<p>终于——</p>
+<p>食指和拇指不耐烦地捏住了这可怜的虫</p>
+<p>稍一用力</p>
+<p>碾碎了一个有骨气的灵魂</p>
+<p>柔软的翅膀多了几分铁骨铮铮</p>
+<p>一手扔到地上</p>
+<p>闭上眼</p>
+<p>进了梦境</p>
+]]></content>
+      <categories>
+        <category>其他</category>
+        <category>文学</category>
+      </categories>
+      <tags>
+        <tag>文学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一些很有用的JavaScript代码</title>
     <url>/posts/bbf49370.html</url>
     <content><![CDATA[<h3 id="获取浏览器cookie值"><a href="#获取浏览器cookie值" class="headerlink" title="获取浏览器cookie值"></a>获取浏览器cookie值</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> cookie = name =<span class="string">`; <span class="subst">$&#123;<span class="variable language_">document</span>.cookie&#125;</span>`</span>.<span class="title function_">split</span>(<span class="string">`; <span class="subst">$&#123;name&#125;</span>=`</span>).<span class="title function_">pop</span>().<span class="title function_">split</span>(<span class="string">&#x27;;&#x27;</span>).<span class="title function_">shift</span>();</span><br><span class="line"><span class="title function_">cookie</span>(<span class="string">&#x27;_ga&#x27;</span>);</span><br></pre></td></tr></table></figure>
@@ -191,36 +190,6 @@
       </tags>
   </entry>
   <entry>
-    <title>《杀虫》若水</title>
-    <url>/posts/ae350edf.html</url>
-    <content><![CDATA[<p>初夏的天气已经使我心烦意乱</p>
-<p>休憩了太久</p>
-<p>思索几番，不得真谛</p>
-<p>一只弱小的虫，趴在闪烁的悬崖处</p>
-<p>试探着，一个无情之人的善念</p>
-<p>是否会给它一个了断</p>
-<p>先是假装的挣扎</p>
-<p>再来几个诱惑性的旋转舞蹈</p>
-<p>绕过睫毛，似乎还有话要说</p>
-<p>絮絮叨叨，总也说不完</p>
-<p>终于——</p>
-<p>食指和拇指不耐烦地捏住了这可怜的虫</p>
-<p>稍一用力</p>
-<p>碾碎了一个有骨气的灵魂</p>
-<p>柔软的翅膀多了几分铁骨铮铮</p>
-<p>一手扔到地上</p>
-<p>闭上眼</p>
-<p>进了梦境</p>
-]]></content>
-      <categories>
-        <category>其他</category>
-        <category>文学</category>
-      </categories>
-      <tags>
-        <tag>文学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>腾讯和字节这对曾经的冤家，在视频二创上竟然上演了世纪大和解。</title>
     <url>/posts/fcce4138.html</url>
     <content><![CDATA[<h3 id="腾讯和字节这对曾经的冤家，在视频二创上竟然上演了世纪大和解。"><a href="#腾讯和字节这对曾经的冤家，在视频二创上竟然上演了世纪大和解。" class="headerlink" title="腾讯和字节这对曾经的冤家，在视频二创上竟然上演了世纪大和解。"></a>腾讯和字节这对曾经的冤家，在视频二创上竟然上演了世纪大和解。</h3><p>4月7日，腾讯视频与抖音集团宣布达成合作，双方将围绕长短视频联动推广、短视频衍生创作开展合作。腾讯视频将向抖音授权其享有信息网络传播权及转授权权利的长视频。此外，腾讯视频与抖音还明确了短视频衍生创作的方式、发布规则，共同促进短视频的创作、传播。</p>
@@ -256,6 +225,37 @@
       </categories>
       <tags>
         <tag>新媒体</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo的npm依赖环境以及博客部署备忘录</title>
+    <url>/posts/28dcdc4c.html</url>
+    <content><![CDATA[<h3 id="pug-以及-stylus-的渲染器"><a href="#pug-以及-stylus-的渲染器" class="headerlink" title="pug 以及 stylus 的渲染器"></a>pug 以及 stylus 的渲染器</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-renderer-pug</span> hexo<span class="literal">-renderer-stylus</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="butterfly开启本地搜索"><a href="#butterfly开启本地搜索" class="headerlink" title="butterfly开启本地搜索"></a>butterfly开启本地搜索</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-generator-search</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="开启hexo-abbrlink文章链接"><a href="#开启hexo-abbrlink文章链接" class="headerlink" title="开启hexo-abbrlink文章链接"></a>开启hexo-abbrlink文章链接</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-abbrlink</span> <span class="literal">--save</span> </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink.html</span>     <span class="comment"># 将原来文章的地址修改为这个</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 并添加如下配置：</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>      <span class="comment">#support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>        <span class="comment">#support dec(default) and hex</span></span><br><span class="line">  <span class="attr">drafts:</span> <span class="literal">false</span>   <span class="comment">#(true)Process draft,(false)Do not process draft. false(default) </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="部署必备插件"><a href="#部署必备插件" class="headerlink" title="部署必备插件"></a>部署必备插件</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-deployer-git</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="开启百度站长主动推送文章链接"><a href="#开启百度站长主动推送文章链接" class="headerlink" title="开启百度站长主动推送文章链接"></a>开启百度站长主动推送文章链接</h3><p>安装依赖</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-baidu-url-submit</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
+
+<p>修改配置文件<code>_config.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#设置百度主动推送</span></span><br><span class="line"><span class="attr">baidu_url_submit:</span></span><br><span class="line">  <span class="attr">count:</span> <span class="number">200</span>  <span class="comment">#比如200，代表提交最新的200个链接</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">www.kimtoli.com</span> <span class="comment"># 在百度站长平台中注册的域名，这个改为你自己的域名</span></span><br><span class="line">  <span class="attr">token:</span> <span class="string">your_token</span> <span class="comment"># 百度站长token字段</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">baidu_urls.txt</span> <span class="comment"># 新链接会保存在此文本文档里（文本文件的文件名）</span></span><br></pre></td></tr></table></figure>
+
+<p>加入新的deploy项</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:XXX/XXX.github.io.git</span>  <span class="comment"># Github地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">baidu_url_submitter</span>  <span class="comment"># 这一行是新增的配置</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>技术类</category>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
