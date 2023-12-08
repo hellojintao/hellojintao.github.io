@@ -1,67 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>《杀虫》若水</title>
-    <url>/posts/ae350edf.html</url>
-    <content><![CDATA[<p>初夏的天气已经使我心烦意乱</p>
-<p>休憩了太久</p>
-<p>思索几番，不得真谛</p>
-<p>一只弱小的虫，趴在闪烁的悬崖处</p>
-<p>试探着，一个无情之人的善念</p>
-<p>是否会给它一个了断</p>
-<p>先是假装的挣扎</p>
-<p>再来几个诱惑性的旋转舞蹈</p>
-<p>绕过睫毛，似乎还有话要说</p>
-<p>絮絮叨叨，总也说不完</p>
-<p>终于——</p>
-<p>食指和拇指不耐烦地捏住了这可怜的虫</p>
-<p>稍一用力</p>
-<p>碾碎了一个有骨气的灵魂</p>
-<p>柔软的翅膀多了几分铁骨铮铮</p>
-<p>一手扔到地上</p>
-<p>闭上眼</p>
-<p>进了梦境</p>
-]]></content>
-      <categories>
-        <category>其他</category>
-        <category>文学</category>
-      </categories>
-      <tags>
-        <tag>文学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo的npm依赖环境以及博客部署备忘录</title>
-    <url>/posts/28dcdc4c.html</url>
-    <content><![CDATA[<h3 id="pug-以及-stylus-的渲染器"><a href="#pug-以及-stylus-的渲染器" class="headerlink" title="pug 以及 stylus 的渲染器"></a>pug 以及 stylus 的渲染器</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-renderer-pug</span> hexo<span class="literal">-renderer-stylus</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="butterfly开启本地搜索"><a href="#butterfly开启本地搜索" class="headerlink" title="butterfly开启本地搜索"></a>butterfly开启本地搜索</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-generator-search</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="开启hexo-abbrlink文章链接"><a href="#开启hexo-abbrlink文章链接" class="headerlink" title="开启hexo-abbrlink文章链接"></a>开启hexo-abbrlink文章链接</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-abbrlink</span> <span class="literal">--save</span> </span><br></pre></td></tr></table></figure>
-
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink.html</span>     <span class="comment"># 将原来文章的地址修改为这个</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 并添加如下配置：</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>      <span class="comment">#support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>        <span class="comment">#support dec(default) and hex</span></span><br><span class="line">  <span class="attr">drafts:</span> <span class="literal">false</span>   <span class="comment">#(true)Process draft,(false)Do not process draft. false(default) </span></span><br></pre></td></tr></table></figure>
-
-<h3 id="部署必备插件"><a href="#部署必备插件" class="headerlink" title="部署必备插件"></a>部署必备插件</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-deployer-git</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="开启百度站长主动推送文章链接"><a href="#开启百度站长主动推送文章链接" class="headerlink" title="开启百度站长主动推送文章链接"></a>开启百度站长主动推送文章链接</h3><p>安装依赖</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-baidu-url-submit</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
-
-<p>修改配置文件<code>_config.yml</code></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#设置百度主动推送</span></span><br><span class="line"><span class="attr">baidu_url_submit:</span></span><br><span class="line">  <span class="attr">count:</span> <span class="number">200</span>  <span class="comment">#比如200，代表提交最新的200个链接</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">www.kimtoli.com</span> <span class="comment"># 在百度站长平台中注册的域名，这个改为你自己的域名</span></span><br><span class="line">  <span class="attr">token:</span> <span class="string">your_token</span> <span class="comment"># 百度站长token字段</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">baidu_urls.txt</span> <span class="comment"># 新链接会保存在此文本文档里（文本文件的文件名）</span></span><br></pre></td></tr></table></figure>
-
-<p>加入新的deploy项</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:XXX/XXX.github.io.git</span>  <span class="comment"># Github地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">baidu_url_submitter</span>  <span class="comment"># 这一行是新增的配置</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>技术类</category>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Go中netpoll的工作机制</title>
     <url>/posts/794f771b.html</url>
     <content><![CDATA[<h2 id="netpollGenericInit-初始化-poller"><a href="#netpollGenericInit-初始化-poller" class="headerlink" title="netpollGenericInit 初始化 poller"></a>netpollGenericInit 初始化 poller</h2><p>netpollGenericInit 保证 poller 被初始化，原子变量netpollInited保证其仅被初始化一次。</p>
@@ -170,6 +109,67 @@
       </tags>
   </entry>
   <entry>
+    <title>《杀虫》若水</title>
+    <url>/posts/ae350edf.html</url>
+    <content><![CDATA[<p>初夏的天气已经使我心烦意乱</p>
+<p>休憩了太久</p>
+<p>思索几番，不得真谛</p>
+<p>一只弱小的虫，趴在闪烁的悬崖处</p>
+<p>试探着，一个无情之人的善念</p>
+<p>是否会给它一个了断</p>
+<p>先是假装的挣扎</p>
+<p>再来几个诱惑性的旋转舞蹈</p>
+<p>绕过睫毛，似乎还有话要说</p>
+<p>絮絮叨叨，总也说不完</p>
+<p>终于——</p>
+<p>食指和拇指不耐烦地捏住了这可怜的虫</p>
+<p>稍一用力</p>
+<p>碾碎了一个有骨气的灵魂</p>
+<p>柔软的翅膀多了几分铁骨铮铮</p>
+<p>一手扔到地上</p>
+<p>闭上眼</p>
+<p>进了梦境</p>
+]]></content>
+      <categories>
+        <category>网文</category>
+        <category>小说</category>
+      </categories>
+      <tags>
+        <tag>小说</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo的npm依赖环境以及博客部署备忘录</title>
+    <url>/posts/28dcdc4c.html</url>
+    <content><![CDATA[<h3 id="pug-以及-stylus-的渲染器"><a href="#pug-以及-stylus-的渲染器" class="headerlink" title="pug 以及 stylus 的渲染器"></a>pug 以及 stylus 的渲染器</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-renderer-pug</span> hexo<span class="literal">-renderer-stylus</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="butterfly开启本地搜索"><a href="#butterfly开启本地搜索" class="headerlink" title="butterfly开启本地搜索"></a>butterfly开启本地搜索</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-generator-search</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="开启hexo-abbrlink文章链接"><a href="#开启hexo-abbrlink文章链接" class="headerlink" title="开启hexo-abbrlink文章链接"></a>开启hexo-abbrlink文章链接</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-abbrlink</span> <span class="literal">--save</span> </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink.html</span>     <span class="comment"># 将原来文章的地址修改为这个</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 并添加如下配置：</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>      <span class="comment">#support crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>        <span class="comment">#support dec(default) and hex</span></span><br><span class="line">  <span class="attr">drafts:</span> <span class="literal">false</span>   <span class="comment">#(true)Process draft,(false)Do not process draft. false(default) </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="部署必备插件"><a href="#部署必备插件" class="headerlink" title="部署必备插件"></a>部署必备插件</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-deployer-git</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="开启百度站长主动推送文章链接"><a href="#开启百度站长主动推送文章链接" class="headerlink" title="开启百度站长主动推送文章链接"></a>开启百度站长主动推送文章链接</h3><p>安装依赖</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-baidu-url-submit</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
+
+<p>修改配置文件<code>_config.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#设置百度主动推送</span></span><br><span class="line"><span class="attr">baidu_url_submit:</span></span><br><span class="line">  <span class="attr">count:</span> <span class="number">200</span>  <span class="comment">#比如200，代表提交最新的200个链接</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">www.kimtoli.com</span> <span class="comment"># 在百度站长平台中注册的域名，这个改为你自己的域名</span></span><br><span class="line">  <span class="attr">token:</span> <span class="string">your_token</span> <span class="comment"># 百度站长token字段</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">baidu_urls.txt</span> <span class="comment"># 新链接会保存在此文本文档里（文本文件的文件名）</span></span><br></pre></td></tr></table></figure>
+
+<p>加入新的deploy项</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:XXX/XXX.github.io.git</span>  <span class="comment"># Github地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">baidu_url_submitter</span>  <span class="comment"># 这一行是新增的配置</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>技术类</category>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一些很有用的JavaScript代码</title>
     <url>/posts/bbf49370.html</url>
     <content><![CDATA[<h3 id="获取浏览器cookie值"><a href="#获取浏览器cookie值" class="headerlink" title="获取浏览器cookie值"></a>获取浏览器cookie值</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> cookie = name =<span class="string">`; <span class="subst">$&#123;<span class="variable language_">document</span>.cookie&#125;</span>`</span>.<span class="title function_">split</span>(<span class="string">`; <span class="subst">$&#123;name&#125;</span>=`</span>).<span class="title function_">pop</span>().<span class="title function_">split</span>(<span class="string">&#x27;;&#x27;</span>).<span class="title function_">shift</span>();</span><br><span class="line"><span class="title function_">cookie</span>(<span class="string">&#x27;_ga&#x27;</span>);</span><br></pre></td></tr></table></figure>
@@ -218,6 +218,22 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我以我满门名誉，用命换了和将军的一纸婚书，却死在他给我安排的牢笼里</title>
+    <url>/posts/bdf69bea.html</url>
+    <content><![CDATA[<p>【被囚禁的金丝雀】<br>昏暗没有一丝光亮的囚牢里，关押着一只不停挣扎的金丝雀。<br>一盘冷眼旁观的男子负手而立，任凭那只金丝雀叫破了嗓子也不为所动。<br>我一身冷汗的从地上爬起来，又梦到这个场景了。<br>现如今我被池鱼关在这暗无天日的地牢已经数月有余。<br>每天都重复梦见囚鸟惨烈的悲剧，忐忑度日。<br>我听着地面上传来的锣鼓喧天声，猜想他应是今日成婚。<br>他成婚以后，有了自己心爱的人，就会对我失去兴趣从而忘却我这个人吧。<br>不知那灯火通明处是谁在与谁共度良宵，反观我周身黑灯瞎火的，谁又来诉说一分悲凉<br>我是赤羽军唯一的主帅，子承父业一生都在守卫顾家的江山。<br>却在大破敌军国都后被我效忠的皇帝和心爱的弟弟联合陷害，落得个虎困牢笼之苦。<br>玄铁黑链随我的动作磕磕碰碰的发出一丝丝凄凉声。<br>我很早之前便猜想过自己的结局，生老病死从来不可避免，可我没想到我最后既然会死在自己一直疼爱的人手上。<br>与其等他来屈辱的了结我，我更喜欢命运掌握在自己手上的感觉。<br>我拿起今早送饭的小厮不小心打碎的碗片，它被我藏在两腿之间才没有被人发现收走。<br>也给了我一个解脱的机会。<br>我生而为帅，只可战败而死，不可为囚而亡。<br>锣鼓声好像停了，我的意识也随鼓声逐渐模糊。<br>将死之际，我似乎看见那年海棠微雨，十几岁的少年郎在满天星辰下和我招手。<br>原本那么要好的两人，不知何时这般陌路。<br>我的意识升上了半空，手上铁链的重量感也随之减轻，心里这长舒了一口气。<br>目光再看向地面血污中的肉身时，我竟生出了几分恍惚，那人安静的躺着，手中紧紧捏着一纸婚书。<br>日期也是元月二八。<br>是的，死之前，我怀里抱着的，是池鱼亲笔写给我的婚书。<br>我的弟弟。<br>池鱼看起来像无辜温顺的小白兔，实际上是个心狠手辣，杀伐果断的猛虎。<br>他不擅武艺，做不到刀剑伤人，可自古要人性命的，还有那口诛笔伐的唾沫。<br>我依稀记得我战胜归来，等来的不是道贺，而是铺天盖地的谩骂。<br>我质问他，为何要将我对他的感情公之于众，为何要将它说的那么不堪。<br>他高高在上藐视着我，他说，我看到的一切都只是我的痴心妄想，我在乎的感情也不过是杀死我自己的一把刀，他一直在利用我。<br>他将我推向风口浪尖，让世人质疑，猜忌我，只因我的一句想与他成婚，只因他与我皆是男子。<br>可先与我谈及秦晋之好的，是他池鱼。<br>他就这样毁了我的一生，甚至于，在我一无所有之时，暗自囚禁我。<br>可我不认，我不做这金丝雀。</p>
+<p>【记忆里的池鱼】<br>我在地牢角落呆呆的等了几个时辰，也没见到黑白双煞来接我走。<br>却不想等来了池鱼。<br>他停在地牢门口背着身，迟迟没有下一步动作，他并不想见我。<br>良久他才吐出一口浊气，似乎在挣扎什么。<br>“顾渊，你是否听得到？”<br>我听见池鱼闷闷的声音，可是我已经死了，回答不了他。<br>“你可恨我？”<br>我以为自己死后会毫无波澜的听他问起我恨不恨，可当这话在我耳边响起时，我还是激动万分。<br>可我说不出口。<br>“今天下雪了，我带你出去看看好不好。”<br>没得到我的回音，池鱼不知所措的捏紧了衣角。<br>这不像他，他为何要装的如此深情，明明，他很讨厌这段感情。<br>我悄悄凑到他身前，盯着他笼在黑影里的脸。<br>他不是今日成亲么，为何没有穿喜服，为何不去与新娘春宵一刻，却要半夜行至我这肮脏的地牢。<br>我和池鱼从小一块长大，他是我爹上山打猎从寒冬腊月里捡回来的。<br>我爹说，他衣衫褴褛，却在冬日里哭声嘹亮，所以给我捡回来做弟弟，让我有个伴。<br>我爹看他是个好苗子，有意培养他，时常教他武学之道，可池鱼学不来，他连剑都握不稳。<br>可他七岁会作诗，八岁便能将大道侃侃而谈，诸如此类，数不胜数。<br>就这般，池鱼文采斐然，我武艺超群，世人艳羡我爹，养了一对双子星。<br>我爹也乐呵呵的，笑的整个人年轻了十几岁。<br>可他没能笑着看他养出来的双子星名扬天下。<br>在我十七岁那年，我爹他战死沙场。<br>我和池鱼知晓我爹班师回朝的日子，那天早早的便等在城墙外。<br>烈马破开皇城，直逼天子宫门。<br>我还疑惑有何事这般火急，下一秒便看见了紧跟在后面挂满白绫的军队。<br>我爹被敌军设的圈套陷害了，可他也只是想多救一个自己的将士，不料那将士早已叛变。<br>我听后稳不住自己的步子，倒在池鱼怀里晕了过去。<br>待我再醒来，池鱼已经在朝堂跪了一天一夜，祈求天子能派兵绞杀敌军和叛国贼。<br>可朝堂之上无一人敢出言。<br>我爹一死，一时竟没有武将敢迎战。<br>一开始天子还会客套的打发池鱼，说此事必有蹊跷，需得从长计议，见劝不动池鱼，便也任由他跪着了。<br>我赶至池鱼身边，派人将他拉回去休息，代替他跪在了那个位置。<br>少年天子见是我来，恼怒的推开门，将明黄圣旨丢在我身上。<br>“顾渊，你也要来逼朕是不是？给你，都给你，朕给你写，你要谁去出征替你父亲讨公道，朕满足你。”<br>我沉默不语，少年天子胸膛剧烈起伏着。<br>“臣恳请陛下，让臣挂帅。”<br>殿内静的只剩我和他的呼吸声，良久，天子才捡起掉落我脚边的圣旨，在挂帅前那一处空白的地方写下我的名字。<br>他长叹一声，我冲他笑了笑，领着圣旨走了。<br>没等池鱼醒来，我便日夜兼程去往八百里外的毫州。<br>我只带了一千精兵，劫了敌军的粮草，夜半一把火烧了他们歇脚的地方。<br>火舌吞吐着，我在火光中看见了我爹。<br>第一缕曙光照在身上时，杀声震天，我执剑砍下一个又一个敌军的头颅，身上已分不清是谁的血。<br>在剑身穿透敌军首领的胸膛，其余散军因为首领被杀而纷纷溃散后，我才扛不住单膝跪在染满血的泥地里。<br>吐出嘴里不停涌上来的血，眼前一阵天悬地转，耳鸣不断。<br>我以为要死了的时候，看见池鱼脸色煞白的将我拥入怀中。<br>“小鱼，哥哥身上脏。”<br>池鱼将我拥得更紧了，似乎要将我融入他的血肉之躯中。<br>“我不嫌你。”<br>是的，池鱼从来不会嫌我脏。<br>那个时候，我刚刚丧父，对池鱼这个唯一的在世亲人格外依赖。<br>他无微不至的照顾战后应激的我，那时我便觉得我对于他来说或许也是不一样的。<br>我看了一眼躺在血污里的肉身，脏吗？应该是的，不然池鱼怎么会不想进去里面看我一眼呢。<br>只要他往后看一眼，就能知道我已微凉的尸体，可他不会，他连看我一眼都觉得为难。<br>我记得很久以前，池鱼从来不会嫌我脏的。</p>
+<p>【一颗苦味的糖】<br>思绪倒回，我轻叹了一口气。<br>池鱼见我不理他，泄气般坐在地牢门口，我和他并排坐着，只可惜他看不见我的灵魂。<br>“顾渊，我前几天去了一趟杭州。”<br>我垂目想了想，池鱼去杭州，是去做什么呢？<br>是那里的布匹好看，去给他的新娘子缝制婚服么？<br>还是那边的点心好吃，买喜糖去了。<br>我皱起眉头，在池鱼身上摸索起来，怎么买了喜糖也不给我这个做哥哥的送一点，当真一点也不顾及儿时情谊。<br>或许对他来说，那儿时的情谊，才是捆绑他的枷锁。<br>他依旧自顾自的看着某一处，没有发觉我的动作。<br>我由着自己的小性子，反正我已经死了，再任性一点也无妨。<br>可我摸不到池鱼，枯瘦的手指从他身体身上穿透而出，也对，我现在没有实体。<br>池鱼叹息一声，从腰带里掏出一块梨花酥。<br>我顺着他的手掌尝了两口，苦涩的很，我呸呸两声连忙吐掉。<br>我记得我以前最爱吃梨花酥了，怎么现在吃起来这么苦呢。<br>是因为这是池鱼的喜糖吗？<br>我喜甜口，以前身上总是会带着几颗糖，池鱼明明最讨厌甜味，却不怨其烦的陪我品尝了世间饴糖。<br>从我爹去世后，很少有人记得我爱吃甜食，我也时常奔波在军营和练武场，这个小习惯便淡忘了。<br>可每次池鱼来找我时，都会塞给我一大把口味各式的糖。<br>我问他为何如此，他总倔强的说是他买多了吃不完的，秉承着不能浪费，让我替他解决掉。<br>直到我意外发现那是他跑遍各地州县，买回五颜六色的饴糖，偷偷一个人尝鲜，然后把我会喜欢的留下来。<br>为此，他被腻的好几天吃不下饭。<br>我不再看此时池鱼手里的那块梨花酥，或许是人死了之后味觉变了，池鱼给我的糖必然不会是苦的。<br>就算是他的喜糖，他要送给我，也该是千挑万选过的。<br>他再不喜欢我，也记得我喜甜口。<br>池鱼将那块梨花酥送入口中，嚼着嚼着却落了泪，我惊慌失措的去替他擦拭，可那泪水径直略过我的手指，掉落在地上。<br>“顾渊，糖好苦啊。”<br>我听见池鱼说。<br>他说好苦，他在哭。<br>在我还未成为名扬天下的一军主帅前，也曾吃过一颗苦到心间的糖。<br>我爹从小便教我，练武之人不得有极端之心，任何事情都讲究个理。<br>我从小对我爹的话奉为圭璧，也坚信这是为人处事的准则。<br>可当我亲眼看见一城人的性命被一个理字活生生害死时，我便从心底里打破了这条束缚我的准则。<br>毫州一战后，蛮夷忌惮顾家还有后备之才不敢轻举妄动，因此消停了几日。<br>或许是探查了两天，发觉毫州短时间没有兵力再承受一战，野心勃勃的他们当然不愿意放过这个重创我们夏国的机会。<br>可两场战斗下来，朝堂亏损严重。<br>将士们连休养生息都没来得及，便又披挂上阵。<br>我尚未真正上过战场，能打退他们已是凭借那一腔为父报仇的热血，再开城门迎战，也有些棘手起来。<br>我自认武学天下人少有胜过我的，也耐不住蛮夷的车轮战术，几次负伤。<br>八百里加急的请兵书往皇城送了一封又一封，没有一封有回音，我知道，天子不打算保亳州了。<br>可我不愿，我不愿看这一城人的性命死在蛮夷的刀下，成为被国家放弃的孤魂野鬼。</p>
+<p><strong>———– 全文内容使用UC浏览器搜索【被将军大人圈养的小白兔弟弟】 ———–</strong></p>
+]]></content>
+      <categories>
+        <category>网文</category>
+        <category>小说</category>
+      </categories>
+      <tags>
+        <tag>小说</tag>
       </tags>
   </entry>
   <entry>
