@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'PingFangSC';
+  src: url('/css/font/PingFangSC.ttf') format("truetype"); 
+
+  font-family: 'MiSans-Regular';
+  src: url('/css/font/MiSans-Regular.ttf') format("truetype"); 
+
+}
+
+  body{
+    font-family: 'MiSans-Regular','PingFangSC',"Microsoft YaHei";
+  }
